@@ -1,0 +1,44 @@
+Guimaci01
+
+Ön egy kollegista tanuló, vasárnap délután 6-kor érkezett a kollégiumba. Mivel délbe evett utoljára, az éhsége alacsony, pénzt indulás előtt kapot apjától, hétvégén buli volt, ezért semmit nem tanult. Mit sinál?
+            vasárnap:
+                -lefürdik:
+                    - +15perc
+                    - -valamennyi éhség
+                -megvacsorázol
+                    -éhség 100% 
+                    - +30 perc
+
+                -tanul:
+                    -elmész tanszobába
+                        -mit tanulsz?
+                        (tantárgyak)
+                        -találkozol valakivel, beszélsz-e vele
+                    -maradsz a szobában
+                        -mit tanulsz                                            ---->szoba
+                        (tantárgyak)
+                        -zavar szobatársad, mit csinálsz?
+                    -kistanuló  
+                        -zárva van 
+                        -mész tanári
+                        -tanulsz szobában  
+                -pihensz:
+                    -
+                -beszégetsz másokkal
+                -elmész aludni
+
+
+
+
+alap stat kiiratás
+függvény:
+-időt mér(elmúlt e tíz vagy nem)
+-éhség nagyobb mint 0 -->halál
+-pénz > 0 = nuh uh: nincs péz
+
+Statok
+-tudás
+-pénz
+-éhség
+-idő
+-életkedv
