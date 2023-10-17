@@ -23,4 +23,21 @@ def idoMeres(oraPlusz,percPlusz):
 
 
 # ehezes(ehseg)
+
+def etel(etelek):
+    global ehezes
+    ehezes += etelek
+    if ehezes >= 100:
+        print("Éhezem meghaltam")
+    else:
+        print(f"Éhség szint: {ehezes}")
+
 # vanPenze(penz)
+
+def penz(penzek):
+    global forint
+    forint += becsuletesseg
+    if forint <= 0:
+        print("Nincs pénz")
+    else:
+        print(f"Jelenleg {penz} forintod van")
