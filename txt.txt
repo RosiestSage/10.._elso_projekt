@@ -1,28 +1,96 @@
 Guimaci01
 
 Ön egy kollegista tanuló, vasárnap délután 6-kor érkezett a kollégiumba. Mivel délbe evett utoljára, az éhsége alacsony, pénzt indulás előtt kapot apjától, hétvégén buli volt, ezért semmit nem tanult. Mit sinál?
-            vasárnap:
-                -Fürdés:
-                    - +15perc
-                    - -valamennyi éhség
+            Vasárnap:
+                -Fürdés, fürdő:
+                    -1. kabinba áll a víz, de csak az szabad
+                    -Várok, addig: 
+                        -Elmosogatok
+                        -Kinyomom a pattanásaim
+                        -beszélgetek
+                            =elmesélik a jedlikes seggmosás történetét
                 -Tanulás:
                     -elmész tanszobába
                         -mit tanulsz?
                         (tantárgyak)
                         -találkozol valakivel, beszélsz-e vele
+                            -nem
+                            -igen = Elmeséli a Jedlikes kutya történetét
                     -maradsz a szobában
-                        -mit tanulsz                                            ---->szoba
+                        -mit tanulsz                                          
                         (tantárgyak)
                         -zavar szobatársad, mit csinálsz?
+                            -szólok hogy abbahagyja
+                            -kistanuló
+                            -tanszoba
                     -kistanuló  
                         -zárva van 
-                        -mész tanári
-                        -tanulsz szobában
+                            -mész tanári
+                                =odaadja a kulcsot
+                            -tanulsz szobában
                 -Mások szobája:
+                    -Gergő szobája
+                        -Leülök az ágyra
+                            =Beleültél valamibe, az eltört és kiküldenek a szobából
+                        -A székre
+                            -Beszélgetsz
+                                = Megtudod mikor lesz a következő dökös buli
+                            -Játszol velük doomot
+                    -Zoli szobája
+                        -Leülök az ágyra
+                            -Beszélgetek játékokról
+                                =Megtudod a GTA 6 mgjelenését
+                            -Beszélgetek vívásról
+                                =Zoli agyonver
+                        -A székre
+                            =A Máté helyére ültél, és ő kipenderít a szobából 
                 -WC:
-                -Szoba
-
-
+                    -piszoár
+                        -első
+                            =beleállsz a pisibe
+                        -második
+                            =csak a buzik állnak középre
+                        -harmadik
+                            =nem húzódik le
+                    -fülke
+                        -első
+                            =foglalt
+                        -második
+                            körbe van pisilve
+                                -letörlöm
+                                -másik fülke
+                        -harmadik
+                            =foglalt
+                        -negyedik
+                            -nincs semmi baja, de hangosak a szomszédban
+                    -kézmosás
+                -Szoba:
+                    -szék:
+                        -tanulok(/ha már megvagy akkor nem)
+                        -játszok
+                            gépen=le van merülve
+                        -telefonozok
+                        -beszélgetek szobatárssal
+                            -Olivérrel
+                                =Megszakadsz a röhögéstől
+                            -Barnival
+                                =Lolozik és nem figyel
+                            -Petivel
+                                =elmagyarázza hogy miért egyenlő mindenki
+                    -ágy:
+                        -tanulok(/ha már megvagy akkor nem)
+                        -játszok
+                            gépen=le van merülve
+                        -telefonozok
+                        -beszélgetek szobatárssal
+                            -Olivérrel
+                                =Megszakadsz a röhögéstől
+                            -Barnival
+                                =Lolozik és nem figyel
+                            -Petivel
+                                =elmagyarázza hogy miért egyenlő mindenki
+                Ha elmúlt 22:00, vissza a szobába és alvás
+            Hétfő
 
 
 alap stat kiiratás
