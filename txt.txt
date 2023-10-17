@@ -2,14 +2,10 @@ Guimaci01
 
 Ön egy kollegista tanuló, vasárnap délután 6-kor érkezett a kollégiumba. Mivel délbe evett utoljára, az éhsége alacsony, pénzt indulás előtt kapot apjától, hétvégén buli volt, ezért semmit nem tanult. Mit sinál?
             vasárnap:
-                -lefürdik:
+                -Fürdés:
                     - +15perc
                     - -valamennyi éhség
-                -megvacsorázol
-                    -éhség 100% 
-                    - +30 perc
-
-                -tanul:
+                -Tanulás:
                     -elmész tanszobába
                         -mit tanulsz?
                         (tantárgyak)
@@ -21,11 +17,10 @@ Guimaci01
                     -kistanuló  
                         -zárva van 
                         -mész tanári
-                        -tanulsz szobában  
-                -pihensz:
-                    -
-                -beszégetsz másokkal
-                -elmész aludni
+                        -tanulsz szobában
+                -Mások szobája:
+                -WC:
+                -Szoba
 
 
 
