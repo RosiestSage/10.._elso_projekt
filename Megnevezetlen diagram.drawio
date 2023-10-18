@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-18T09:32:51.395Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="X00sl7uI5OassS9fYF1v" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-18T09:33:18.270Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="qESY5PIHivLYcqZwOQgY" version="22.0.4" type="github">
   <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
     <mxGraphModel dx="1337" dy="2741" grid="1" gridSize="21" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
@@ -966,7 +966,7 @@
         <mxCell id="8U4HnvXi1fb4CnehVS-Q-504" value="Van ott valaki" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="4131" y="296" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="8U4HnvXi1fb4CnehVS-Q-518" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="8U4HnvXi1fb4CnehVS-Q-507">
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-518" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-520" target="8U4HnvXi1fb4CnehVS-Q-507">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="4131" y="523.9999999999991" as="sourcePoint" />
           </mxGeometry>
