@@ -11,23 +11,23 @@ Guimaci01
                             =elmesélik a jedlikes seggmosás történetét
                 -Tanulás:
                     -elmész tanszobába
-                        -mit tanulsz?
-                        (tantárgyak)
                         -találkozol valakivel, beszélsz-e vele
                             -nem
                             -igen = Elmeséli a Jedlikes kutya történetét
-                    -maradsz a szobában
-                        -mit tanulsz                                          
-                        (tantárgyak)
+                    =tanulsz
+                    -maradsz a szobában                                         
                         -zavar szobatársad, mit csinálsz?
                             -szólok hogy abbahagyja
                             -kistanuló
                             -tanszoba
+                    =tanulsz
+
                     -kistanuló  
                         -zárva van 
                             -mész tanári
                                 =odaadja a kulcsot
                             -tanulsz szobában
+                    =tanulsz
                 -Mások szobája:
                     -Gergő szobája
                         -Leülök az ágyra
