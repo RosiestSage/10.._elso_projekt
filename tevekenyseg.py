@@ -61,10 +61,11 @@ def tanul():
     idoMeres(1, 0)
     statPrint()
 #debug
+'''
 x = input("Fürdés_1 vagy Tanulás_2")
 match x:
     case '1':
         furdes()
     case '2':
         tanul()
-
+'''

@@ -1,5 +1,5 @@
 import os, random
-
+from napok import vasarnap
 
 #Változók----------------------------------
 ora = 18
@@ -56,4 +56,3 @@ def penz(penzPlusz):
         print("Nincs pénz")
     else:           #Később átírni ha nem biztos van pénze ételre
         print(f"Jelenleg {penzem} forintod van")
-
