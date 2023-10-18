@@ -41,11 +41,10 @@ Guimaci01
                     -Zoli szobája
                         -Leülök az ágyra
                             -Beszélgetek játékokról
-                                =Megtudod a GTA 6 mgjelenését
                             -Beszélgetek vívásról
-                                =Zoli agyonver
+                        =Zoli agyonver
                         -A székre
-                            =A Máté helyére ültél, és ő kipenderít a szobából 
+                        =A Máté helyére ültél, és ő kipenderít a szobából 
                 -WC:
                     -piszoár
                         -első
@@ -72,6 +71,7 @@ Guimaci01
                         -játszok
                             gépen=le van merülve
                         -telefonozok
+                        -eszek
                         -beszélgetek szobatárssal
                             -Olivérrel
                                 =Megszakadsz a röhögéstől
@@ -84,6 +84,7 @@ Guimaci01
                         -játszok
                             gépen=le van merülve
                         -telefonozok
+                        -eszek
                         -beszélgetek szobatárssal
                             -Olivérrel
                                 =Megszakadsz a röhögéstől
