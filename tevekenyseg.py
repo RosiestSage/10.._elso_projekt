@@ -1,8 +1,8 @@
-import random
-from main import idoMeres
-from main import etel
-from main import statPrint
-from main import tudasPlusz
+import random, os
+from statok import idoMeres
+from statok import etel
+from statok import statPrint
+from statok import tudasPlusz
 furdottMar = False
 
 
@@ -15,15 +15,16 @@ def furdes():
         match x:
             case 1:
                 problema = "de a szabad kabinban áll a víz"
-                elsovalasz = "Mégis bemész az állló vízes kabinba"
+                elsovalasz = "Mégis bemegyek az álló vízes kabinba"
             case 2:
                 problema = "de rossz a zuhany rózsa"
-                elsovalasz = "Mégis bemész a kabinba"
+                elsovalasz = "Mégis bemegyek a kabinba"
             case 3:
                 problema = "de koszos a kabin"
-                elsovalasz = "Mégis lefürdesz a kabinban"
-        print(f'Elmentem fürödni, {problema}.')
-        print('Mit csinájak?')
+                elsovalasz = "Mégis lefürdök a kabinban"
+        os.system('cls')
+        print(f'\nElmentem fürödni, {problema}.')
+        print('Mit tegyek? ')
         
         print(f'\n1.. {elsovalasz}')
         print('2.. Kinyomom a pattanásaim')
@@ -31,7 +32,7 @@ def furdes():
 
         m = '0'
         while m != '1' and m != '2' and m != '3':
-            m = input('Döntésem:  ')
+            m = input('\nDöntésem:  ')
         match m:
             case '1':
                 print('\nLefürödtem és vissza mentem a szobába.')
@@ -46,13 +47,17 @@ def furdes():
                 print('\nA beszélgetés után elmentem fürödni és visszamentem a szobába.')
                 furdottMar = True
                 #SZOBA FUNCTION
+        
         etel(10)
         idoMeres(0, 30)
-        statPrint()
+        # statPrint()
+        input('ENTER...')
 
     else:
-        print('Ma már fürödtem visszamegyek a szobába.')
+        os.system('cls')
+        print('\nMa már fürödtem visszamegyek a szobába.')
         #SZOBA FUNCTION
+        input('\nEnter: Vissza a szobába')
 
 def tanul():
     tudasPlusz(30)
