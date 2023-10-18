@@ -23,7 +23,8 @@ def furdes():
                 problema = "de koszos a kabin"
                 elsovalasz = "Mégis lefürdök a kabinban"
         os.system('cls')
-        print(f'\nElmentem fürödni, {problema}.')
+        statPrint()
+        print(f'\n\nElmentem fürödni, {problema}.')
         print('Mit tegyek? ')
         
         print(f'\n1.. {elsovalasz}')
@@ -33,38 +34,79 @@ def furdes():
         m = '0'
         while m != '1' and m != '2' and m != '3':
             m = input('\nDöntésem:  ')
-        match m:
-            case '1':
-                print('\nLefürödtem és vissza mentem a szobába.')
-                furdottMar = True
-                #SZOBA FUNCTION
-            case '2':
-                print('\nKinyomtam a pattanásaimat, utána lefürödtem és visszamentem a szobába.')
-                furdottMar = True
-                #SZOBA FUNCTION
-            case '3':
-                #JEDLIKES TÖRTÉNET
-                print('\nA beszélgetés után elmentem fürödni és visszamentem a szobába.')
-                furdottMar = True
-                #SZOBA FUNCTION
+            match m:
+                case '1':
+                    os.system('cls')
+                    statPrint()
+                    print('\n\nLefürödtem és vissza mentem a szobába.')
+                    furdottMar = True
+                    #SZOBA FUNCTION
+                case '2':
+                    os.system('cls')
+                    statPrint()
+                    print('\n\nKinyomtam a pattanásaimat, utána lefürödtem és visszamentem a szobába.')
+                    furdottMar = True
+                    #SZOBA FUNCTION
+                case '3':
+                    os.system('cls')
+                    statPrint()
+                    #JEDLIKES TÖRTÉNET
+                    print('\n\nA beszélgetés után elmentem fürödni és visszamentem a szobába.')
+                    furdottMar = True
+                    #SZOBA FUNCTION
         
         etel(10)
         idoMeres(0, 30)
-        # statPrint()
-        input('ENTER...')
+        input('\nENTER...')
 
     else:
         os.system('cls')
-        print('\nMa már fürödtem visszamegyek a szobába.')
+        statPrint()
+        print('\n\nMa már fürödtem visszamegyek a szobába.')
         #SZOBA FUNCTION
         input('\nEnter: Vissza a szobába')
 
+def tanulas():
+    os.system('cls')
+    statPrint()
+
+    print('\n\nHol tanuljak?')
+
+    print('\n1.. Tanszoba')
+    print('2.. Szoba')
+    print('3.. Kistanuló')
+    m = '0'
+    while m != '1' and m != '2' and m != '3':
+        m = input('\nDöntésem: ')
+        match m:
+            case '1':
+                os.system('cls')
+                statPrint()
+                print('\n\nTanszobához menet barátom jött szembe.')
+                print('\nBeszélgessek vele?')
+                n = '0'
+                while n != 'Igen' and n != 'Nem':
+                    n = input('Igen/Nem:')
+                    match n:
+                        case 'Igen':
+                            os.system('cls')
+                            statPrint()
+                            #Elmeséli a történetet
+                            print('\n\nA történet után elmentem a Tanszobába.')
+                            tanul()
+                        case 'Nem':
+                            os.system('cls')
+                            statPrint()
+                            print('\n\nKöszöntem neki és tovább haladtam a Tanszobába.')
+                            tanul()
+    input('\nENTER...')
+        
+
 def tanul():
     tudasPlusz(30)
-    print('Megtanultam a mai anyagot, holnap jobban fognak menni a dolgozatok')
+    print('Megtanultam a mai anyagot egy részét, holnap jobban fognak menni a dolgozatok')
     etel(20)
     idoMeres(1, 0)
-    statPrint()
 #debug
 '''
 x = input("Fürdés_1 vagy Tanulás_2")

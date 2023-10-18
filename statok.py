@@ -36,13 +36,15 @@ def etel(etelek):
     if ehseg >= 100:
         print("Éhezem meghaltam")
     elif ehseg >= 70:
-        print(f'{ehseg}% az éhséged, menj el enni!')
+        print(f'\n{ehseg}% az éhséged, menj el enni!')
     
 #tudas
 
 def tudasPlusz(pluszTudas):
     global tudas
     tudas += pluszTudas
+    if tudas > 100:
+        tudas -= (100-tudas)
 
 # vanPenze(penz)
 

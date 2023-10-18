@@ -3,6 +3,7 @@ global ora
 from statok import ora
 from statok import statPrint
 from tevekenyseg import furdes
+from tevekenyseg import tanulas
 
 def vasarnap():
     global ora
@@ -14,7 +15,7 @@ def vasarnap():
         m = 0
         while m != 1 and m != 2 and m != 3 and m != 4 and m != 5:
             os.system('cls')    
-            statPrint()
+            print('\n\n', statPrint())
             print('\n\n1...Elmegyek fürödni')
             print('\n2...Elmegyek tanulni')
             print('\n3...Bemegyek valakihez meglátogatni')
@@ -25,7 +26,7 @@ def vasarnap():
                 case '1':
                     furdes()
                 case '2':
-                    print('tanulas')#func
+                    tanulas()
                 case '3':
                     print('bemegyekValakihez')#func
                 case '4':
