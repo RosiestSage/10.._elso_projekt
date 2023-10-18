@@ -1,5 +1,4 @@
 import os, random
-from statok import *
 
 
 #Változók----------------------------------
@@ -8,7 +7,7 @@ perc = 0
 oraPlusz = 0
 percPlusz = 0
 ehseg = 0
-penz = 5000
+penzem = 5000
 #------------------------------------------
 def idoMeres(oraPlusz,percPlusz):
     global ora
@@ -25,19 +24,19 @@ def idoMeres(oraPlusz,percPlusz):
 # ehezes(ehseg)
 
 def etel(etelek):
-    global ehezes
-    ehezes += etelek
-    if ehezes >= 100:
+    global ehseg
+    ehseg += etelek
+    if ehseg >= 100:
         print("Éhezem meghaltam")
     else:
-        print(f"Éhség szint: {ehezes}")
+        print(f"Éhség szint: {ehseg}")
 
 # vanPenze(penz)
 
-def penz(penzek):
-    global forint
-    forint += becsuletesseg
-    if forint <= 0:
+def penz(penzPlusz):
+    global penzem
+    penzem += penzPlusz
+    if penzem <= 0:
         print("Nincs pénz")
     else:
-        print(f"Jelenleg {penz} forintod van")
+        print(f"Jelenleg {penzem} forintod van")
