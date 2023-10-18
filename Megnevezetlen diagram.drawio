@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-18T08:39:50.877Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="HVTR5mQsFOo2PCsvb4qr" version="22.0.4" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-18T08:43:57.979Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="T6mb98CVAYHipRlaBmNk" version="22.0.4" type="github">
   <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
     <mxGraphModel dx="934" dy="788" grid="1" gridSize="21" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1.5" pageWidth="3300" pageHeight="2339" background="none" math="0" shadow="0">
       <root>
@@ -432,6 +432,9 @@
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="3381" y="491" as="sourcePoint" />
             <mxPoint x="3431" y="441" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="3591" y="565" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="8U4HnvXi1fb4CnehVS-Q-210" value="tanulok(ha megvan akkor nem)" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
@@ -459,13 +462,82 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="8U4HnvXi1fb4CnehVS-Q-214" value="gép le van merülve" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="3677" y="787" width="120" height="60" as="geometry" />
+          <mxGeometry x="3677" y="736" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="8U4HnvXi1fb4CnehVS-Q-216" value="feldugom töltőre" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="3608" y="914" width="120" height="60" as="geometry" />
+          <mxGeometry x="3608" y="854" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="8U4HnvXi1fb4CnehVS-Q-220" value="Nem érdekel" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="3759" y="914" width="120" height="60" as="geometry" />
+          <mxGeometry x="3738" y="854" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-222" value="telefonozok" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="3381" y="647" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-223" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="8U4HnvXi1fb4CnehVS-Q-222">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3591" y="567" as="sourcePoint" />
+            <mxPoint x="3620" y="714" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-224" value="eszek" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="3234" y="647" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-225" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="8U4HnvXi1fb4CnehVS-Q-224">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3591" y="567" as="sourcePoint" />
+            <mxPoint x="3620" y="714" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-229" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-226" target="8U4HnvXi1fb4CnehVS-Q-228">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-233" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-226" target="8U4HnvXi1fb4CnehVS-Q-228">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-234" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-226" target="8U4HnvXi1fb4CnehVS-Q-228">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-236" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-226" target="8U4HnvXi1fb4CnehVS-Q-235">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-240" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-226" target="8U4HnvXi1fb4CnehVS-Q-239">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-226" value="Beszélgetek" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="4011" y="644" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-227" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="8U4HnvXi1fb4CnehVS-Q-226">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="3591" y="567" as="sourcePoint" />
+            <mxPoint x="3641" y="777" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-231" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-228" target="8U4HnvXi1fb4CnehVS-Q-230">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-228" value="Olivér" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="3885" y="736" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-230" value="Megszakadsz a röhögéstől" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="3885" y="876" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-238" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-235" target="8U4HnvXi1fb4CnehVS-Q-237">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-235" value="Barni" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="4011" y="736" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-237" value="Lolozik és nem figyel" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="4011" y="876" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-242" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="8U4HnvXi1fb4CnehVS-Q-239" target="8U4HnvXi1fb4CnehVS-Q-241">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-239" value="Peti" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="4179" y="736" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="8U4HnvXi1fb4CnehVS-Q-241" value="Elmagyarázza miért egyenlő mindenki" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="4179" y="876" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
