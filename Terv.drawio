@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-19T09:28:22.943Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="NMTthIiGiR5n7pXk8RGg" version="22.0.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-19T09:31:12.230Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="muYJjm6jdRJcwc8ZsKjz" version="22.0.5" type="github">
   <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
-    <mxGraphModel dx="2868" dy="3192" grid="1" gridSize="21" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1.5" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+    <mxGraphModel dx="5736" dy="4784" grid="1" gridSize="21" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1.5" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -2372,6 +2372,14 @@
         <mxCell id="fAHxTyDC1zf231zhJwNP-37" value="Beszélek Módlival" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="4704" y="1417.5" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="fAHxTyDC1zf231zhJwNP-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fAHxTyDC1zf231zhJwNP-39">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="2875.1428571428573" y="2100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="4336" y="2100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
         <mxCell id="fAHxTyDC1zf231zhJwNP-39" value="Elmondja hogy nem lesz csoportfoglalkozás, és jövő héten színház" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="4275.5" y="1557.5" width="120" height="101.5" as="geometry" />
         </mxCell>
@@ -2410,6 +2418,15 @@
         </mxCell>
         <mxCell id="fAHxTyDC1zf231zhJwNP-48" value="Segítségedet kéri a kiülő megcsinálásához" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="4503" y="1573.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fAHxTyDC1zf231zhJwNP-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="fAHxTyDC1zf231zhJwNP-50" target="IBn8xnxq9UzVSuGG8Kz--76">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="4764" y="2100" />
+              <mxPoint x="3802" y="2100" />
+              <mxPoint x="3802" y="2111" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="fAHxTyDC1zf231zhJwNP-50" value="Elmeséli a napját(1 óra)" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="4704" y="1557.5" width="120" height="101.5" as="geometry" />
