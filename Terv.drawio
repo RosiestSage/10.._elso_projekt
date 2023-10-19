@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-19T21:25:26.911Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="csYIjlg688bQ2Mq4_uN1" version="22.0.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-19T21:28:30.746Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="qmj1FR9XnZbruKrA2ZBJ" version="22.0.5" type="github">
   <diagram name="Page-1" id="97916047-d0de-89f5-080d-49f4d83e522f">
-    <mxGraphModel dx="1760" dy="2556" grid="1" gridSize="21" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1.5" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+    <mxGraphModel dx="978" dy="2131" grid="1" gridSize="21" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1.5" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1947,7 +1947,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="IBn8xnxq9UzVSuGG8Kz--247" value="Fegyverekről magyaráz" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;shadow=1;gradientColor=none;fontStyle=1;" parent="1" vertex="1">
+        <mxCell id="IBn8xnxq9UzVSuGG8Kz--247" value="Közös rajongás metál iránt" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;shadow=1;gradientColor=none;fontStyle=1;" parent="1" vertex="1">
           <mxGeometry x="3092" y="3083" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="IBn8xnxq9UzVSuGG8Kz--248" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IBn8xnxq9UzVSuGG8Kz--249" target="IBn8xnxq9UzVSuGG8Kz--250" edge="1">
@@ -1965,7 +1965,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="IBn8xnxq9UzVSuGG8Kz--250" value="WC-n" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" parent="1" vertex="1">
+        <mxCell id="IBn8xnxq9UzVSuGG8Kz--250" value="Elmagyarázza a matekot(+tanulás)" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" parent="1" vertex="1">
           <mxGeometry x="3245" y="3083" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="IBn8xnxq9UzVSuGG8Kz--251" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IBn8xnxq9UzVSuGG8Kz--252" target="IBn8xnxq9UzVSuGG8Kz--253" edge="1">
@@ -1983,7 +1983,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="IBn8xnxq9UzVSuGG8Kz--253" value="Edz" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" parent="1" vertex="1">
+        <mxCell id="IBn8xnxq9UzVSuGG8Kz--253" value="Beszélgetés kötben ad a sütiéből (éhség)" style="whiteSpace=wrap;html=1;fontSize=14;fillColor=#10739E;strokeColor=none;fontColor=#FFFFFF;rounded=1;shadow=1;gradientColor=none;fontStyle=1;" parent="1" vertex="1">
           <mxGeometry x="3413" y="3091" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="IBn8xnxq9UzVSuGG8Kz--254" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="IBn8xnxq9UzVSuGG8Kz--257" target="IBn8xnxq9UzVSuGG8Kz--261" edge="1">
