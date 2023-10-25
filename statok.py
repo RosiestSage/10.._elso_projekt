@@ -55,3 +55,7 @@ def penz(penzPlusz):
         print("Nincs pénz")
     else:           #Később átírni ha nem biztos van pénze ételre
         print(f"Jelenleg {penzem} forintod van")
+
+def getehseg():
+    global ehseg 
+    return ehseg

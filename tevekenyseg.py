@@ -3,6 +3,7 @@ from statok import idoMeres
 from statok import etel
 from statok import statPrint
 from statok import tudasPlusz
+from david import voltSzoba
 furdottMar = False
 
 
@@ -68,6 +69,7 @@ def furdes():
 
 def tanulas():
     os.system('cls')
+    global voltSzoba
     statPrint()
 
     print('\n\nHol tanuljak?')
@@ -86,7 +88,7 @@ def tanulas():
                 print('\nBeszélgessek vele?')
                 n = '0'
                 while n != 'Igen' and n != 'Nem':
-                    n = input('Igen/Nem:')
+                    n = input('Igen/Nem: ')
                     match n:
                         case 'Igen':
                             os.system('cls')
@@ -99,6 +101,8 @@ def tanulas():
                             statPrint()
                             print('\n\nKöszöntem neki és tovább haladtam a Tanszobába.')
                             tanul()
+                    voltSzoba = False
+                        
     input('\nENTER...')
         
 
@@ -108,6 +112,8 @@ def tanul():
     etel(20)
     idoMeres(1, 0)
 #debug
+
+
 '''
 x = input("Fürdés_1 vagy Tanulás_2")
 match x:
