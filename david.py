@@ -1,7 +1,6 @@
 import random, os
-from statok import tudas
 voltSzoba = False
-from statok import etel, getehseg
+from statok import etel, getehseg, idoMeres, tudas, tudasPlusz
 from statok import statPrint
 
 def dogaEredmeny():
@@ -43,14 +42,34 @@ def szoba():
     match m:
         case '1':
             if ehseg > 15:
-                etel() -15
+                os.system("cls")
+                print("Ettél valamennyit és így már kevésbé vagy éhes")
                 input("Enter")
-            elif ehseg < 15 and ehseg > 0:
-                etel() - ehseg
+                etel(-15)
+                idoMeres(0, 20)
+            elif ehseg <= 15 and ehseg > 0:
+                os.system("cls")
+                print("Ettél valamennyit és már egyáltalán nem vagy éhes")
                 input("Enter")
+                etel(-ehseg)
+                idoMeres(0, 20)
             elif ehseg == 0:
                 os.system("cls")
                 print("Tele vagy, nem tudsz ennni egy falatot se")
                 input("Enter")
-
+        case '2':
+            os.system("cls")
+            print("Elfeküdtél és jól körbenéztél a közösségi oldalokon")
+            input("Enter") 
+            etel(5)
+            idoMeres(0, 45)           
+        case '3':   
+            print("Mivel úgy döntöttél, hogy tanulsz, mégjobban készen állsz a holnapi napra")
+            input("Enter")
+            etel(20)
+            idoMeres(0, 45)  
+            tudasPlusz(20)
+        # case '4':
+        # case '5':
+        # case '6':
     
