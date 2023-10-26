@@ -23,13 +23,12 @@ def szoba():
     os.system('cls')
     if voltSzoba == False:
         print('Bementem a szobámba')
+        print("\n1...Leülök a székre")
+        print("\n2...Leülök az ágyra")
+        m = input("\nHova mész? ")
         voltSzoba = True
     else:
-        print('A szobában maradtam')
-    
-    print("\n1...Leülök a székre")
-    print("\n2...Leülök az ágyra")
-    m = input("\nHova mész? ")
+        os.system("cls")
     os.system("cls")
     statPrint()
     print("\n1...Eszek")
@@ -39,6 +38,7 @@ def szoba():
     print("\n5...Beszélgetek")
     print("\n6...Alvás")
     m = input("\nMit csinálok? ")
+
     match m:
         case '1':
             if ehseg > 15:
@@ -64,6 +64,7 @@ def szoba():
             etel(5)
             idoMeres(0, 45)           
         case '3':   
+            os.system("cls")
             print("Mivel úgy döntöttél, hogy tanulsz, mégjobban készen állsz a holnapi napra")
             input("Enter")
             etel(20)

@@ -44,7 +44,7 @@ def tudasPlusz(pluszTudas):
     global tudas
     tudas += pluszTudas
     if tudas > 100:
-        tudas -= (100-tudas)
+        tudas -= (tudas-100)
 
 # vanPenze(penz)
 
