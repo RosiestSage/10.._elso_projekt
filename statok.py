@@ -59,3 +59,7 @@ def penz(penzPlusz):
 def getehseg():
     global ehseg 
     return ehseg
+
+def getora():
+    global ora
+    return ora

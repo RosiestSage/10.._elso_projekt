@@ -1,14 +1,9 @@
 import os
-global ora
-from statok import ora
-from statok import statPrint
-from tevekenyseg import furdes
-from tevekenyseg import tanulas
-from tevekenyseg import szoba, voltSzoba
+from statok import statPrint, getora
+from tevekenyseg import furdes, tanulas, szoba, voltSzoba
 
 
 def vasarnap():
-    global ora
     global voltSzoba
     print('Egy kollégista élete\n')
     print('Ön egy kollégista. Ebben a játékban figyelnie kell, hogy ne haljon éhen, és megtanuljon, hisz a héten minddennap ír valamiből. Lehetőleg pénzét se verje el. Megérkezett vasárnap a kollégiumba és sok lehetőség várja...')
@@ -16,7 +11,7 @@ def vasarnap():
     input('\nFolytatáshoz ENTER...')
     m = 0
     while m != 1 and m != 2 and m != 3 and m != 4 and m != 5:
-        while ora < 22:
+        while getora() < 22:
             os.system('cls')    
             print('\n\n', statPrint())
             print('\n\n1...Elmegyek fürödni')
@@ -43,7 +38,8 @@ def vasarnap():
                 case '5':
                     szoba()
                     voltSzoba = True
-        if ora >= 22:
+        if getora() >= 22:
+            os.system('cls')
             print('Elég fáradt vagyok, elmegyek aludni.')
             print('alvas')#func
             input('Enter a folytatáshoz..')

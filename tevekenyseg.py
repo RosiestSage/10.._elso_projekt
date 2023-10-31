@@ -1,5 +1,5 @@
 import random, os
-from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint
+from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora
 furdottMar = False
 voltSzoba = False
 
