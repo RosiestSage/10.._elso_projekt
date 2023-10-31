@@ -69,13 +69,13 @@ def tanulas():
     global voltSzoba
     statPrint()
 
-    print('\n\nHol tanuljak?')
-
-    print('\n1.. Tanszoba')
-    print('2.. Szoba')
-    print('3.. Kistanuló')
     m = '0'
     while m != '1' and m != '2' and m != '3':
+        print('\n\nHol tanuljak?')
+
+        print('\n1.. Tanszoba')
+        print('2.. Szoba')
+        print('3.. Kistanuló')
         m = input('\nDöntésem: ')
         match m:
             case '1':
@@ -98,27 +98,68 @@ def tanulas():
                             statPrint()
                             print('\n\nKöszöntem neki és tovább haladtam a Tanszobába.')
                             tanul()
-                    voltSzoba = False
+                voltSzoba = False
+            
+            case '2':
+                os.system('cls')
+                statPrint()
+                print('\n\nMaradok a szobában tanulni, de szobatársam zavar.')
+                print('\n1.. Szólok, hogy hagyja abba')
+                print('2.. Elmegyek máshova tanulni')
+                n = '0'
+                while n != '1' and n != '2' and n != '3':
+                    n = input('\nMit tegyek? ')
+                    match n:
+                        case '1':
+                            os.system('cls')
+                            statPrint()
+                            print('\n\nSzobatársam csendben maradt és megtanultam.')
+                            tanul()
+                        case '2':
+                            os.system('cls')
+                            statPrint()
+                            print('\n\nKimegyek a szobából és máshova megyek tanulni.')
+                            input('ENTER...')
+
+                            os.system('cls')
+                            statPrint()
+                            m = '0'
+                #voltSzoba = False ??
+            case '3':
+                os.system('cls')
+                statPrint()
+                print('\n\nElmentem a kistanulóba, de az ajtó zárva.')
+                print('\n1.. Elkérem a kulcsot')
+                print('2.. Tanulok máshol')
+                n = '0'
+                while n != '1' and n != '2':
+                    n = input('\nMit csináljak? ')
+                    match n:
+                        case '1':
+                            os.system('cls')
+                            statPrint()
+                            print('\n\nElkértem a kulcsot és megtanultam.')
+                            tanul()
+                        case '2':
+                            os.system('cls')
+                            statPrint()
+                            print('\n\nElmegyek a kistanulótól máshova tanulni.')
+                            input('ENTER...')
+
+                            os.system('cls')
+                            statPrint()
+                            m = '0'
+                voltSzoba = False
                         
     input('\nENTER...')
-        
+
+ 
 
 def tanul():
     tudasPlusz(30)
-    print('Megtanultam a mai anyagot egy részét, holnap jobban fognak menni a dolgozatok')
+    print('Megtanultam a mai anyagot egy részét, holnap jobban fognak menni a dolgozatok.')
     etel(20)
     idoMeres(1, 0)
-#debug
-
-
-'''
-x = input("Fürdés_1 vagy Tanulás_2")
-match x:
-    case '1':
-        furdes()
-    case '2':
-        tanul()
-'''
 
 def WC():
     x = random.randint(1, 5)
