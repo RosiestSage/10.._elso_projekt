@@ -1,5 +1,5 @@
 import random, os
-from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc
+from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap
 furdottMar = False
 voltSzoba = False
 
@@ -296,10 +296,11 @@ def dogaEredmeny():
 
 
 def szoba():
+    os.system('cls')
     statPrint()
     ehseg = getehseg()
     global voltSzoba
-    os.system('cls')
+    nap = getnap()
     if voltSzoba == False:
         print('Bementem a szobámba')
         print("\n1...Leülök a székre")
@@ -349,7 +350,12 @@ def szoba():
             etel(20)
             idoMeres(0, 45)  
             tudasPlusz(20)
-        # case '4':
+        case '4':
+            match nap:
+                case 'vasarnap':
+                    print()
+                case 2:
+                    print()
         # case '5':
         # case '6':
 

@@ -3,6 +3,8 @@ ora = 18
 perc = 0
 oraPlusz = 0
 percPlusz = 0
+milyenNap = ''
+nap = ''
 ehseg = 0
 tudas = 20
 penzem = 5000
@@ -55,6 +57,19 @@ def penz(penzPlusz):
         print("Nincs pénz")
     else:           #Később átírni ha nem biztos van pénze ételre
         print(f"Jelenleg {penzem} forintod van")
+
+#milyen nap van
+
+def Nap(milyenNap):
+    global nap
+    nap = milyenNap
+    return nap
+
+
+#változók átvitele
+def getnap():
+    global nap
+    return nap
 
 def getehseg():
     global ehseg 

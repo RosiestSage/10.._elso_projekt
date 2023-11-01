@@ -1,10 +1,10 @@
 import os
-from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gettudas
+from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gettudas, Nap
 from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny
-
 
 def main():
     global voltSzoba
+    Nap('vasarnap')
     print('Egy kollégista élete\n')
     print('Ön egy kollégista. Ebben a játékban figyelnie kell, hogy ne haljon éhen, és megtanuljon, hisz a héten minddennap ír valamiből. Lehetőleg pénzét se verje el. Megérkezett vasárnap a kollégiumba és sok lehetőség várja...')
     #Bevezető szöveg
@@ -46,8 +46,9 @@ def main():
         break
 
 
-def hetfo():
+def hetfo(): 
     global voltSzoba
+    Nap(2)
     os.system('cls')
     print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
     input('\nFolytatáshoz ENTER...')
