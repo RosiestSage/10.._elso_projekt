@@ -1,5 +1,5 @@
 import random, os
-from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora
+from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc
 furdottMar = False
 voltSzoba = False
 
@@ -18,7 +18,7 @@ def furdes():
                 problema = "de rossz a zuhany rózsa"
                 elsovalasz = "Mégis bemegyek a kabinba"
             case 3:
-                problema = "de koszos a kabin"
+                problema = "de koszos a szabad kabin"
                 elsovalasz = "Mégis lefürdök a kabinban"
         os.system('cls')
         statPrint()
@@ -64,9 +64,9 @@ def furdes():
         #SZOBA FUNCTION
         input('\nEnter: Vissza a szobába')
 
-def tanulas():
+
+def tanulas(voltSzoba):
     os.system('cls')
-    global voltSzoba
     statPrint()
 
     m = '0'
@@ -124,7 +124,7 @@ def tanulas():
                             os.system('cls')
                             statPrint()
                             m = '0'
-                #voltSzoba = False ??
+                voltSzoba = True
             case '3':
                 os.system('cls')
                 statPrint()
@@ -150,16 +150,16 @@ def tanulas():
                             statPrint()
                             m = '0'
                 voltSzoba = False
-                        
     input('\nENTER...')
+    return voltSzoba                    
 
- 
 
 def tanul():
     tudasPlusz(30)
     print('Megtanultam a mai anyagot egy részét, holnap jobban fognak menni a dolgozatok.')
     etel(20)
     idoMeres(1, 0)
+
 
 def WC():
     x = random.randint(1, 5)
@@ -292,7 +292,6 @@ def dogaEredmeny():
         jegy = random.randint(2,4)
     elif tudas < 40:
         jegy = random.randint(1,3)
-    print(jegy)
     return jegy
 
 
@@ -353,4 +352,10 @@ def szoba():
         # case '4':
         # case '5':
         # case '6':
+
+
+def alvas():
+    print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
+    idoMeres(0, -getperc())
+    statPrint()
     

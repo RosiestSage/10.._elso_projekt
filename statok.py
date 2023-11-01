@@ -4,7 +4,7 @@ perc = 0
 oraPlusz = 0
 percPlusz = 0
 ehseg = 0
-tudas = 40
+tudas = 20
 penzem = 5000
 #------------------------------------------
 def idoMeres(oraPlusz,percPlusz):
@@ -63,3 +63,11 @@ def getehseg():
 def getora():
     global ora
     return ora
+
+def getperc():
+    global perc
+    return perc
+
+def gettudas():
+    global tudas
+    return tudas
