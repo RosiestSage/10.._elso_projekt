@@ -1,0 +1,23 @@
+body, html{
+    height: 100%;
+}
+#cimsav-text{
+    padding-bottom: 0.01%;
+}
+#cimsav-text h1{
+    text-align: center;
+}
+
+.navbar-div{
+    width: 100%;
+}
+div.navbar-nav.row{
+    width: 100%;
+    text-align: center;
+}
+.navbar-nav a{
+    color: var(--bs-navbar-active-color);
+}
+a.active{
+    font-weight: bold;
+}
