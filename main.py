@@ -1,5 +1,5 @@
 import os, random
-from napok import main, hetfo
+from napok import vasarnap, hetfo
 
-main()
+vasarnap()
 hetfo()
