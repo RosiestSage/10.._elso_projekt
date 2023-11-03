@@ -482,6 +482,7 @@ def szoba():
                                         print("\nAndrás sikeresen megjavította a géped és fizetned kellett 1000 Ft-ot nagylelkűsége miatt")
                                         penz(-1000)
                                         idoMeres(0, 30)
+                                        etel(10)
                                         input("\nEnter a folytatáshoz")
                                         javitas = True
                                     case 2:
@@ -489,6 +490,7 @@ def szoba():
                                         print("\nAndrás nem volt valami ügyes és most mégrosszabb, kárpótlásul ő adott egy ezrest")
                                         penz(1000)
                                         idoMeres(0, 15)
+                                        etel(5)
                                         input("\nEnter a folytatáshoz")
                                         javitas = True
                     else:
@@ -501,9 +503,182 @@ def szoba():
                             print("\nA laptop el van romolva")
                             input("\nEnter a folytatáshoz")
     
-        # case '5':
+        case '5':
+            match nap:
+                case 'vasarnap':
+                    os.system("cls")
+                    statPrint()
+                    print("\nÚgy döntöttél, hogy leülsz szobatársaiddal beszélni. Három lakótársad Barni, Olivár és Peti.")
+                    print("\n1...Barni")
+                    print("\n2...Olivér")
+                    print("\n3...Peti")
+                    n = input("\nKit választasz?")
+                    match n:
+                        case '1':
+                            os.system("cls")
+                            print("\nBarni sajnos játszik így nem nagyon tud rád koncentrálni")
+                            input("\nENTER folytatáshoz...")
+                        case '2':
+                            os.system('cls')
+                            x = random.randint(1,3)
+                            if x == 1:
+                                mese = "Radics Peti idézete"
+                            if x == 2:
+                                mese = "iskolai története"
+                            else:
+                                mese = "otthon történt eseménye"
+                            print(f"\nOlivér {mese} nagyon megnevettetett")
+                            idoMeres(0, 30)
+                            etel(10)
+                            input("\nENTER folytatáshoz...")
+                        case '3':
+                            os.system("cls")
+                            print("\nPeti egy békés ember és erősen hisz mindenkinek az egyenjogúságában. Érdekes történeteiből és mély metaforáiból sokat tanulsz")
+                            idoMeres(0, 30)
+                            etel(10)
+                            tudasPlusz(1)
+                            input("\nENTER folytatáshoz...")
+                case 'hetfo':
+                    os.system("cls")
+                    statPrint()
+                    print()
+                    print("\n1...Barni")
+                    print("\n2...Olivér")
+                    print("\n3...Peti")
+                    n = input("\nKit választasz?")
+                    match n:
+                        case '1':
+                            os.system('cls')
+                            x = random.randint(1,3)
+                            if x == 1:
+                                mese = "Barni sajnos WC-n van, így pont nem tudsz beszélni vele"
+                            if x == 2:
+                                mese = "Barni Gergőék szobájában animét néz."
+                            else:
+                                mese = "Barni Zoliék szobájában animét néz."
+                            print(f"\n{mese}")
+                            input("\nENTER folytatáshoz...")
+                        case '2':
+                            os.system('cls')
+                            print("\nOlivérnek nagy szenvedélye az airsoft, így rengeteg újat mesél neked a játékról")
+                            idoMeres(0, 30)
+                            etel(10)
+                            tudasPlusz(1)
+                            input("\nENTER folytatáshoz...")
+                        case '3':
+                            os.system('cls')
+                            print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
+                            input("\nENTER folytatáshoz...")
+                case 'kedd':
+                    os.system("cls")
+                    statPrint()
+                    print()
+                    print("\n1...Barni")
+                    print("\n2...Olivér")
+                    print("\n3...Peti")
+                    n = input("\nKit választasz?")
+                    match n:
+                        case '1':
+                            os.system("cls")
+                            print("\nBarni segítséget kér projektjében")
+                            print("\n1...Segítesz")
+                            print("\n2...Hagyod")
+                            j = input("\nHogy döntessz? ")
+                            match j:
+                                case '1':
+                                    os.system('cls')
+                                    print("\n1.5 óra kemény munka után befejeztétek és Barni nagy segítséged házi készítésű hókiflijével jutalmazta")
+                                    idoMeres(1, 30)
+                                    if ehseg >= 10:
+                                        etel(-10)
+                                    else:
+                                        etel(-ehseg)
+                                    input("\nENTER folytatáshoz...")
+                                case '2':
+                                    os.system("cls")
+                                    print("Csalódottan, de megértően elfogadja hogy nem segítesz")
+                                    input("\nENTER folytatáshoz...")
+                        case '2':
+                            os.system("cls")
+                            x = random.randint(1,2)
+                            if x == 1:
+                                print(f"\nOlivér ma három egyest is szerzett, emiatt mikor beszéltél vele felhúztad és megvert, de nagyobb bajod nem lett")
+                                idoMeres(20)
+                                etel(15)
+                                input("\nENTER folytatáshoz...")
+                
+                            else:
+                                print(f"\nOlivér ma három egyest is szerzett, és bár beszélgetés közbe felhúztad, végül nem vert meg")
+                                idoMeres(0, 30)
+                                etel(10)
+                                input("\nENTER folytatáshoz...")
 
-
+                        case '3':
+                            os.system("cls")
+                            print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
+                            input("\nENTER folytatáshoz...")
+                case 'szerda':
+                    os.system("cls")
+                    statPrint()
+                    print()
+                    print("\n1...Barni")
+                    print("\n2...Olivér")
+                    print("\n3...Peti")
+                    n = input("\nKit választasz?")
+                    match n:
+                        case '1':
+                            os.system('cls')
+                            print("\nBarninak gondjai akadtak a matekkal és segítséged kéri")
+                            print("\n1...Segítesz")
+                            print("\n2...Hagyod")
+                            j = input("\nHogy döntessz? ")
+                            match j:
+                                case '1':
+                                    os.system('cls')
+                                    print("\n1.5 óra kemény munka után jobban érti az anyagot, de a gyakorlás neked is jót tett")
+                                    idoMeres(1, 30)
+                                    tudasPlusz(10)
+                                    etel(15)
+                                    input("\nENTER folytatáshoz...")
+                                case '2':
+                                    os.system("cls")
+                                    print("Csalódottan, de megértően elfogadja hogy nem segítesz")
+                                    input("\nENTER folytatáshoz...")    
+                        case '2':
+                            os.system('cls')
+                            print("\nFelhozza kedvenc metál együttesét és mivel mindketten hatalmas fanok, így jó hosszan beszélgettek a metál zenéről")
+                            idoMeres(0, 45)
+                            input("\nENTER a folytatáshoz")
+                        case '3':
+                            os.system('cls')
+                            print("\nPetivel elbeszélgettek egymás barátnőiről és beszélgetés közben kedvesen megkínál sütijéből")
+                            idoMeres(0, 30)
+                            if ehseg >= 10:
+                                etel(-10)
+                            else:
+                                etel(-ehseg)
+                            input("\nENTER a folytatáshoz")
+                case 'csutortok':
+                    os.system("cls")
+                    statPrint()
+                    print()
+                    print("\n1...Barni")
+                    print("\n2...Olivér")
+                    print("\n3...Peti")
+                    n = input("\nKit választasz?")
+                    match n:
+                        case '1':
+                            os.system('cls')
+                            print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
+                            input("\nENTER a folytatáshoz")
+                        case '2':
+                            os.system('cls')
+                            print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
+                            input("\nENTER a folytatáshoz")
+                        case '3':
+                            os.system('cls')
+                            print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
+                            input("\nENTER folytatáshoz...")
 def alvas():
     print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
     idoMeres(0, -getperc())
