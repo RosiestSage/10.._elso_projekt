@@ -166,126 +166,167 @@ def tanul():
 
 
 def WC():
-    x = random.randint(1, 5)
+    x = random.randint(1, 4)
     problema = ""
     valasz = ""
     match x:
-        case 1:
-            problema = "de bele kell állnom a pisibe"
-            valasz = "de bele kellett állnom a pisibe"
+        case 1: 
+            problema = "de bele kell állnom a pisibe."
+            valasz = "de bele kellett állnom a pisibe."
         case 2:
-            problema = "de nem húzódik le"
-            valasz = "de nem húzódik le, hugyszag van"
+            problema = "de nem húzódik le."
+            valasz = "de nem húzódott le, hugyszag volt."
         case 3:
-            problema = "de foglalt"
+            problema = "de körbe van pisilve." 
+            valasz = "de hugyszag volt."
         case 4:
-            problema = "de körbe van pisilve"
-        case 5:
-            problema = "és nincs semmi baja"
-    os.system('cls')
-    statPrint()
-    print('\nHol wc-zzek?')
-
-    print('\n1.. Első piszoár')
-    print('\n2.. Második piszoár')
-    print('\n3.. Harmadik piszoár')
-    print('\n4.. Első fülke')
-    print('\n5.. Második fülke')
-    print('\n6.. Harmadik fülke')
-    print('\n7.. Negyedik fülke')
+            problema = ""
+    
     
     m = 0
-    while m != 1 and m != 2 and m != 3 and m != 4 and m != 5 and m != 6 and m != 7:
-        m = input('Döntésem: ')
-        match m:
-            case '1':
+    while m != '1' and m != '2' and m != '3' and m != '4' and m != '5' and m != '6' and m != '7':
+        os.system('cls')
+        statPrint()
+        print('\nHol wc-zzek?')
+
+        print('\n1.. Első piszoár')
+        print('\n2.. Második piszoár')
+        print('\n3.. Harmadik piszoár')
+        print('\n4.. Első fülke')
+        print('\n5.. Második fülke')
+        print('\n6.. Harmadik fülke')
+        print('\n7.. Negyedik fülke')
+        m = input('\nDöntésem: ')
+        
+        if x == 1 or x == 2 or x == 3:
+            match m:
+                case '1' :
+                    os.system('cls')
+                    statPrint()
+                    
+                    n = 0
+                    while n != 'Igen' and n != 'Nem':
+                        print(f'\nOdamentem, {problema}')
+                        n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
+                        os.system('cls')
+                        statPrint()
+                        match n:
+                            case 'Igen':
+                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                input('ENTER...')
+                                WC()
+                            case 'Nem':
+                                WC()
+
+                case '2':
+                    os.system('cls')
+                    statPrint()
+                    print('\nKözépen buzis pisilni...')
+                    input('\nENTER...')
+                    WC()
+                                            
+                case '3':
+                    os.system('cls')
+                    statPrint()
+
+                    n = 0
+                    while n != 'Igen' and n != 'Nem':
+                        print(f'\nOdamentem, {problema}')
+                        n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
+                        os.system('cls')
+                        statPrint()
+                        match n:
+                            case 'Igen':
+                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                input('ENTER...')
+                                WC()
+                            case 'Nem':
+                                WC()
+
+                case '4':
+                    os.system('cls')
+                    statPrint()
+
+                    n = 0
+                    while n != 'Igen' and n != 'Nem':
+                        print(f'\nOdamentem, {problema}')
+                        n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
+                        os.system('cls')
+                        statPrint()
+                        match n:
+                            case 'Igen':
+                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                input('ENTER...')
+                                WC()
+                            case 'Nem':
+                                WC()
+                case '5':
+                    os.system('cls')
+                    statPrint()
+
+                    n = 0
+                    while n != 'Igen' and n != 'Nem':
+                        print(f'\nOdamentem, {problema}')
+                        n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
+                        os.system('cls')
+                        statPrint()
+                        match n:
+                            case 'Igen':
+                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                input('ENTER...')
+                                WC()
+                            case 'Nem':
+                                WC()
+
+                case '6':
+                    os.system('cls')
+                    statPrint()
+
+                    n = 0
+                    while n != 'Igen' and n != 'Nem':
+                        print(f'\nOdamentem, {problema}')
+                        n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
+                        os.system('cls')
+                        statPrint()
+                        match n:
+                            case 'Igen':
+                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                input('ENTER...')
+                                WC()
+                            case 'Nem':
+                                WC()
+
+                case '7':
+                    os.system('cls')
+                    statPrint()
+
+                    n = 0
+                    while n != 'Igen' and n != 'Nem':
+                        print(f'\nOdamentem, {problema}')
+                        n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
+                        os.system('cls')
+                        statPrint()
+                        match n:
+                            case 'Igen':
+                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                input('ENTER...')
+                                WC()
+                            case 'Nem':
+                                WC()
+    
+        elif x == 4:
+            if m == '2':
                 os.system('cls')
                 statPrint()
-                print(f'Odamentem, {problema}')
-
-                n = 0
-                while n != 'Igen' and n != 'Nem':
-                    n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
-                    match n:
-                        case 'Igen':
-                            print('Elvégeztem a dolgomat.')
-
-            case '2':
-                os.system('cls')
-                statPrint()
-                print('\nKözépen buzis pisilni.')
+                print('\nKözépen buzis pisilni...')
                 input('\nENTER...')
                 WC()
-
-            case '3':
+            else:
                 os.system('cls')
                 statPrint()
-                print(f'Odamentem, {problema}')
-
-                n = 0
-                while n != 'Igen' and n != 'Nem':
-                    n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
-                    match n:
-                        case 'Igen':
-                            print('Elvégeztem a dolgomat.')
-                        case 'Nem':
-                            print(f'Elvégeztem a dolgomat, {valasz}')
-
-            case '4':
-                os.system('cls')
-                statPrint()
-                print(f'Odamentem, {problema}')
-
-                n = 0
-                while n != 'Igen' and n != 'Nem':
-                    n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
-                    match n:
-                        case 'Igen':
-                            print('Elvégeztem a dolgomat.')
-                        case 'Nem':
-                            print(f'Elvégeztem a dolgomat, {valasz}')
-            case '5':
-                os.system('cls')
-                statPrint()
-                print(f'Odamentem, {problema}')
-
-                n = 0
-                while n != 'Igen' and n != 'Nem':
-                    n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
-                    match n:
-                        case 'Igen':
-                            print('Elvégeztem a dolgomat.')
-                        case 'Nem':
-                            print(f'Elvégeztem a dolgomat, {valasz}')
-
-            case '6':
-                os.system('cls')
-                statPrint()
-                print(f'Odamentem, {problema}')
-
-                n = 0
-                while n != 'Igen' and n != 'Nem':
-                    n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
-                    match n:
-                        case 'Igen':
-                            print('Elvégeztem a dolgomat.')
-                        case 'Nem':
-                            print(f'Elvégeztem a dolgomat, {valasz}')
-
-            case '7':
-                os.system('cls')
-                statPrint()
-                print(f'Odamentem, {problema}')
-
-                n = 0
-                while n != 'Igen' and n != 'Nem':
-                    n = input('Mégis itt végzed el a dolgodat? (Igen/Nem): ')
-                    match n:
-                        case 'Igen':
-                            print('Elvégeztem a dolgomat.')
-                        case 'Nem':
-                            print(f'Elvégeztem a dolgomat, {valasz}')
-
+                print('\nElvégeztem a dolgomat.')
+                input('\nENTER...')
+                WC()
 
 def dogaEredmeny():
     if tudas >= 100:
