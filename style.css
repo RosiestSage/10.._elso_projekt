@@ -23,13 +23,13 @@ a.active{
     font-weight: bold;
 }
 
-#jatekrol h1{
+.torzs h1{
     font-size: 3.5em;
 }
-#jatekrol div.row div.szoveg{
+.torzs div.row div.szoveg{
     font-size: 2.3em;
 }
-#jatekrol div.row div img.kep{
+.torzs div.row div img.kep{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,4 +59,8 @@ a.active{
     transition: .5s;
     transition-delay: .1s;
     scale: 110%;
+}
+.row-margin{
+    margin-top: 2%;
+    padding-bottom: 2%;
 }
