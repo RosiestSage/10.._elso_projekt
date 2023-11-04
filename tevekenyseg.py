@@ -1,5 +1,5 @@
 import random, os
-from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz
+from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz, getpenz, gettudas
 furdottMar = False
 voltSzoba = False
 toltott = False
@@ -328,7 +328,9 @@ def WC():
                 input('\nENTER...')
                 WC()
 
+
 def dogaEredmeny():
+    tudas = gettudas()
     if tudas >= 100:
         jegy = 5
     elif tudas >= 80 and tudas < 100:
@@ -564,7 +566,7 @@ def szoba():
                             x = random.randint(1,3)
                             if x == 1:
                                 mese = "Radics Peti idézete"
-                            if x == 2:
+                            elif x == 2:
                                 mese = "iskolai története"
                             else:
                                 mese = "otthon történt eseménye"
@@ -720,8 +722,173 @@ def szoba():
                             os.system('cls')
                             print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
                             input("\nENTER folytatáshoz...")
+
+
 def alvas():
     print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
     idoMeres(0, -getperc())
     statPrint()
-    
+
+
+def varos():
+    penzem = getpenz()
+    if penzem > 0:
+        ehseg = getehseg()
+        os.system('cls')
+        statPrint()
+        print("\nÚgy döntöttél a városba mész és egész magas éhség szinted miatt elmennél kajálni")
+        print("\n1...Gyorskajálda")
+        print("\n2...Bolt")
+        m = input("\nHogy választasz? ")
+        match m:
+            case '1':
+                    os.system('cls')
+                    statPrint()
+                    print("\nElmész gyorskajáldába, de ez Győr, rengeteg a választék, de a jelenleg csak ez a 3 étterem éri meg neked")
+                    print('\n1...McDonalds')
+                    print('2...KFC')
+                    print('3...Burger King')
+                    j = input("\nHogy választasz? ")
+                    x = random. randint(1,3)
+                    if x == 1:
+                        problema = 'kedvenc menüdet pont nem árulják, így kényszerülsz valami drágábbat venni, cserébe teljesen jól laksz és visszagyalogolsz a koliba'
+                    elif x == 2:
+                        problema = 'nem volt hely, így kényszerülsz a kollégiumban megenni'
+                    else:
+                        problema = 'egy kellemes ebéd után visszatérsz a kollégiumba'
+                    match j:
+                        case '1':
+                            os.system('cls')
+                            print('\nA McDonaldsban', problema)
+                            if x == 1:
+                                idoMeres(1, 30)
+                                etel(-ehseg)
+                                penz(-2500)
+                            elif x == 2:
+                                idoMeres(1, 0)
+                                if ehseg > 20:
+                                    etel(-20)
+                                else:
+                                    etel(-ehseg)
+                                penz(-2000)
+                            else: 
+                                idoMeres(1, 30)
+                                if ehseg > 20:
+                                    etel(-20)
+                                else:
+                                    etel(-ehseg)
+                                penz(-2000)
+                            input('\nENTER a folytatáshoz...')
+                        case '2':
+                            os.system('cls')
+                            print('\nA KFC-ben', problema)
+                            if x == 1:
+                                idoMeres(1, 30)
+                                etel(-ehseg)
+                                penz(-3000)
+                            elif x == 2:
+                                idoMeres(1, 0)
+                                if ehseg > 25:
+                                    etel(-25)
+                                else:
+                                    etel(-ehseg)
+                                penz(-2100)
+                            else: 
+                                idoMeres(1, 30)
+                                if ehseg > 25:
+                                    etel(-25)
+                                else:
+                                    etel(-ehseg)
+                                penz(-1000)
+                            input('\nENTER a folytatáshoz...')
+                        case '3':
+                            os.system('cls')
+                            print('\nA Burger Kingben', problema)
+                            if x == 1:
+                                idoMeres(2, 0)
+                                etel(-ehseg)
+                                penz(-2700)
+                            elif x == 2:
+                                idoMeres(1, 30)
+                                if ehseg > 20:
+                                    etel(-20)
+                                else:
+                                    etel(-ehseg)
+                                penz(-2200)
+                            else: 
+                                idoMeres(2, 0)
+                                if ehseg > 20:
+                                    etel(-20)
+                                else:
+                                    etel(-ehseg)
+                                penz(-2200)
+                            input('\nENTER a folytatáshoz...')
+            case '2':
+                    os.system('cls')
+                    statPrint()
+                    print("\nAz olcsóbb megoldás a boltok, 3 kedvenc és legközelebbi bolt közül kell választanod")
+                    print('\n1...Wellmark')
+                    print('2...Real')
+                    print('3...Leo pékség')
+                    j = input("\nHogy választasz? ")       
+                    match j:
+                        case '1':
+                            os.system('cls')
+                            print('\nEbben a boltban megtudod veni kedvenc instant levesed, miután ezt megtetted, visszamentél a kollégiumba és elkészítése után meg is etted')
+                            if ehseg > 10:
+                                etel(-10)
+                            else:
+                                etel(-ehseg)
+                            idoMeres(1, 0)
+                            penz(-600)                            
+                            input('\nENTER a folytatáshoz...')
+                        case '2':
+                            os.system('cls')
+                            print('\nEbben a boltban megtudod veni a legfinomabb előre elkészített szenvicset, miután ezt megvetted, visszamentél a kollégiumba és megetted')
+                            if ehseg > 15:
+                                etel(-15)
+                            else:
+                                etel(-ehseg)
+                            idoMeres(0, 45)
+                            penz(-1200)                            
+                            input('\nENTER a folytatáshoz...')                                                        
+                        case '3':
+                            os.system('cls')
+                            statPrint()
+                            print("\nMit kívánnál?")
+                            print("\n1...Kakaós csiga")            
+                            print("2...Pizza szelet")            
+                            print("3...Sajtosrúd")
+                            n = input("\nHogy választasz? ") 
+                            match n:
+                                case '1':
+                                    if ehseg > 10:
+                                        etel(-10)
+                                    else:
+                                        etel(-ehseg)
+                                    penz(-500)
+                                    kaja = 'kakaós csigát'
+                                case '2':
+                                    if ehseg > 15:
+                                        etel(-15)
+                                    else:
+                                        etel(-ehseg)
+                                    penz(-650)
+                                    kaja = 'pizza szeletet'                                                          
+                                case '3':   
+                                    if ehseg > 5:
+                                        etel(-5)
+                                    else:
+                                        etel(-ehseg)
+                                    penz(-300)  
+                                    kaja = 'sajtosrudat' 
+                            idoMeres(0, 45)
+                            os.system('cls')
+                            print(f"\nMiután megvetted a {kaja} visszamentél a koliba és megetted")
+                            input('\nENTER a folytatáshoz...')                                                        
+
+
+
+    else:
+        print("\nNincs pénzed, nem tudsz venno semmit magadnak")
+        input("\nENTER folytatáshoz...")

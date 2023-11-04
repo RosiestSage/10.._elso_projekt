@@ -8,7 +8,7 @@ nap = ''
 laptop = True
 ehseg = 0
 tudas = 20
-penzem = 5000
+penzem = 6000
 #------------------------------------------
 def idoMeres(oraPlusz,percPlusz):
     global ora
@@ -28,7 +28,7 @@ def statPrint():
     global penzem
     print(f'Idő: {ora}:{perc:02}', end='')
     print(f'\t\t\t\tÉhség: {ehseg}')
-    print(f'Pénz: {penzem}', end='')
+    print(f'Pénz: {penzem}Ft', end='')
     print(f'\t\t\t\tTudás: {tudas}')
 
 # ehezes(ehseg)
@@ -40,6 +40,9 @@ def etel(etelek):
         print("Éhezem meghaltam")
     elif ehseg >= 70:
         print(f'\n{ehseg}% az éhséged, menj el enni!')
+    
+    # if ehseg < 0:
+    #     ehseg = 0
     
 #tudas
 
@@ -86,3 +89,7 @@ def getperc():
 def gettudas():
     global tudas
     return tudas
+
+def getpenz():
+    global penzem
+    return penzem
