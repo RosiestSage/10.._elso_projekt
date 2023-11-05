@@ -181,23 +181,20 @@ def WC():
             valasz = "de hugyszag volt."
         case 4:
             problema = ""
-    
-    
-    m = 0
-    while m != '1' and m != '2' and m != '3' and m != '4' and m != '5' and m != '6' and m != '7':
-        os.system('cls')
-        statPrint()
-        print('\nHol wc-zzek?')
 
-        print('\n1.. Első piszoár')
-        print('\n2.. Második piszoár')
-        print('\n3.. Harmadik piszoár')
-        print('\n4.. Első fülke')
-        print('\n5.. Második fülke')
-        print('\n6.. Harmadik fülke')
-        print('\n7.. Negyedik fülke')
-        m = input('\nDöntésem: ')
-        
+    os.system('cls')
+    statPrint()
+    print('\nHol wc-zzek?')
+
+    print('\n1.. Első piszoár')
+    print('\n2.. Második piszoár')
+    print('\n3.. Harmadik piszoár')
+    print('\n4.. Első fülke')
+    print('\n5.. Második fülke')
+    print('\n6.. Harmadik fülke')
+    print('\n7.. Negyedik fülke')
+    m = input('\nDöntésem: ')
+    while m != '0':
         if x == 1 or x == 2 or x == 3:
             match m:
                 case '1' :
@@ -214,10 +211,8 @@ def WC():
                             case 'Igen':
                                 print(f'\nElvégeztem a dolgomat, {valasz}')
                                 input('ENTER...')
-                                WC()
                             case 'Nem':
                                 WC()
-
                 case '2':
                     os.system('cls')
                     statPrint()
@@ -260,6 +255,7 @@ def WC():
                                 WC()
                             case 'Nem':
                                 WC()
+                
                 case '5':
                     os.system('cls')
                     statPrint()
@@ -313,20 +309,28 @@ def WC():
                                 WC()
                             case 'Nem':
                                 WC()
-    
+            m ='0'
+
         elif x == 4:
             if m == '2':
                 os.system('cls')
                 statPrint()
                 print('\nKözépen buzis pisilni...')
                 input('\nENTER...')
-                WC()
             else:
                 os.system('cls')
                 statPrint()
                 print('\nElvégeztem a dolgomat.')
                 input('\nENTER...')
-                WC()
+            m = '0'
+    os.system('cls')
+    statPrint()
+    print('\n1...Kézmosás')
+    print('\n2...Nem')
+    j = input("\nMi legyen? ")
+    match j:
+        case '1':
+            idoMeres(0, 3)
 
 
 def dogaEredmeny():
