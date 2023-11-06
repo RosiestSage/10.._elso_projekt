@@ -1,6 +1,5 @@
 import random, os
 from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz, getpenz, gettudas
-furdottMar = False
 voltSzoba = False
 toltott = False
 voltmar = True
@@ -8,8 +7,7 @@ elso = True
 keddentoltott = False
 javitas = False
 
-def furdes():
-    global furdottMar
+def furdes(furdottMar: bool):
     if furdottMar == False:
         x = random.randint(1, 3)
         problema = ""
