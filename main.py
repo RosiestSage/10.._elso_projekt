@@ -57,7 +57,7 @@ def hetfo():
     os.system('cls')
     print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
     input('\nFolytatáshoz ENTER...')
-    idoMeres(-1, 30)
+    idoMeres(-8, 30)
     etel(-getehseg())
     etel(40)
     tudasPlusz(-gettudas())
@@ -110,7 +110,7 @@ def hetfo():
             alvas()
             input('\nEnter a következő naphoz..')
             m = 0
-
+        break
 
 def kedd(): 
     global voltSzoba
@@ -173,6 +173,7 @@ def kedd():
             alvas()
             input('\nEnter a következő naphoz..')
             m = '0'
+        break
 
 
 def szerda(): 
@@ -236,6 +237,7 @@ def szerda():
             alvas()
             input('\nEnter a következő naphoz..')
             m = '0'
+        break
 
 
 def csutortok(): 
@@ -299,6 +301,7 @@ def csutortok():
             alvas()
             input('\nEnter a következő naphoz..')
             m = '0'
+        break
 
 
 vasarnap()
