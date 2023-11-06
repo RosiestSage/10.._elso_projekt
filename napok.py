@@ -1,11 +1,13 @@
 import os
 from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gettudas, Nap
 from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC
+furdottMar = False
 voltvaros = False
 
 
 def vasarnap():
     global voltSzoba
+    global furdottMar
     Nap('vasarnap')
     print('Egy kollégista élete\n')
     print('Ön egy kollégista. Ebben a játékban figyelnie kell, hogy ne haljon éhen, és megtanuljon, hisz a héten minddennap ír valamiből. Lehetőleg pénzét se verje el. Megérkezett vasárnap a kollégiumba és sok lehetőség várja...')
@@ -26,7 +28,7 @@ def vasarnap():
             m = input('\nMit csináljak? ')
             match m:
                 case '1':
-                    furdes()
+                    furdes(furdottMar)
                     voltSzoba = False
                 case '2':
                     voltSzoba = tanulas(voltSzoba)
@@ -44,11 +46,13 @@ def vasarnap():
             alvas()
             input('\nEnter a következő naphoz..')
             m = 0
+            furdottMar = False
         break
 
 
 def hetfo(): 
     global voltSzoba
+    global furdottMar
     global voltvaros
     Nap('hetfo')
     os.system('cls')
@@ -89,7 +93,7 @@ def hetfo():
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes()
+                            furdes(furdottMar)
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
@@ -111,6 +115,7 @@ def hetfo():
 
 def kedd(): 
     global voltSzoba
+    global furdottMar
     global voltvaros
     Nap('kedd')
     os.system('cls')
@@ -151,7 +156,7 @@ def kedd():
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes()
+                            furdes(furdottMar)
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
@@ -173,6 +178,7 @@ def kedd():
 
 def szerda(): 
     global voltSzoba
+    global furdottMar
     global voltvaros
     Nap('szerda')
     os.system('cls')
@@ -213,7 +219,7 @@ def szerda():
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes()
+                            furdes(furdottMar)
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
@@ -235,6 +241,7 @@ def szerda():
 
 def csutortok(): 
     global voltSzoba
+    global furdottMar
     global voltvaros
     Nap('csutortok')
     os.system('cls')
@@ -275,7 +282,7 @@ def csutortok():
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes()
+                            furdes(furdottMar)
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
@@ -298,15 +305,19 @@ def csutortok():
 vasarnap()
 voltSzoba = False
 voltvaros = False
+furdottMar = False
 hetfo()
 voltSzoba = False
 voltvaros = False
+furdottMar = False
 kedd()
 voltSzoba = False
 voltvaros = False
+furdottMar = False
 szerda()
 voltSzoba = False
 voltvaros = False
+furdottMar = False
 csutortok()
 
 
