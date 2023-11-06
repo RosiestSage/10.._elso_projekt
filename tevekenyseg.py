@@ -1,13 +1,15 @@
 import random, os
 from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz, getpenz, gettudas
+furdottMar = False
 voltSzoba = False
 toltott = False
 voltmar = True
 elso = True
 keddentoltott = False
 javitas = False
+m = ""
 
-def furdes(furdottMar: bool):
+def furdes(furdottMar):
     if furdottMar == False:
         x = random.randint(1, 3)
         problema = ""
@@ -39,25 +41,28 @@ def furdes(furdottMar: bool):
                     os.system('cls')
                     statPrint()
                     print('\n\nLefürödtem és vissza mentem a szobába.')
+                    input('\nEnter: Vissza a szobába')
+
                     furdottMar = True
-                    #SZOBA FUNCTION
                 case '2':
                     os.system('cls')
                     statPrint()
                     print('\n\nKinyomtam a pattanásaimat, utána lefürödtem és visszamentem a szobába.')
+                    input('\nEnter: Vissza a szobába')
+
                     furdottMar = True
-                    #SZOBA FUNCTION
                 case '3':
                     os.system('cls')
                     statPrint()
                     #JEDLIKES TÖRTÉNET
                     print('\n\nA beszélgetés után elmentem fürödni és visszamentem a szobába.')
+                    input('\nEnter: Vissza a szobába')
+
                     furdottMar = True
-                    #SZOBA FUNCTION
-        
-        etel(10)
-        idoMeres(0, 30)
-        input('\nENTER...')
+            etel(10)
+            idoMeres(0, 30)
+            szoba()
+
 
     else:
         os.system('cls')
@@ -164,6 +169,7 @@ def tanul():
 
 
 def WC():
+    global m
     x = random.randint(1, 4)
     problema = ""
     valasz = ""
@@ -191,8 +197,8 @@ def WC():
     print('\n5.. Második fülke')
     print('\n6.. Harmadik fülke')
     print('\n7.. Negyedik fülke')
-    m = input('\nDöntésem: ')
     while m != '0':
+        m = input('\nDöntésem: ')
         if x == 1 or x == 2 or x == 3:
             match m:
                 case '1' :
@@ -373,6 +379,7 @@ def szoba():
     else:
         print("\n4...Gépszerelés")
     print("\n5...Beszélgetek")
+    print("\n6...Kimegyek")
     m = input("\nMit csinálok? ")
 
     match m:
@@ -383,6 +390,7 @@ def szoba():
                 input("Enter")
                 etel(-15)
                 idoMeres(0, 20)
+                
             elif ehseg <= 15 and ehseg > 0:
                 os.system("cls")
                 print("Ettél valamennyit és már egyáltalán nem vagy éhes")
@@ -393,12 +401,14 @@ def szoba():
                 os.system("cls")
                 print("Tele vagy, nem tudsz ennni egy falatot se")
                 input("Enter")
+            voltSzoba = True
         case '2':
             os.system("cls")
             print("Elfeküdtél és jól körbenéztél a közösségi oldalokon")
             input("Enter") 
             etel(5)
-            idoMeres(0, 45)           
+            idoMeres(0, 45)     
+            voltSzoba = True      
         case '3':   
             os.system("cls")
             print("Mivel úgy döntöttél, hogy tanulsz, mégjobban készen állsz a holnapi napra")
@@ -406,6 +416,7 @@ def szoba():
             etel(20)
             idoMeres(0, 45)  
             tudasPlusz(20)
+            voltSzoba = True
         case '4':
             match nap:
                 case 'vasarnap':
@@ -547,7 +558,7 @@ def szoba():
                             os.system('cls')
                             print("\nA laptop el van romolva")
                             input("\nEnter a folytatáshoz")
-    
+            voltSzoba = True
         case '5':
             match nap:
                 case 'vasarnap':
@@ -724,7 +735,10 @@ def szoba():
                             os.system('cls')
                             print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
                             input("\nENTER folytatáshoz...")
-
+            voltSzoba = True
+        case '6':
+            voltSzoba = False
+        
 
 def alvas():
     print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
