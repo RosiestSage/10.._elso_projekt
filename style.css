@@ -60,15 +60,13 @@ a.active{
 }
 .valasztkep img{
     width: 100%;
-    transition: scale .5s;
 }
 .valasztszoveg{
     margin-bottom: 3%;
 }
-.valasztkep img:hover{
-    transition: .5s;
-    transition-delay: .1s;
-    scale: 110%;
+div.card a{
+    text-decoration: none;
+    color:white;
 }
 .row-margin{
     margin-top: 2%;
