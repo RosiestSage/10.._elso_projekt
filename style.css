@@ -68,6 +68,15 @@ div.card a{
     text-decoration: none;
     color:white;
 }
+.valasztdiv .card{
+    scale: 100%;
+    transition: scale 0.2s;
+}
+.valasztdiv .card:hover{
+    scale: 105%;
+    transition:  scale 0.2s;
+}
+
 .row-margin{
     margin-top: 2%;
     padding-bottom: 2%;
@@ -75,4 +84,10 @@ div.card a{
 
 div.szoveg b{
     font-size: 1.3em;
+}
+.navbar-div .cimsav-text{
+    color: white;
+}
+.navbar-div a{
+    color: white !important;
 }
