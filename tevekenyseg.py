@@ -189,6 +189,7 @@ def kezmosas():
                 input('\nENTER...')
                 # WC()
 
+
 def WC():
     x = random.randint(1, 4)
     problema = ""
@@ -922,40 +923,33 @@ def varos():
 
 
 def vacsora():
+    m = '0'
     ehseg = getehseg()
-    if getora() <= 19:
-        m = '0'
-        while m != '1' or m!= '2':
-            x = random.randint(1,2)
-            if x == 1:
-                n = '0'
-                while n != 'Igen' and n != 'Nem':
-                        os.system('cls')
-                        statPrint()
-                        print('\nLementél vacsorázni, de nem szereted amit ma adnak, megeszed?')
-                        n = input('Megeszed? (Igen/Nem): ')
-                        match n:
-                            case 'Igen':
-                                idoMeres(25)
-                                etel(-ehseg)
-                                m = '1'
-                            case 'Nem':
-                                m = '1'
-            else:
-                n = '0'
-                while n != 'Igen' and n != 'Nem':
-                        os.system('cls')
-                        statPrint()
-                        print('\nLementél vacsorázni, és evés közben összekoszoltad a kezed')
-                        n = input('Megmosod? (Igen/Nem): ')
-                        match n:
-                            case 'Igen':
-                                idoMeres(25)
-                                etel(-ehseg)
-                                m = '1'
-                                kezmosas()
-                            case 'Nem':
-                                idoMeres(25)
-                                etel(-ehseg)
-                                m = '1'
+    if getora() < 19:
+        x = random.randint(1,2)
+        if x == 1:
+            while m != '1' and m!= '2':
+                os.system('cls')
+                statPrint()
+                print("\nLementél ebédelni, de nem annyira szereted amit adnak.")
+                print("\n1...Mégis megeszem")
+                print("\n2...Hagyom")
+                m = input('\nMit csinálsz?')
+                match m:
+                    case '1':
+                        idoMeres(0, 30)
+                        etel(-ehseg)
+        if x == 2:
+            idoMeres(0, 30)
+            etel(-ehseg)
+            while m != '1' and m!= '2':
+                os.system('cls')
+                statPrint()
+                print("\nEbéd közben összepiszkoltad a kezed.")
+                print("\n1...Megmosom")
+                print("\n2...Hagyom")
+                m = input('\nMit csinálsz?')
+                match m:
+                    case '1':
+                        idoMeres(0, 3)
 

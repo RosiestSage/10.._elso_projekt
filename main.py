@@ -3,7 +3,7 @@ from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gett
 from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora
 furdottMar = False
 voltvaros = False
-
+vacsiMar = False
 
 def vasarnap():
     global voltSzoba
@@ -53,6 +53,7 @@ def hetfo():
     global voltSzoba
     global furdottMar
     global voltvaros
+    global vacsiMar
     Nap('hetfo')
     os.system('cls')
     print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon. \n~A mai napon lehetősége nyílik különböző sportokat játszani a kollégiumban.~')
@@ -89,12 +90,12 @@ def hetfo():
                         print('\n5...Bemegyek a szobámba')
                     else:
                         print('\n5...Maradok a szobában')
-                    if getora() >= 18:
+                    if getora() >= 18 and getora() <19 and vacsiMar == False and getehseg() > 0:
                         print('\n6...Vacsora')
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes(furdottMar)
+                            furdes()
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
@@ -109,6 +110,7 @@ def hetfo():
                             voltSzoba = True
                         case '6':
                             vacsora()
+                            vacsiMar = True
         if getora() >= 22:
             os.system('cls')
             alvas()
@@ -160,7 +162,7 @@ def kedd():
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes(furdottMar)
+                            furdes()
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
@@ -224,7 +226,7 @@ def szerda():
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes(furdottMar)
+                            furdes()
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
@@ -288,7 +290,7 @@ def csutortok():
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
-                            furdes(furdottMar)
+                            furdes()
                             voltSzoba = False
                         case '2':
                             tanulas(voltSzoba)
