@@ -5,7 +5,7 @@ body, html{
 #cimsav-text{
     padding-bottom: 0.01%;
 }
-#cimsav-text h1{
+.cimsav-text{
     text-align: center;
 }
 .szoveg{
@@ -29,6 +29,7 @@ div.navbar-nav.row{
 }
 a.active{
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .torzs h1{
@@ -59,17 +60,34 @@ a.active{
 }
 .valasztkep img{
     width: 100%;
-    transition: scale .5s;
 }
 .valasztszoveg{
     margin-bottom: 3%;
 }
-.valasztkep img:hover{
-    transition: .5s;
-    transition-delay: .1s;
-    scale: 110%;
+div.card a{
+    text-decoration: none;
+    color:white;
 }
+.valasztdiv .card{
+    scale: 100%;
+    transition: scale 0.2s;
+}
+.valasztdiv .card:hover{
+    scale: 105%;
+    transition:  scale 0.2s;
+}
+
 .row-margin{
     margin-top: 2%;
     padding-bottom: 2%;
+}
+
+div.szoveg b{
+    font-size: 1.3em;
+}
+.navbar-div .cimsav-text{
+    color: white;
+}
+.navbar-div a{
+    color: white !important;
 }
