@@ -1,6 +1,6 @@
 import os
 from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gettudas, Nap
-from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC
+from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora
 furdottMar = False
 voltvaros = False
 
@@ -28,8 +28,8 @@ def vasarnap():
             m = input('\nMit csináljak? ')
             match m:
                 case '1':
-                    furdes(furdottMar)
-                    voltSzoba = False
+                    furdes()                    
+                    szoba()
                 case '2':
                     voltSzoba = tanulas(voltSzoba)
                 case '3':
@@ -55,9 +55,9 @@ def hetfo():
     global voltvaros
     Nap('hetfo')
     os.system('cls')
-    print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
+    print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon. \n~A mai napon lehetősége nyílik különböző sportokat játszani a kollégiumban.~')
     input('\nFolytatáshoz ENTER...')
-    idoMeres(-8, 30)
+    idoMeres(-1, 30)
     etel(-getehseg())
     etel(40)
     tudasPlusz(-gettudas())
@@ -89,6 +89,8 @@ def hetfo():
                         print('\n5...Bemegyek a szobámba')
                     else:
                         print('\n5...Maradok a szobában')
+                    if getora() >= 18:
+                        print('\n6...Vacsora')
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
@@ -105,6 +107,8 @@ def hetfo():
                         case '5':
                             szoba()
                             voltSzoba = True
+                        case '6':
+                            vacsora()
         if getora() >= 22:
             os.system('cls')
             alvas()
@@ -112,15 +116,16 @@ def hetfo():
             m = 0
         break
 
+
 def kedd(): 
     global voltSzoba
     global furdottMar
     global voltvaros
     Nap('kedd')
     os.system('cls')
-    print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
+    print(f'Sok óra alvás után kipihenten állt neki a napnak, és megírt dolgozatára és feleletére {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.\n~A mai napon még a Tanárit is meglátogathatja.~')
     input('\nFolytatáshoz ENTER...')
-    idoMeres(-8, 30)
+    idoMeres(-9, 30)
     etel(-getehseg())
     etel(40)
     tudasPlusz(-gettudas())
@@ -182,7 +187,7 @@ def szerda():
     global voltvaros
     Nap('szerda')
     os.system('cls')
-    print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
+    print(f'Szerdán kipihenten állt neki a napnak, és megírt dolgozatára {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.\n~A mai napon Gergő segítségedet kérte a jövő heti kollégiumi buli megszervezésében.~')
     input('\nFolytatáshoz ENTER...')
     idoMeres(-8, 30)
     etel(-getehseg())
@@ -246,7 +251,7 @@ def csutortok():
     global voltvaros
     Nap('csutortok')
     os.system('cls')
-    print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
+    print(f'Csütörtökön kipihenten és a közelgő hétvége reményében ment iskolában, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
     input('\nFolytatáshoz ENTER...')
     idoMeres(-8, 30)
     etel(-getehseg())
@@ -304,7 +309,7 @@ def csutortok():
         break
 
 
-vasarnap()
+# vasarnap()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
