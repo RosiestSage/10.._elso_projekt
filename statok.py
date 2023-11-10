@@ -9,6 +9,7 @@ laptop = True
 ehseg = 0
 tudas = 20
 penzem = 6000
+helyszin = ''
 #------------------------------------------
 def idoMeres(oraPlusz,percPlusz):
     global ora
@@ -30,6 +31,8 @@ def statPrint():
     print(f'\t\t\t\tÉhség: {ehseg}')
     print(f'Pénz: {penzem}Ft', end='')
     print(f'\t\t\t\tTudás: {tudas}')
+    print(f'Helyszín: {hely()}')
+
 
 # ehezes(ehseg)
 
@@ -69,10 +72,23 @@ def Nap(milyenNap):
     nap = milyenNap
     return nap
 
+#hol vagy
+
+def helySzin(Helyszin):
+    global helyszin
+    helyszin = Helyszin
+    return helyszin
+
+
+
 #változók átvitele
 def getnap():
     global nap
     return nap
+
+def hely():
+    global helyszin
+    return helyszin
 
 def getehseg():
     global ehseg 

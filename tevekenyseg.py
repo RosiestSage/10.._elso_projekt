@@ -1,5 +1,5 @@
 import random, os
-from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz, getpenz, gettudas
+from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz, getpenz, gettudas, helySzin
 furdottMar = False
 voltSzoba = False
 toltott = False
@@ -10,6 +10,7 @@ javitas = False
 m = '0'
 
 def furdes():
+    helySzin('Fürdő')
     global furdottMar
     if furdottMar == False:
         x = random.randint(1, 3)
@@ -88,6 +89,7 @@ def tanulas(voltSzoba):
                 while n != 'Igen' and n != 'Nem':
                     os.system('cls')
                     statPrint()
+                    helySzin('Tanulószoba')
                     print('\n\nTanszobához menet barátom jött szembe.')
                     print('\nBeszélgessek vele?')
                     n = input('Igen/Nem: ')
@@ -98,17 +100,20 @@ def tanulas(voltSzoba):
                             #Elmeséli a történetet
                             print('\n\nA történet után elmentem a Tanszobába.')
                             tanul()
+
                         case 'Nem':
                             os.system('cls')
                             statPrint()
                             print('\n\nKöszöntem neki és tovább haladtam a Tanszobába.')
                             tanul()
+
                 voltSzoba = False
             
             case '2':
                 n = '0'
                 while n != '1' and n != '2' and n != '3':
                     os.system('cls')
+                    helySzin('Szoba')
                     statPrint()
                     print('\n\nMaradok a szobában tanulni, de szobatársam zavar.')
                     print('\n1.. Szólok, hogy hagyja abba')
@@ -125,7 +130,6 @@ def tanulas(voltSzoba):
                             statPrint()
                             print('\n\nKimegyek a szobából és máshova megyek tanulni.')
                             input('ENTER...')
-
                             os.system('cls')
                             statPrint()
                             m = '0'
@@ -135,6 +139,7 @@ def tanulas(voltSzoba):
                 while n != '1' and n != '2':
                     os.system('cls')
                     statPrint()
+                    helySzin('Kistanuló')
                     print('\n\nElmentem a kistanulóba, de az ajtó zárva.')
                     print('\n1.. Elkérem a kulcsot')
                     print('2.. Tanulok máshol')
@@ -145,6 +150,7 @@ def tanulas(voltSzoba):
                             statPrint()
                             print('\n\nElkértem a kulcsot és megtanultam.')
                             tanul()
+
                         case '2':
                             os.system('cls')
                             statPrint()
@@ -161,7 +167,7 @@ def tanulas(voltSzoba):
 
 def tanul():
     tudasPlusz(30)
-    print('Megtanultam a mai anyagot egy részét, holnap jobban fognak menni a dolgozatok.')
+    print('Megtanultam a mai anyag egy részét, holnap jobban fognak menni a dolgozatok.')
     etel(20)
     idoMeres(1, 0)
 
@@ -209,7 +215,7 @@ def WC():
             problema = ""
             
     m = '0'
-
+    helySzin('WC')
     while m != '1' and m != '2' and m != '3' and m != '4' and m != '5' and m != '6' and m != '7':
         os.system('cls')
         statPrint()
@@ -371,6 +377,7 @@ def dogaEredmeny():
 
 def szoba():
     os.system('cls')
+    helySzin('Szoba')
     statPrint()
     global toltott
     global voltmar
@@ -398,38 +405,44 @@ def szoba():
             case '1':
                 if ehseg > 15:
                     os.system("cls")
-                    print("Ettél valamennyit és így már kevésbé vagy éhes")
-                    input("Enter")
                     etel(-15)
                     idoMeres(0, 20)
+                    statPrint()
+                    print("\nEttél valamennyit és így már kevésbé vagy éhes")
+                    input("Enter")
                     voltSzoba = True
                     
                 elif ehseg <= 15 and ehseg > 0:
                     os.system("cls")
-                    print("Ettél valamennyit és már egyáltalán nem vagy éhes")
-                    input("Enter")
                     etel(-ehseg)
                     idoMeres(0, 20)
+                    statPrint()
+                    print("\nEttél valamennyit és már egyáltalán nem vagy éhes")
+                    input("Enter")
                     voltSzoba = True
 
                 elif ehseg == 0:
                     os.system("cls")
-                    print("Tele vagy, nem tudsz ennni egy falatot se")
+                    statPrint()
+                    print("\nTele vagy, nem tudsz ennni egy falatot se")
                     input("Enter")
                     voltSzoba = True
             case '2':
                 os.system("cls")
-                print("Elfeküdtél és jól körbenéztél a közösségi oldalokon")
-                input("Enter") 
                 etel(5)
                 idoMeres(0, 45)     
+                statPrint()
+                print("\nElfeküdtél és jól körbenéztél a közösségi oldalokon")
+                input("Enter") 
                 voltSzoba = True      
             case '3':   
                 os.system("cls")
-                tanul()
-                input("Enter")
                 idoMeres(-1, 45)  
                 tudasPlusz(-10)
+                statPrint()
+                print('')
+                tanul()
+                input("Enter...")
                 voltSzoba = True
             case '4':
                 match nap:
@@ -448,12 +461,14 @@ def szoba():
                             match n:
                                 case '1':
                                     os.system('cls')
-                                    print('\nA laptopot felraktad töltőre')
                                     idoMeres(0, 5)
+                                    statPrint()
+                                    print('\nA laptopot felraktad töltőre')
                                     toltott = True
                                     input('\nEnter folytatáshoz...')
                                 case '2':
                                     os.system('cls')
+                                    statPrint()
                                     print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
                                     input('\nEnter folytatáshoz...')                                
                         else:
@@ -475,12 +490,14 @@ def szoba():
                             match n:
                                 case '1':
                                     os.system('cls')
-                                    print('\nA laptopot felraktad töltőre')
                                     idoMeres(0, 5)
+                                    statPrint()
+                                    print('\nA laptopot felraktad töltőre')
                                     toltott = True
                                     input('\nEnter folytatáshoz...')
                                 case '2':
                                     os.system('cls')
+                                    statPrint()
                                     print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
                                     input('\nEnter folytatáshoz...')                                
                         else:
@@ -492,20 +509,23 @@ def szoba():
                                 match n:
                                     case '1':
                                         os.system('cls')
-                                        print("\nEgy órán keresztül szórákoztál ezzel az idegfeszítő játékkal, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
                                         idoMeres(1, 0)
                                         etel(20)
+                                        statPrint()
+                                        print("\nEgy órán keresztül szórákoztál ezzel az idegfeszítő játékkal, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
                                         input('\nEnter folytatáshoz...')
                                     case '2':
                                         os.system('cls')
-                                        print("\nEgy órán keresztül cukroztál, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
                                         idoMeres(1, 0)
                                         etel(20)
                                         tudasPlusz(-10)
+                                        statPrint()
+                                        print("\nEgy órán keresztül cukroztál, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
                                         input('\nEnter folytatáshoz...')
                                 elso = False
                             else:
                                 os.system('cls')
+                                statPrint()
                                 print("\nLe vagy merülve, és csak holnap tudsz tölteni")
                                 input('\nEnter folytatáshoz...')
                     case 'kedd':
@@ -519,12 +539,14 @@ def szoba():
                             match n:
                                 case '1':
                                     os.system('cls')
-                                    print('\nA laptopot felraktad töltőre')
                                     idoMeres(0, 5)
+                                    statPrint()
+                                    print('\nA laptopot felraktad töltőre')
                                     keddentoltott = True
                                     input('\nEnter folytatáshoz...')
                                 case '2':
                                     os.system('cls')
+                                    statPrint()
                                     print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
                                     input('\nEnter folytatáshoz...')                                
                         else:
@@ -549,27 +571,31 @@ def szoba():
                                     match x:
                                         case 1:
                                             os.system('cls')
-                                            print("\nAndrás sikeresen megjavította a géped és fizetned kellett 1000 Ft-ot nagylelkűsége miatt")
                                             penz(-1000)
                                             idoMeres(0, 30)
                                             etel(10)
+                                            statPrint()
+                                            print("\nAndrás sikeresen megjavította a géped és fizetned kellett 1000 Ft-ot nagylelkűsége miatt")
                                             input("\nEnter a folytatáshoz")
                                             javitas = True
                                         case 2:
                                             os.system('cls')
-                                            print("\nAndrás nem volt valami ügyes és most mégrosszabb, kárpótlásul ő adott egy ezrest")
                                             penz(1000)
                                             idoMeres(0, 15)
                                             etel(5)
+                                            statPrint()
+                                            print("\nAndrás nem volt valami ügyes és most mégrosszabb, kárpótlásul ő adott egy ezrest")
                                             input("\nEnter a folytatáshoz")
                                             javitas = True
                         else:
                             if x == 1 and javitas == True:
                                 os.system('cls')
+                                statPrint()
                                 print("\nA laptop megvan javulva")
                                 input("\nEnter a folytatáshoz")
                             if x == 2 and javitas == True:
                                 os.system('cls')
+                                statPrint()
                                 print("\nA laptop el van romolva")
                                 input("\nEnter a folytatáshoz")
                 voltSzoba = True
@@ -586,10 +612,14 @@ def szoba():
                         match n:
                             case '1':
                                 os.system("cls")
+                                statPrint()
                                 print("\nBarni sajnos játszik így nem nagyon tud rád koncentrálni")
                                 input("\nENTER folytatáshoz...")
                             case '2':
                                 os.system('cls')
+                                idoMeres(0, 30)
+                                etel(10)
+                                statPrint()
                                 x = random.randint(1,3)
                                 if x == 1:
                                     mese = "Radics Peti idézete"
@@ -598,15 +628,14 @@ def szoba():
                                 else:
                                     mese = "otthon történt eseménye"
                                 print(f"\nOlivér {mese} nagyon megnevettetett")
-                                idoMeres(0, 30)
-                                etel(10)
                                 input("\nENTER folytatáshoz...")
                             case '3':
                                 os.system("cls")
-                                print("\nPeti egy békés ember és erősen hisz mindenkinek az egyenjogúságában. Érdekes történeteiből és mély metaforáiból sokat tanulsz")
                                 idoMeres(0, 30)
                                 etel(10)
                                 tudasPlusz(1)
+                                statPrint()
+                                print("\nPeti egy békés ember és erősen hisz mindenkinek az egyenjogúságában. Érdekes történeteiből és mély metaforáiból sokat tanulsz")
                                 input("\nENTER folytatáshoz...")
                     case 'hetfo':
                         os.system("cls")
@@ -619,6 +648,7 @@ def szoba():
                         match n:
                             case '1':
                                 os.system('cls')
+                                statPrint()
                                 x = random.randint(1,3)
                                 if x == 1:
                                     mese = "Barni sajnos WC-n van, így pont nem tudsz beszélni vele"
@@ -630,13 +660,15 @@ def szoba():
                                 input("\nENTER folytatáshoz...")
                             case '2':
                                 os.system('cls')
-                                print("\nOlivérnek nagy szenvedélye az airsoft, így rengeteg újat mesél neked a játékról")
                                 idoMeres(0, 30)
                                 etel(10)
                                 tudasPlusz(1)
+                                statPrint()
+                                print("\nOlivérnek nagy szenvedélye az airsoft, így rengeteg újat mesél neked a játékról")
                                 input("\nENTER folytatáshoz...")
                             case '3':
                                 os.system('cls')
+                                statPrint()
                                 print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
                                 input("\nENTER folytatáshoz...")
                     case 'kedd':
@@ -650,6 +682,7 @@ def szoba():
                         match n:
                             case '1':
                                 os.system("cls")
+                                statPrint()
                                 print("\nBarni segítséget kér projektjében")
                                 print("\n1...Segítesz")
                                 print("\n2...Hagyod")
@@ -657,23 +690,26 @@ def szoba():
                                 match j:
                                     case '1':
                                         os.system('cls')
-                                        print("\n1.5 óra kemény munka után befejeztétek és Barni nagy segítséged házi készítésű hókiflijével jutalmazta")
                                         idoMeres(1, 30)
                                         if ehseg >= 10:
                                             etel(-10)
                                         else:
                                             etel(-ehseg)
+                                        statPrint()
+                                        print("\n1.5 óra kemény munka után befejeztétek és Barni nagy segítséged házi készítésű hókiflijével jutalmazta")
                                         input("\nENTER folytatáshoz...")
                                     case '2':
                                         os.system("cls")
+                                        statPrint()
                                         print("Csalódottan, de megértően elfogadja hogy nem segítesz")
                                         input("\nENTER folytatáshoz...")
                             case '2':
                                 os.system("cls")
+                                statPrint()
                                 x = random.randint(1,2)
                                 if x == 1:
                                     print(f"\nOlivér ma három egyest is szerzett, emiatt mikor beszéltél vele felhúztad és megvert, de nagyobb bajod nem lett")
-                                    idoMeres(20)
+                                    idoMeres(0, 20)
                                     etel(15)
                                     input("\nENTER folytatáshoz...")
                     
@@ -685,6 +721,7 @@ def szoba():
 
                             case '3':
                                 os.system("cls")
+                                statPrint()
                                 print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
                                 input("\nENTER folytatáshoz...")
                     case 'szerda':
@@ -698,6 +735,7 @@ def szoba():
                         match n:
                             case '1':
                                 os.system('cls')
+                                statPrint()
                                 print("\nBarninak gondjai akadtak a matekkal és segítséged kéri")
                                 print("\n1...Segítesz")
                                 print("\n2...Hagyod")
@@ -705,28 +743,32 @@ def szoba():
                                 match j:
                                     case '1':
                                         os.system('cls')
-                                        print("\n1.5 óra kemény munka után jobban érti az anyagot, de a gyakorlás neked is jót tett")
                                         idoMeres(1, 30)
                                         tudasPlusz(10)
                                         etel(15)
+                                        statPrint()
+                                        print("\n1.5 óra kemény munka után jobban érti az anyagot, de a gyakorlás neked is jót tett")
                                         input("\nENTER folytatáshoz...")
                                     case '2':
                                         os.system("cls")
+                                        statPrint()
                                         print("Csalódottan, de megértően elfogadja hogy nem segítesz")
                                         input("\nENTER folytatáshoz...")    
                             case '2':
                                 os.system('cls')
-                                print("\nFelhozza kedvenc metál együttesét és mivel mindketten hatalmas fanok, így jó hosszan beszélgettek a metál zenéről")
                                 idoMeres(0, 45)
+                                statPrint()
+                                print("\nFelhozza kedvenc metál együttesét és mivel mindketten hatalmas fanok, így jó hosszan beszélgettek a metál zenéről")
                                 input("\nENTER a folytatáshoz")
                             case '3':
                                 os.system('cls')
-                                print("\nPetivel elbeszélgettek egymás barátnőiről és beszélgetés közben kedvesen megkínál sütijéből")
                                 idoMeres(0, 30)
                                 if ehseg >= 10:
                                     etel(-10)
                                 else:
                                     etel(-ehseg)
+                                statPrint()
+                                print("\nPetivel elbeszélgettek egymás barátnőiről és beszélgetés közben kedvesen megkínál sütijéből")
                                 input("\nENTER a folytatáshoz")
                     case 'csutortok':
                         os.system("cls")
@@ -739,14 +781,17 @@ def szoba():
                         match n:
                             case '1':
                                 os.system('cls')
+                                statPrint()
                                 print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
                                 input("\nENTER a folytatáshoz")
                             case '2':
                                 os.system('cls')
+                                statPrint()
                                 print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
                                 input("\nENTER a folytatáshoz")
                             case '3':
                                 os.system('cls')
+                                statPrint()
                                 print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
                                 input("\nENTER folytatáshoz...")
                 voltSzoba = True
@@ -787,6 +832,8 @@ def varos():
                     match j:
                         case '1':
                             os.system('cls')
+                            helySzin('McDonalds')
+                            statPrint()                            
                             print('\nA McDonaldsban', problema)
                             if x == 1:
                                 idoMeres(1, 30)
@@ -809,6 +856,8 @@ def varos():
                             input('\nENTER a folytatáshoz...')
                         case '2':
                             os.system('cls')
+                            helySzin('KFC')
+                            statPrint()                            
                             print('\nA KFC-ben', problema)
                             if x == 1:
                                 idoMeres(1, 30)
@@ -831,6 +880,8 @@ def varos():
                             input('\nENTER a folytatáshoz...')
                         case '3':
                             os.system('cls')
+                            helySzin('Burger King')
+                            statPrint()                            
                             print('\nA Burger Kingben', problema)
                             if x == 1:
                                 idoMeres(2, 0)
@@ -856,12 +907,14 @@ def varos():
                     statPrint()
                     print("\nAz olcsóbb megoldás a boltok, 3 kedvenc és legközelebbi bolt közül kell választanod")
                     print('\n1...Wellmark')
-                    print('2...Real')
+                    print('2...Reál')
                     print('3...Leo pékség')
                     j = input("\nHogy választasz? ")       
                     match j:
                         case '1':
                             os.system('cls')
+                            helySzin('Wellmark')
+                            statPrint()
                             print('\nEbben a boltban megtudod veni kedvenc instant levesed, miután ezt megtetted, visszamentél a kollégiumba és elkészítése után meg is etted')
                             if ehseg > 10:
                                 etel(-10)
@@ -872,6 +925,8 @@ def varos():
                             input('\nENTER a folytatáshoz...')
                         case '2':
                             os.system('cls')
+                            helySzin('Reál')
+                            statPrint()                            
                             print('\nEbben a boltban megtudod veni a legfinomabb előre elkészített szenvicset, miután ezt megvetted, visszamentél a kollégiumba és megetted')
                             if ehseg > 15:
                                 etel(-15)
@@ -883,6 +938,8 @@ def varos():
                         case '3':
                             os.system('cls')
                             statPrint()
+                            helySzin('Leo pékség')
+                            statPrint()                            
                             print("\nMit kívánnál?")
                             print("\n1...Kakaós csiga")            
                             print("2...Pizza szelet")            
@@ -953,3 +1010,11 @@ def vacsora():
                     case '1':
                         idoMeres(0, 3)
 
+
+def sport():
+    os.system('cls')
+    statPrint()
+    print('\nLehetőségek sportolásra:')
+    print('\n')
+    print('\n')
+    print('\n')
