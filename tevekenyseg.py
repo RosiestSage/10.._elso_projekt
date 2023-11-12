@@ -8,7 +8,7 @@ elso = True
 keddentoltott = False
 javitas = False
 m = '0'
-
+kiulo = False
 def furdes():
     helySzin('Fürdő')
     global furdottMar
@@ -45,12 +45,18 @@ def furdes():
                     print('\n\nLefürödtem és vissza mentem a szobába.')
                     input('\nEnter: Vissza a szobába')
                     furdottMar = True
+                    etel(10)
+                    idoMeres(0, 30)
+
                 case '2':
                     os.system('cls')
                     statPrint()
                     print('\n\nKinyomtam a pattanásaimat, utána lefürödtem és visszamentem a szobába.')
                     input('\nEnter: Vissza a szobába')
                     furdottMar = True
+                    etel(10)
+                    idoMeres(0, 30)
+
                 case '3':
                     os.system('cls')
                     statPrint()
@@ -58,8 +64,8 @@ def furdes():
                     print('\n\nA beszélgetés után elmentem fürödni és visszamentem a szobába.')
                     input('\nEnter: Vissza a szobába')
                     furdottMar = True
-            etel(10)
-            idoMeres(0, 30)
+                    etel(10)
+                    idoMeres(0, 30)
 
 
     else:
@@ -184,6 +190,7 @@ def kezmosas():
         match j:
             case '1':
                 os.system('cls')
+                idoMeres(0, 3)
                 statPrint()
                 print('Kezet mostam, és kimentem a WC-ből')
                 input('\nENTER...')
@@ -194,6 +201,7 @@ def kezmosas():
                 print('Nem mostam kezet, ezért koszos maradt.')
                 input('\nENTER...')
                 # WC()
+        
 
 
 def WC():
@@ -246,6 +254,7 @@ def WC():
                             case 'Igen':
                                 print(f'\nElvégeztem a dolgomat, {valasz}')
                                 input('ENTER...')
+                                idoMeres(0, 5)
                                 kezmosas()
                             case 'Nem':
                                 WC()
@@ -256,6 +265,7 @@ def WC():
                         print('\nKözépen buzis pisilni...')
                         input('\nENTER...')
                         WC()
+
                 case '3':
                     os.system('cls')
                     statPrint()
@@ -270,6 +280,7 @@ def WC():
                             case 'Igen':
                                 print(f'\nElvégeztem a dolgomat, {valasz}')
                                 input('ENTER...')
+                                idoMeres(0, 5)
                                 kezmosas()
                             case 'Nem':
                                 WC()
@@ -288,6 +299,7 @@ def WC():
                             case 'Igen':
                                 print(f'\nElvégeztem a dolgomat, {valasz}')
                                 input('ENTER...')
+                                idoMeres(0, 15)
                                 kezmosas()
                             case 'Nem':
                                 WC()
@@ -306,6 +318,7 @@ def WC():
                             case 'Igen':
                                 print(f'\nElvégeztem a dolgomat, {valasz}')
                                 input('ENTER...')
+                                idoMeres(0, 15)
                                 kezmosas()
                             case 'Nem':
                                 WC()
@@ -324,6 +337,7 @@ def WC():
                             case 'Igen':
                                 print(f'\nElvégeztem a dolgomat, {valasz}')
                                 input('ENTER...')
+                                idoMeres(0, 15)
                                 kezmosas()
                             case 'Nem':
                                 WC()
@@ -342,6 +356,7 @@ def WC():
                             case 'Igen':
                                 print(f'\nElvégeztem a dolgomat, {valasz}')
                                 input('ENTER...')
+                                idoMeres(0, 15)
                                 kezmosas()
                             case 'Nem':
                                 WC()
@@ -359,7 +374,13 @@ def WC():
                 statPrint()
                 print('\nElvégeztem a dolgomat.')
                 input('\nENTER...')
+                if m == '1' or m == '2' or m == '3':
+                    idoMeres(0, 5)
+                else:
+                    idoMeres(0, 15)
                 kezmosas()
+
+        
 
 
 def dogaEredmeny():
@@ -450,27 +471,27 @@ def szoba():
                         os.system('cls')
                         statPrint()
                         if toltott == False:  
-                            if voltmar == True:  
-                                print("\nSajnos mikor elindítottad a laptopot észre vetted hogy le van merülve")
-                                voltmar = False
-                            else:
-                                print("\nMég mindig le van merülve")
-                            print("\n1...Feldugom töltőre")
-                            print("\n2...Hagyom")
-                            n = input("\nHogy döntesz?")
-                            match n:
-                                case '1':
-                                    os.system('cls')
-                                    idoMeres(0, 5)
-                                    statPrint()
-                                    print('\nA laptopot felraktad töltőre')
-                                    toltott = True
-                                    input('\nEnter folytatáshoz...')
-                                case '2':
-                                    os.system('cls')
-                                    statPrint()
-                                    print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
-                                    input('\nEnter folytatáshoz...')                                
+                                if voltmar == True:  
+                                    print("\nSajnos mikor elindítottad a laptopot észre vetted hogy le van merülve")
+                                    voltmar = False
+                                else:
+                                    print("\nMég mindig le van merülve")
+                                print("\n1...Feldugom töltőre")
+                                print("\n2...Hagyom")
+                                n = input("\nHogy döntesz?")
+                                match n:
+                                    case '1':
+                                        os.system('cls')
+                                        idoMeres(0, 5)
+                                        statPrint()
+                                        print('\nA laptopot felraktad töltőre')
+                                        toltott = True
+                                        input('\nEnter folytatáshoz...')
+                                    case '2':
+                                        os.system('cls')
+                                        statPrint()
+                                        print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
+                                        input('\nEnter folytatáshoz...')                                
                         else:
                             print('\nA laptop töltődik')
                             input('\nEnter folytatáshoz...')
@@ -979,16 +1000,17 @@ def varos():
         input("\nENTER folytatáshoz...")
 
 
-def vacsora():
+def vacsora(vacsiMar):
     m = '0'
     ehseg = getehseg()
-    if getora() < 19:
+    ido = getora()
+    if ido < 19 and ido >= 18:
         x = random.randint(1,2)
         if x == 1:
             while m != '1' and m!= '2':
                 os.system('cls')
                 statPrint()
-                print("\nLementél ebédelni, de nem annyira szereted amit adnak.")
+                print("\nLementél vacsorázni, de nem annyira szereted amit adnak.")
                 print("\n1...Mégis megeszem")
                 print("\n2...Hagyom")
                 m = input('\nMit csinálsz?')
@@ -1002,19 +1024,147 @@ def vacsora():
             while m != '1' and m!= '2':
                 os.system('cls')
                 statPrint()
-                print("\nEbéd közben összepiszkoltad a kezed.")
+                print("\nVacsora közben összepiszkoltad a kezed.")
                 print("\n1...Megmosom")
                 print("\n2...Hagyom")
                 m = input('\nMit csinálsz?')
                 match m:
                     case '1':
                         idoMeres(0, 3)
-
+        vacsiMar = True
+        return vacsiMar 
+    elif ido < 18:
+        print('')
+        vacsiMar = False
+        return vacsiMar 
+    
 
 def sport():
+    m = '0'
+    while m != '1' and m != '2' and m != '3':
+        os.system('cls')
+        statPrint()
+        print('\nLehetőségek kollégiumban a sportolásra:')
+        print('\n1...Pingpong')
+        print('\n2...Darts')
+        print('\n3...Sakk')
+        print('\n4...Csocsóasztal')
+        m = input('\nMivel játszol? ')
+        x = random. randint(1,5)
+        if x == 1:
+            ember = 'Barnival'
+        elif x == 2:
+            ember = 'Ferenccel'
+        elif x == 3:
+            ember = 'Áronnal'
+        elif x == 4:
+            ember == 'Olivérrel'
+        else:
+            ember == 'Attilával'
+
+        y = random.randint(1,2)
+        if y == 1:
+            nyeres = 'sajnos veszítettél ellene'
+        else:
+            nyeres = 'nyertél ellene'
+        
+        match m:
+            case '1':
+                os.system('cls')
+                helySzin('Alaksor')
+                statPrint()
+                print(f'\nLementél pingpongozni egyet {ember} és egy jó hosszú játszma után {nyeres}')
+                idoMeres(1, 0)
+                etel(20)
+                input("\nENTER folytatáshoz...")
+
+            case '2':
+                os.system('cls')
+                helySzin('Tanulószoba')
+                statPrint()
+                print(f'\nFelmentél a tanulószobába dartsozni  {ember} és egy jó hosszú játszma után {nyeres}')
+                idoMeres(0, 45)
+                etel(15)
+                input("\nENTER folytatáshoz...")
+
+            case '3':
+                os.system('cls')
+                helySzin('Tanulószoba')
+                statPrint()
+                print(f'\nFelmentél a tanulószobába sakkozni egyet {ember} és egy jó hosszú játszma után {nyeres}')
+                idoMeres(1, 15)
+                etel(25)
+                input("\nENTER folytatáshoz...")
+
+            case '4':
+                os.system('cls')
+                helySzin('Foglalkoztató')
+                statPrint()
+                print(f'\nLementél a foglalkoztatóba csocsózni {ember} és egy jó hosszú játszma után {nyeres}')
+                idoMeres(0, 30)
+                etel(10)
+                input("\nENTER folytatáshoz...")
+
+
+def tanari():
+    global kiulo
     os.system('cls')
+    helySzin('Tanári')
     statPrint()
-    print('\nLehetőségek sportolásra:')
-    print('\n')
-    print('\n')
-    print('\n')
+    m = '0'
+    while m != '1' and m != '2' and m != '3':
+        print('\nJelenleg csak 3 nevelő van bennt')
+        print('\n1...Székely Szabolcs')
+        print('\n2...Fehér Szilárd')
+        print('\n3...Módly Zoltán')
+        m = input('\nKivel beszélsz? ')
+        match m:
+            case '1':
+                os.system('cls')
+                idoMeres(0, 30)
+                etel(5)
+                statPrint()
+                print('\nSzékely tanár úrral sokat beszélgettetek, majd emlékeztett hogy jövő héten színházba mész a csoportoddal.')
+                input("\nENTER folytatáshoz...")
+
+            case '2':
+                os.system('cls')
+                statPrint()
+                if kiulo == False:
+                    n = ''
+                    while n != "Igen" and n != 'Nem':
+                        print('\nFehér tanár úr segítségeded kéri az új kiülő rendrakásában')
+                        n= input('\nSegítesz (Igen/Nem): ')
+                        match n:
+                            case 'Igen':
+                                os.system("cls")
+                                helySzin('Udvar')
+                                idoMeres(0, 45)
+                                etel(20)
+                                statPrint()
+                                kiulo = True
+                                print('\nA hosszú és fárasztó munka után végre rendben van a kiülő')
+                                input("\nENTER folytatáshoz...")
+                            case 'Nem':
+                                os.system("cls")
+                                statPrint()
+                                print("\nFehér tanár úr megérti hogy más dolgod van és inkább megkérdez mást")
+                                input("\nENTER folytatáshoz...")
+
+                else:
+                    os.system('cls')
+                    idoMeres(0, 25)
+                    etel(5)
+                    statPrint()
+                    print('\nFehér tanár úrral sokat beszélgettetek.')
+                    input("\nENTER folytatáshoz...")
+
+
+
+            case '3':
+                os.system('cls')
+                idoMeres(0, 45)
+                etel(10)
+                statPrint()
+                print('\nMódly tanár úrral jól el lehet beszélgetni, ez most se volt másképp, sokat beszéltetek történelemről és a kollégiumban történt eseményekről')
+                input("\nENTER folytatáshoz...")

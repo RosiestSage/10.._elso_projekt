@@ -11,6 +11,8 @@ tudas = 20
 penzem = 6000
 helyszin = ''
 #------------------------------------------
+
+#Idő mérés
 def idoMeres(oraPlusz,percPlusz):
     global ora
     global perc
@@ -35,20 +37,18 @@ def statPrint():
 
 
 # ehezes(ehseg)
-
 def etel(etelek):
     global ehseg
     ehseg += etelek
     if ehseg >= 100:
         print("Éhezem meghaltam")
     elif ehseg >= 70:
-        print(f'\n{ehseg}% az éhséged, menj el enni!')
+        print(f'\n{ehseg}% az éhséged, menj el enni!\n')
     
     # if ehseg < 0:
     #     ehseg = 0
     
 #tudas
-
 def tudasPlusz(pluszTudas):
     global tudas
     tudas += pluszTudas
@@ -56,7 +56,6 @@ def tudasPlusz(pluszTudas):
         tudas -= (tudas-100)
 
 # vanPenze(penz)
-
 def penz(penzPlusz):
     global penzem
     penzem += penzPlusz
@@ -66,14 +65,12 @@ def penz(penzPlusz):
     #     print(f"Jelenleg {penzem} forintod van")
 
 #milyen nap van
-
 def Nap(milyenNap):
     global nap
     nap = milyenNap
     return nap
 
 #hol vagy
-
 def helySzin(Helyszin):
     global helyszin
     helyszin = Helyszin
