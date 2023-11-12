@@ -10,6 +10,8 @@ keddentoltott = False
 javitas = False
 m = '0'
 kiulo = False
+
+
 def furdes():
     helySzin('Fürdő')
     global furdottMar
@@ -193,17 +195,16 @@ def kezmosas():
                 os.system('cls')
                 idoMeres(0, 3)
                 statPrint()
-                print('Kezet mostam, és kimentem a WC-ből')
+                print('\nKezet mostam, és kimentem a WC-ből')
                 input('\nENTER...')
                 # WC()
             case '2':
                 os.system('cls')
                 statPrint()
-                print('Nem mostam kezet, ezért koszos maradt.')
+                print('\nNem mostam kezet, ezért koszos maradt.')
                 input('\nENTER...')
                 # WC()
         
-
 
 def WC():
     x = random.randint(1, 4)
@@ -382,8 +383,6 @@ def WC():
                 kezmosas()
 
         
-
-
 def dogaEredmeny():
     tudas = gettudas()
     if tudas >= 100:
@@ -816,7 +815,8 @@ def szoba():
                                 print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
                                 input("\nENTER folytatáshoz...")
                 voltSzoba = True
-              
+
+
 def telefon():
     global voltPenz
     m = '0'
@@ -926,6 +926,7 @@ def telefon():
                             telefon()
             case '4':
                 szoba()
+
 
 def alvas():
     print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
@@ -1282,3 +1283,58 @@ def tanari():
                 statPrint()
                 print('\nMódly tanár úrral jól el lehet beszélgetni, ez most se volt másképp, sokat beszéltetek történelemről és a kollégiumban történt eseményekről')
                 input("\nENTER folytatáshoz...")
+
+
+def csocsoBajnoksag():
+    helySzin("Foglalkoztató")
+    m = '0'
+    while m != '1' and m != '2' and m != '3':
+        os.system('cls')
+        statPrint()
+        print('\nEljött az idei Csocsóbajnokság ami 5 körből áll, de először válassz csapattársad.')
+        print('\n1...Barni')
+        print('\n2...Máté')
+        print('\n3...Gergő')
+        m = input('\nKit választasz?' )
+        gyoz = 0
+        vesz = 0
+        for i in range(1,6):
+            if m == '1':
+                os.system('cls')
+                idoMeres(0, 10)
+                etel(2)
+                n += 1
+                statPrint()
+                print(f'\n{i}. kör')
+                print("\nGyőzelem")
+                print(f"\nGyőzelmek száma: {gyoz}")
+                print(f"\nVereségek száma: 0")
+                input('\nFolytatáshoz ENTER ')
+            elif m == '2' or m == '3':
+                os.system('cls')
+                idoMeres(0, 10)
+                etel(3)
+                x = random.randint(1,2)
+                statPrint()
+                print(f'\n{i}. kör')
+                if x == 1:
+                    gyoz += 1
+                    print("\nGyőzelem")
+                else:
+                    vesz += 1
+                    print("\nVeszteség")
+                print(f"\nGyőzelmek száma: {gyoz}")
+                print(f"\nVereségek száma: {vesz}")
+                input('\nFolytatáshoz ENTER ')
+        if gyoz >= 3:
+            os.system('cls')    
+            statPrint()
+            print('\nA tavalyi után az idei bajnokságot is sikeresen megnyerted')
+            input('\nFolytatáshoz ENTER ')
+        else:
+            os.system('cls')    
+            statPrint()
+            print('\nA tavalyi sikerek után sajnos nem tudtad fenntartani bajnoki címed')
+            input('\nFolytatáshoz ENTER ')   
+
+

@@ -1,17 +1,18 @@
 import os
 from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gettudas, Nap, helySzin
-from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora, sport, tanari
+from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora, sport, tanari, csocsoBajnoksag
 furdottMar = False
 voltvaros = False
 vacsiMar = False
+
 
 def vasarnap():
     global voltSzoba
     global furdottMar
     Nap('vasarnap')
     helySzin('Kollégium') 
-    print('Egy kollégista élete\n')
-    print('\nEbben a játékban egy kollégista tanuló vagy. Figyelned kell, hogy ne halj éhen, és megtanulj, hisz a héten mindennap írsz vagy felelsz valamiből. Pénzed se verdd el (nem kötelező). A játék a Kollégium területén játszódik, ezen belül mászkálhatsz különböző helyszínekre, ahol statisztikáid változnak, amik a következő képpen jelennek meg: ')
+    print('Egy kollégista élete')
+    print('\nEbben a játékban egy kollégista tanuló vagy. Figyelned kell, hogy ne halj éhen, és megtanulj, hisz a héten mindennap írsz vagy felelsz valamiből. Pénzed se verdd el (nem kötelező). A játék a Kollégium területén játszódik, ezen belül mászkálhatsz különböző helyszínekre, ahol statisztikáid változnak, amik a következő képpen jelennek meg: \n')
     statPrint()
     print('\nSok sikert és eredményes hetet!')
     input('\nFolytatáshoz ENTER...')
@@ -138,7 +139,7 @@ def kedd():
     os.system('cls')
     print(f'Sok óra alvás után kipihenten állt neki a napnak, és megírt dolgozatára és feleletére {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.\n~Csak mai napon még a Tanárit is meglátogathatja.~')
     input('\nFolytatáshoz ENTER...')
-    idoMeres(-2, 10)
+    idoMeres(-9, 10)
     etel(-getehseg())
     etel(40)
     tudasPlusz(-gettudas())
@@ -283,7 +284,6 @@ def csutortok():
     global furdottMar
     global voltvaros
     global vacsiMar
-
     helySzin('Jedlik ajtaja előtt')
     Nap('csutortok')
     os.system('cls')
@@ -343,6 +343,8 @@ def csutortok():
                         case '6':
                             sport()
                         case '7':
+                                csocsoBajnoksag()
+                        case '8':
                             vacsiMar = vacsora(vacsiMar)
         if getora() >= 22:
             os.system('cls')
@@ -352,11 +354,11 @@ def csutortok():
         break
 
 
-# vasarnap()
+vasarnap()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
-#hetfo()
+hetfo()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
