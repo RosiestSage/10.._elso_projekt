@@ -2,6 +2,7 @@ import random, os
 from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz, getpenz, gettudas, helySzin
 furdottMar = False
 voltSzoba = False
+voltPenz = False
 toltott = False
 voltmar = True
 elso = True
@@ -817,6 +818,7 @@ def szoba():
                 voltSzoba = True
               
 def telefon():
+    global voltPenz
     m = '0'
     while m != '1' and m != '2' and m != '3' and m != '4':
         os.system('cls')
@@ -843,15 +845,27 @@ def telefon():
                         case '1':
                             os.system('cls')
                             statPrint()
-                            print('\nBeszélgettem anyukámmal, örültem neki.')
+                            print('\nBeszélgettél anyukáddal, örültél neki.')
+                            idoMeres(0, 5)
                             input('ENTER...')
                             telefon()
                         case '2':
-                            os.system('cls')
-                            statPrint()
-                            print('\nBeszélgettem apukámmal és küldött 1500 Ft-ot.')
-                            input('ENTER...')
-                            telefon()
+                            if voltPenz == False:
+                                os.system('cls')
+                                statPrint()
+                                print('\nBeszélgettél apukáddal és küldött 1500 Ft-ot.')
+                                penz(+1500)
+                                idoMeres(0, 5)
+                                voltPenz = True
+                                input('ENTER...')
+                                telefon()
+                            elif voltPenz == True:
+                                os.system('cls')
+                                statPrint()
+                                print('\nBeszélgettél apukáddal, örültél neki.')
+                                idoMeres(0, 5)
+                                input('ENTER...')
+                                telefon()
                         case '3':
                             telefon()
             case '2':
@@ -869,12 +883,14 @@ def telefon():
                             os.system('cls')
                             statPrint()
                             print('\nMivel megnézted Corinna Kopf bejegyzéseit, így nem bírtad ki, hogy ne huzogasd a bőrtokos calippod. Sajnos ezzel elment egy kis idő.')
+                            idoMeres(0, 20)
                             input('ENTER...')
                             telefon()
                         case '2':
                             os.system('cls')
                             statPrint()
                             print('\nMegnézted a mai bejegyzéseket, semmi különös nem volt.')
+                            idoMeres(0, 10)
                             input('ENTER...')
                             telefon()
                         case '3':
@@ -895,12 +911,15 @@ def telefon():
                             os.system('cls')
                             statPrint()
                             print('\nKüldtél neki rózsát, és mondta "Hmm... Rózsa illatos!". Nem értetted miért mondja ezt.')
+                            penz(-300)
+                            idoMeres(0, 5)
                             input('ENTER...')
                             telefon()
                         case '2':
                             os.system('cls')
                             statPrint()
                             print('\nBeszóltál neki, de nem vette észre.')
+                            idoMeres(0, 5)
                             input('ENTER...')
                             telefon()
                         case '3':
