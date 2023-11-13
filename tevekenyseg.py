@@ -405,10 +405,10 @@ def szoba():
     global elso
     global keddentoltott
     global javitas
-    ehseg = getehseg()
-    nap = getnap()
     m = '0'
     while m != '6' :
+        ehseg = getehseg()
+        nap = getnap()
         os.system("cls")
         statPrint()
         print("\n1...Eszek")
@@ -426,7 +426,10 @@ def szoba():
             case '1':
                 if ehseg > 15:
                     os.system("cls")
-                    etel(-15)
+                    if ehseg >= 15:
+                        etel(-15)
+                    else:
+                        etel(-ehseg)
                     idoMeres(0, 20)
                     statPrint()
                     print("\nEttél valamennyit és így már kevésbé vagy éhes")
@@ -933,11 +936,6 @@ def alvas():
     idoMeres(0, -getperc())
     statPrint()
 
-def alvas():
-    print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
-    idoMeres(0, -getperc())
-    statPrint()
-
 
 def varos():
     penzem = getpenz()
@@ -1285,7 +1283,7 @@ def tanari():
                 input("\nENTER folytatáshoz...")
 
 
-def csocsoBajnoksag():
+def csocsoBajnoksag(csocso):
     helySzin("Foglalkoztató")
     m = '0'
     while m != '1' and m != '2' and m != '3':
@@ -1303,7 +1301,7 @@ def csocsoBajnoksag():
                 os.system('cls')
                 idoMeres(0, 10)
                 etel(2)
-                n += 1
+                gyoz += 1
                 statPrint()
                 print(f'\n{i}. kör')
                 print("\nGyőzelem")
@@ -1331,10 +1329,13 @@ def csocsoBajnoksag():
             statPrint()
             print('\nA tavalyi után az idei bajnokságot is sikeresen megnyerted')
             input('\nFolytatáshoz ENTER ')
+            csocso = True
         else:
             os.system('cls')    
             statPrint()
             print('\nA tavalyi sikerek után sajnos nem tudtad fenntartani bajnoki címed')
-            input('\nFolytatáshoz ENTER ')   
+            input('\nFolytatáshoz ENTER ')  
+            csocso = False 
+    return csocso
 
 
