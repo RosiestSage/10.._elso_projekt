@@ -77,7 +77,6 @@ def helySzin(Helyszin):
     return helyszin
 
 
-
 #változók átvitele
 def getnap():
     global nap
