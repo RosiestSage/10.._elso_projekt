@@ -176,7 +176,7 @@ def tanulas(voltSzoba):
 
 def tanul():
     tudasPlusz(30)
-    print('Megtanultam a mai anyag egy részét, holnap jobban fognak menni a dolgozatok.')
+    print('Megtanulod a mai anyag egy részét, holnap jobban fognak menni a dolgozatok.')
     etel(20)
     idoMeres(1, 0)
 
@@ -407,74 +407,104 @@ def szoba():
     global javitas
     m = '0'
     while m != '6' :
-        ehseg = getehseg()
-        nap = getnap()
-        os.system("cls")
-        statPrint()
-        print("\n1...Eszek")
-        print("\n2...Telefonozok")
-        print("\n3...Tanulok")
-        if nap != 'csutortok':
-            print("\n4...Játszok")
-        else:
-            print("\n4...Gépszerelés")
-        print("\n5...Beszélgetek")
-        print("\n6...Kimegyek")
+        if getora() < 22:
+            ehseg = getehseg()
+            nap = getnap()
+            os.system("cls")
+            statPrint()
+            print("\n1...Eszek")
+            print("\n2...Telefonozok")
+            print("\n3...Tanulok")
+            if nap != 'csutortok':
+                print("\n4...Játszok")
+            else:
+                print("\n4...Gépszerelés")
+            print("\n5...Beszélgetek")
+            print("\n6...Kimegyek")
 
-        m = input("\nMit csinálok? ")
-        match m:
-            case '1':
-                if ehseg > 15:
-                    os.system("cls")
-                    if ehseg >= 15:
-                        etel(-15)
-                    else:
-                        etel(-ehseg)
-                    idoMeres(0, 20)
-                    statPrint()
-                    print("\nEttél valamennyit és így már kevésbé vagy éhes")
-                    input("Enter")
-                    voltSzoba = True
-                    
-                elif ehseg <= 15 and ehseg > 0:
-                    os.system("cls")
-                    etel(-ehseg)
-                    idoMeres(0, 20)
-                    statPrint()
-                    print("\nEttél valamennyit és már egyáltalán nem vagy éhes")
-                    input("Enter")
-                    voltSzoba = True
-
-                elif ehseg == 0:
-                    os.system("cls")
-                    statPrint()
-                    print("\nTele vagy, nem tudsz ennni egy falatot se")
-                    input("Enter")
-                    voltSzoba = True
-            case '2':
-                os.system("cls")
-                etel(5)
-                idoMeres(0, 45)     
-                statPrint()
-                telefon()
-                voltSzoba = True      
-            case '3':   
-                os.system("cls")
-                idoMeres(-1, 45)  
-                tudasPlusz(-10)
-                statPrint()
-                print('')
-                tanul()
-                input("Enter...")
-                voltSzoba = True
-            case '4':
-                match nap:
-                    case 'vasarnap':
-                        os.system('cls')
+            m = input("\nMit csinálok? ")
+            match m:
+                case '1':
+                    if ehseg > 15:
+                        os.system("cls")
+                        if ehseg >= 15:
+                            etel(-15)
+                        else:
+                            etel(-ehseg)
+                        idoMeres(0, 20)
                         statPrint()
-                        if toltott == False:  
+                        print("\nEttél valamennyit és így már kevésbé vagy éhes")
+                        input("Enter")
+                        voltSzoba = True
+                        
+                    elif ehseg <= 15 and ehseg > 0:
+                        os.system("cls")
+                        etel(-ehseg)
+                        idoMeres(0, 20)
+                        statPrint()
+                        print("\nEttél valamennyit és már egyáltalán nem vagy éhes")
+                        input("Enter")
+                        voltSzoba = True
+
+                    elif ehseg == 0:
+                        os.system("cls")
+                        statPrint()
+                        print("\nTele vagy, nem tudsz ennni egy falatot se")
+                        input("Enter")
+                        voltSzoba = True
+                case '2':
+                    os.system("cls")
+                    etel(5)
+                    idoMeres(0, 45)     
+                    statPrint()
+                    telefon()
+                    voltSzoba = True      
+                case '3':   
+                    os.system("cls")
+                    statPrint()
+                    print('')
+                    tanul()
+                    tudasPlusz(-10)
+                    idoMeres(-1, 45)  
+                    input("Enter...")
+                    voltSzoba = True
+                case '4':
+                    match nap:
+                        case 'vasarnap':
+                            os.system('cls')
+                            statPrint()
+                            if toltott == False:  
+                                    if voltmar == True:  
+                                        print("\nSajnos mikor elindítottad a laptopot észre vetted hogy le van merülve")
+                                        voltmar = False
+                                    else:
+                                        print("\nMég mindig le van merülve")
+                                    print("\n1...Feldugom töltőre")
+                                    print("\n2...Hagyom")
+                                    n = input("\nHogy döntesz?")
+                                    match n:
+                                        case '1':
+                                            os.system('cls')
+                                            idoMeres(0, 5)
+                                            statPrint()
+                                            print('\nA laptopot felraktad töltőre')
+                                            toltott = True
+                                            input('\nEnter folytatáshoz...')
+                                        case '2':
+                                            os.system('cls')
+                                            statPrint()
+                                            print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
+                                            input('\nEnter folytatáshoz...')                                
+                            else:
+                                print('\nA laptop töltődik')
+                                input('\nEnter folytatáshoz...')
+                        case 'hetfo':
+                            os.system('cls')
+                            statPrint()
+                            voltmar = True
+                            if toltott == False:  
                                 if voltmar == True:  
-                                    print("\nSajnos mikor elindítottad a laptopot észre vetted hogy le van merülve")
+                                    print("\nSajnos tegnap nem töltötted fel a laptopot ezért le van merülve")
                                     voltmar = False
                                 else:
                                     print("\nMég mindig le van merülve")
@@ -494,330 +524,305 @@ def szoba():
                                         statPrint()
                                         print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
                                         input('\nEnter folytatáshoz...')                                
-                        else:
-                            print('\nA laptop töltődik')
-                            input('\nEnter folytatáshoz...')
-                    case 'hetfo':
-                        os.system('cls')
-                        statPrint()
-                        voltmar = True
-                        if toltott == False:  
-                            if voltmar == True:  
-                                print("\nSajnos tegnap nem töltötted fel a laptopot ezért le van merülve")
-                                voltmar = False
                             else:
-                                print("\nMég mindig le van merülve")
-                            print("\n1...Feldugom töltőre")
-                            print("\n2...Hagyom")
-                            n = input("\nHogy döntesz?")
-                            match n:
-                                case '1':
+                                if elso == True:
+                                    print('\nA laptop fel van töltve, de sajnos az elit kollégiumban most pont nincs net')
+                                    print("\n1...Játszom a Google-es dínóval")
+                                    print("\n2...Candy crush")
+                                    n = input("\nHogy döntesz?")
+                                    match n:
+                                        case '1':
+                                            os.system('cls')
+                                            idoMeres(1, 0)
+                                            etel(20)
+                                            statPrint()
+                                            print("\nEgy órán keresztül szórákoztál ezzel az idegfeszítő játékkal, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
+                                            input('\nEnter folytatáshoz...')
+                                        case '2':
+                                            os.system('cls')
+                                            idoMeres(1, 0)
+                                            etel(20)
+                                            tudasPlusz(-10)
+                                            statPrint()
+                                            print("\nEgy órán keresztül cukroztál, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
+                                            input('\nEnter folytatáshoz...')
+                                    elso = False
+                                else:
                                     os.system('cls')
-                                    idoMeres(0, 5)
                                     statPrint()
-                                    print('\nA laptopot felraktad töltőre')
-                                    toltott = True
+                                    print("\nLe vagy merülve, és csak holnap tudsz tölteni")
                                     input('\nEnter folytatáshoz...')
-                                case '2':
-                                    os.system('cls')
-                                    statPrint()
-                                    print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
-                                    input('\nEnter folytatáshoz...')                                
-                        else:
-                            if elso == True:
-                                print('\nA laptop fel van töltve, de sajnos az elit kollégiumban most pont nincs net')
-                                print("\n1...Játszom a Google-es dínóval")
-                                print("\n2...Candy crush")
+                        case 'kedd':
+                            os.system('cls')
+                            statPrint()
+                            if keddentoltott == False:  
+                                print("\nA laptop le van merülve")
+                                print("\n1...Feldugom töltőre")
+                                print("\n2...Hagyom")
                                 n = input("\nHogy döntesz?")
                                 match n:
                                     case '1':
                                         os.system('cls')
-                                        idoMeres(1, 0)
-                                        etel(20)
+                                        idoMeres(0, 5)
                                         statPrint()
-                                        print("\nEgy órán keresztül szórákoztál ezzel az idegfeszítő játékkal, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
+                                        print('\nA laptopot felraktad töltőre')
+                                        keddentoltott = True
                                         input('\nEnter folytatáshoz...')
                                     case '2':
                                         os.system('cls')
-                                        idoMeres(1, 0)
-                                        etel(20)
-                                        tudasPlusz(-10)
                                         statPrint()
-                                        print("\nEgy órán keresztül cukroztál, de sikeresen lemerítetted a gépet és sajnos az összes konnektor foglalt")
-                                        input('\nEnter folytatáshoz...')
-                                elso = False
+                                        print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
+                                        input('\nEnter folytatáshoz...')                                
                             else:
-                                os.system('cls')
-                                statPrint()
-                                print("\nLe vagy merülve, és csak holnap tudsz tölteni")
+                                print('\nA laptop töltődik')
                                 input('\nEnter folytatáshoz...')
-                    case 'kedd':
-                        os.system('cls')
-                        statPrint()
-                        if keddentoltott == False:  
-                            print("\nA laptop le van merülve")
-                            print("\n1...Feldugom töltőre")
-                            print("\n2...Hagyom")
-                            n = input("\nHogy döntesz?")
+                        case 'szerda':
+                            os.system('cls')
+                            statPrint()
+                            print("\nA mai napon leültél játszani, de a gép sajnos nem indult akárhogy nyomkodtad, úgy néz ki elvan romolva")
+                            input("\nEnter a folytatáshoz")
+                        case 'csutortok':
+                            os.system('cls')
+                            statPrint()
+                            x = random.randint(1,2)
+                            if javitas == False:
+                                print("\nZoli szobatársa, András, felajánlotta hogy 1000Ft-ért megszereli laptopod")
+                                print("\n1...Elfogadom")
+                                print("\n2...Inkább hagyom")
+                                n = input("\nHogy választasz?")
+                                match n:
+                                    case '1': 
+                                        match x:
+                                            case 1:
+                                                os.system('cls')
+                                                penz(-1000)
+                                                idoMeres(0, 30)
+                                                etel(10)
+                                                statPrint()
+                                                print("\nAndrás sikeresen megjavította a géped és fizetned kellett 1000 Ft-ot nagylelkűsége miatt")
+                                                input("\nEnter a folytatáshoz")
+                                                javitas = True
+                                            case 2:
+                                                os.system('cls')
+                                                penz(1000)
+                                                idoMeres(0, 15)
+                                                etel(5)
+                                                statPrint()
+                                                print("\nAndrás nem volt valami ügyes és most mégrosszabb, kárpótlásul ő adott egy ezrest")
+                                                input("\nEnter a folytatáshoz")
+                                                javitas = True
+                            else:
+                                if x == 1 and javitas == True:
+                                    os.system('cls')
+                                    statPrint()
+                                    print("\nA laptop megvan javulva")
+                                    input("\nEnter a folytatáshoz")
+                                if x == 2 and javitas == True:
+                                    os.system('cls')
+                                    statPrint()
+                                    print("\nA laptop el van romolva")
+                                    input("\nEnter a folytatáshoz")
+                    voltSzoba = True
+                case '5':
+                    match nap:
+                        case 'vasarnap':
+                            os.system("cls")
+                            statPrint()
+                            print("\nÚgy döntöttél, hogy leülsz szobatársaiddal beszélni. Három lakótársad Barni, Olivár és Peti.")
+                            print("\n1...Barni")
+                            print("\n2...Olivér")
+                            print("\n3...Peti")
+                            n = input("\nKit választasz?")
+                            match n:
+                                case '1':
+                                    os.system("cls")
+                                    statPrint()
+                                    print("\nBarni sajnos játszik így nem nagyon tud rád koncentrálni")
+                                    input("\nENTER folytatáshoz...")
+                                case '2':
+                                    os.system('cls')
+                                    idoMeres(0, 30)
+                                    etel(10)
+                                    statPrint()
+                                    x = random.randint(1,3)
+                                    if x == 1:
+                                        mese = "Radics Peti idézete"
+                                    elif x == 2:
+                                        mese = "iskolai története"
+                                    else:
+                                        mese = "otthon történt eseménye"
+                                    print(f"\nOlivér {mese} nagyon megnevettetett")
+                                    input("\nENTER folytatáshoz...")
+                                case '3':
+                                    os.system("cls")
+                                    idoMeres(0, 30)
+                                    etel(10)
+                                    tudasPlusz(1)
+                                    statPrint()
+                                    print("\nPeti egy békés ember és erősen hisz mindenkinek az egyenjogúságában. Érdekes történeteiből és mély metaforáiból sokat tanulsz")
+                                    input("\nENTER folytatáshoz...")
+                        case 'hetfo':
+                            os.system("cls")
+                            statPrint()
+                            print()
+                            print("\n1...Barni")
+                            print("\n2...Olivér")
+                            print("\n3...Peti")
+                            n = input("\nKit választasz?")
                             match n:
                                 case '1':
                                     os.system('cls')
-                                    idoMeres(0, 5)
                                     statPrint()
-                                    print('\nA laptopot felraktad töltőre')
-                                    keddentoltott = True
-                                    input('\nEnter folytatáshoz...')
+                                    x = random.randint(1,3)
+                                    if x == 1:
+                                        mese = "Barni sajnos WC-n van, így pont nem tudsz beszélni vele"
+                                    if x == 2:
+                                        mese = "Barni Gergőék szobájában animét néz."
+                                    else:
+                                        mese = "Barni Zoliék szobájában animét néz."
+                                    print(f"\n{mese}")
+                                    input("\nENTER folytatáshoz...")
+                                case '2':
+                                    os.system('cls')
+                                    idoMeres(0, 30)
+                                    etel(10)
+                                    tudasPlusz(1)
+                                    statPrint()
+                                    print("\nOlivérnek nagy szenvedélye az airsoft, így rengeteg újat mesél neked a játékról")
+                                    input("\nENTER folytatáshoz...")
+                                case '3':
+                                    os.system('cls')
+                                    statPrint()
+                                    print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
+                                    input("\nENTER folytatáshoz...")
+                        case 'kedd':
+                            os.system("cls")
+                            statPrint()
+                            print()
+                            print("\n1...Barni")
+                            print("\n2...Olivér")
+                            print("\n3...Peti")
+                            n = input("\nKit választasz?")
+                            match n:
+                                case '1':
+                                    os.system("cls")
+                                    statPrint()
+                                    print("\nBarni segítséget kér projektjében")
+                                    print("\n1...Segítesz")
+                                    print("\n2...Hagyod")
+                                    j = input("\nHogy döntessz? ")
+                                    match j:
+                                        case '1':
+                                            os.system('cls')
+                                            idoMeres(1, 30)
+                                            if ehseg >= 10:
+                                                etel(-10)
+                                            else:
+                                                etel(-ehseg)
+                                            statPrint()
+                                            print("\n1.5 óra kemény munka után befejeztétek és Barni nagy segítséged házi készítésű hókiflijével jutalmazta")
+                                            input("\nENTER folytatáshoz...")
+                                        case '2':
+                                            os.system("cls")
+                                            statPrint()
+                                            print("Csalódottan, de megértően elfogadja hogy nem segítesz")
+                                            input("\nENTER folytatáshoz...")
+                                case '2':
+                                    os.system("cls")
+                                    statPrint()
+                                    x = random.randint(1,2)
+                                    if x == 1:
+                                        print(f"\nOlivér ma három egyest is szerzett, emiatt mikor beszéltél vele felhúztad és megvert, de nagyobb bajod nem lett")
+                                        idoMeres(0, 20)
+                                        etel(15)
+                                        input("\nENTER folytatáshoz...")
+                        
+                                    else:
+                                        print(f"\nOlivér ma három egyest is szerzett, és bár beszélgetés közbe felhúztad, végül nem vert meg")
+                                        idoMeres(0, 30)
+                                        etel(10)
+                                        input("\nENTER folytatáshoz...")
+
+                                case '3':
+                                    os.system("cls")
+                                    statPrint()
+                                    print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
+                                    input("\nENTER folytatáshoz...")
+                        case 'szerda':
+                            os.system("cls")
+                            statPrint()
+                            print()
+                            print("\n1...Barni")
+                            print("\n2...Olivér")
+                            print("\n3...Peti")
+                            n = input("\nKit választasz?")
+                            match n:
+                                case '1':
+                                    os.system('cls')
+                                    statPrint()
+                                    print("\nBarninak gondjai akadtak a matekkal és segítséged kéri")
+                                    print("\n1...Segítesz")
+                                    print("\n2...Hagyod")
+                                    j = input("\nHogy döntessz? ")
+                                    match j:
+                                        case '1':
+                                            os.system('cls')
+                                            idoMeres(1, 30)
+                                            tudasPlusz(10)
+                                            etel(15)
+                                            statPrint()
+                                            print("\n1.5 óra kemény munka után jobban érti az anyagot, de a gyakorlás neked is jót tett")
+                                            input("\nENTER folytatáshoz...")
+                                        case '2':
+                                            os.system("cls")
+                                            statPrint()
+                                            print("Csalódottan, de megértően elfogadja hogy nem segítesz")
+                                            input("\nENTER folytatáshoz...")    
+                                case '2':
+                                    os.system('cls')
+                                    idoMeres(0, 45)
+                                    statPrint()
+                                    print("\nFelhozza kedvenc metál együttesét és mivel mindketten hatalmas fanok, így jó hosszan beszélgettek a metál zenéről")
+                                    input("\nENTER a folytatáshoz")
+                                case '3':
+                                    os.system('cls')
+                                    idoMeres(0, 30)
+                                    if ehseg >= 10:
+                                        etel(-10)
+                                    else:
+                                        etel(-ehseg)
+                                    statPrint()
+                                    print("\nPetivel elbeszélgettek egymás barátnőiről és beszélgetés közben kedvesen megkínál sütijéből")
+                                    input("\nENTER a folytatáshoz")
+                        case 'csutortok':
+                            os.system("cls")
+                            statPrint()
+                            print()
+                            print("\n1...Barni")
+                            print("\n2...Olivér")
+                            print("\n3...Peti")
+                            n = input("\nKit választasz?")
+                            match n:
+                                case '1':
+                                    os.system('cls')
+                                    statPrint()
+                                    print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
+                                    input("\nENTER a folytatáshoz")
                                 case '2':
                                     os.system('cls')
                                     statPrint()
-                                    print("\nMivel nem vagy hajlandó feltölteni, így nem játszol")
-                                    input('\nEnter folytatáshoz...')                                
-                        else:
-                            print('\nA laptop töltődik')
-                            input('\nEnter folytatáshoz...')
-                    case 'szerda':
-                        os.system('cls')
-                        statPrint()
-                        print("\nA mai napon leültél játszani, de a gép sajnos nem indult akárhogy nyomkodtad, úgy néz ki elvan romolva")
-                        input("\nEnter a folytatáshoz")
-                    case 'csutortok':
-                        os.system('cls')
-                        statPrint()
-                        x = random.randint(1,2)
-                        if javitas == False:
-                            print("\nZoli szobatársa, András, felajánlotta hogy 1000Ft-ért megszereli laptopod")
-                            print("\n1...Elfogadom")
-                            print("\n2...Inkább hagyom")
-                            n = input("\nHogy választasz?")
-                            match n:
-                                case '1': 
-                                    match x:
-                                        case 1:
-                                            os.system('cls')
-                                            penz(-1000)
-                                            idoMeres(0, 30)
-                                            etel(10)
-                                            statPrint()
-                                            print("\nAndrás sikeresen megjavította a géped és fizetned kellett 1000 Ft-ot nagylelkűsége miatt")
-                                            input("\nEnter a folytatáshoz")
-                                            javitas = True
-                                        case 2:
-                                            os.system('cls')
-                                            penz(1000)
-                                            idoMeres(0, 15)
-                                            etel(5)
-                                            statPrint()
-                                            print("\nAndrás nem volt valami ügyes és most mégrosszabb, kárpótlásul ő adott egy ezrest")
-                                            input("\nEnter a folytatáshoz")
-                                            javitas = True
-                        else:
-                            if x == 1 and javitas == True:
-                                os.system('cls')
-                                statPrint()
-                                print("\nA laptop megvan javulva")
-                                input("\nEnter a folytatáshoz")
-                            if x == 2 and javitas == True:
-                                os.system('cls')
-                                statPrint()
-                                print("\nA laptop el van romolva")
-                                input("\nEnter a folytatáshoz")
-                voltSzoba = True
-            case '5':
-                match nap:
-                    case 'vasarnap':
-                        os.system("cls")
-                        statPrint()
-                        print("\nÚgy döntöttél, hogy leülsz szobatársaiddal beszélni. Három lakótársad Barni, Olivár és Peti.")
-                        print("\n1...Barni")
-                        print("\n2...Olivér")
-                        print("\n3...Peti")
-                        n = input("\nKit választasz?")
-                        match n:
-                            case '1':
-                                os.system("cls")
-                                statPrint()
-                                print("\nBarni sajnos játszik így nem nagyon tud rád koncentrálni")
-                                input("\nENTER folytatáshoz...")
-                            case '2':
-                                os.system('cls')
-                                idoMeres(0, 30)
-                                etel(10)
-                                statPrint()
-                                x = random.randint(1,3)
-                                if x == 1:
-                                    mese = "Radics Peti idézete"
-                                elif x == 2:
-                                    mese = "iskolai története"
-                                else:
-                                    mese = "otthon történt eseménye"
-                                print(f"\nOlivér {mese} nagyon megnevettetett")
-                                input("\nENTER folytatáshoz...")
-                            case '3':
-                                os.system("cls")
-                                idoMeres(0, 30)
-                                etel(10)
-                                tudasPlusz(1)
-                                statPrint()
-                                print("\nPeti egy békés ember és erősen hisz mindenkinek az egyenjogúságában. Érdekes történeteiből és mély metaforáiból sokat tanulsz")
-                                input("\nENTER folytatáshoz...")
-                    case 'hetfo':
-                        os.system("cls")
-                        statPrint()
-                        print()
-                        print("\n1...Barni")
-                        print("\n2...Olivér")
-                        print("\n3...Peti")
-                        n = input("\nKit választasz?")
-                        match n:
-                            case '1':
-                                os.system('cls')
-                                statPrint()
-                                x = random.randint(1,3)
-                                if x == 1:
-                                    mese = "Barni sajnos WC-n van, így pont nem tudsz beszélni vele"
-                                if x == 2:
-                                    mese = "Barni Gergőék szobájában animét néz."
-                                else:
-                                    mese = "Barni Zoliék szobájában animét néz."
-                                print(f"\n{mese}")
-                                input("\nENTER folytatáshoz...")
-                            case '2':
-                                os.system('cls')
-                                idoMeres(0, 30)
-                                etel(10)
-                                tudasPlusz(1)
-                                statPrint()
-                                print("\nOlivérnek nagy szenvedélye az airsoft, így rengeteg újat mesél neked a játékról")
-                                input("\nENTER folytatáshoz...")
-                            case '3':
-                                os.system('cls')
-                                statPrint()
-                                print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
-                                input("\nENTER folytatáshoz...")
-                    case 'kedd':
-                        os.system("cls")
-                        statPrint()
-                        print()
-                        print("\n1...Barni")
-                        print("\n2...Olivér")
-                        print("\n3...Peti")
-                        n = input("\nKit választasz?")
-                        match n:
-                            case '1':
-                                os.system("cls")
-                                statPrint()
-                                print("\nBarni segítséget kér projektjében")
-                                print("\n1...Segítesz")
-                                print("\n2...Hagyod")
-                                j = input("\nHogy döntessz? ")
-                                match j:
-                                    case '1':
-                                        os.system('cls')
-                                        idoMeres(1, 30)
-                                        if ehseg >= 10:
-                                            etel(-10)
-                                        else:
-                                            etel(-ehseg)
-                                        statPrint()
-                                        print("\n1.5 óra kemény munka után befejeztétek és Barni nagy segítséged házi készítésű hókiflijével jutalmazta")
-                                        input("\nENTER folytatáshoz...")
-                                    case '2':
-                                        os.system("cls")
-                                        statPrint()
-                                        print("Csalódottan, de megértően elfogadja hogy nem segítesz")
-                                        input("\nENTER folytatáshoz...")
-                            case '2':
-                                os.system("cls")
-                                statPrint()
-                                x = random.randint(1,2)
-                                if x == 1:
-                                    print(f"\nOlivér ma három egyest is szerzett, emiatt mikor beszéltél vele felhúztad és megvert, de nagyobb bajod nem lett")
-                                    idoMeres(0, 20)
-                                    etel(15)
+                                    print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
+                                    input("\nENTER a folytatáshoz")
+                                case '3':
+                                    os.system('cls')
+                                    statPrint()
+                                    print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
                                     input("\nENTER folytatáshoz...")
-                    
-                                else:
-                                    print(f"\nOlivér ma három egyest is szerzett, és bár beszélgetés közbe felhúztad, végül nem vert meg")
-                                    idoMeres(0, 30)
-                                    etel(10)
-                                    input("\nENTER folytatáshoz...")
-
-                            case '3':
-                                os.system("cls")
-                                statPrint()
-                                print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
-                                input("\nENTER folytatáshoz...")
-                    case 'szerda':
-                        os.system("cls")
-                        statPrint()
-                        print()
-                        print("\n1...Barni")
-                        print("\n2...Olivér")
-                        print("\n3...Peti")
-                        n = input("\nKit választasz?")
-                        match n:
-                            case '1':
-                                os.system('cls')
-                                statPrint()
-                                print("\nBarninak gondjai akadtak a matekkal és segítséged kéri")
-                                print("\n1...Segítesz")
-                                print("\n2...Hagyod")
-                                j = input("\nHogy döntessz? ")
-                                match j:
-                                    case '1':
-                                        os.system('cls')
-                                        idoMeres(1, 30)
-                                        tudasPlusz(10)
-                                        etel(15)
-                                        statPrint()
-                                        print("\n1.5 óra kemény munka után jobban érti az anyagot, de a gyakorlás neked is jót tett")
-                                        input("\nENTER folytatáshoz...")
-                                    case '2':
-                                        os.system("cls")
-                                        statPrint()
-                                        print("Csalódottan, de megértően elfogadja hogy nem segítesz")
-                                        input("\nENTER folytatáshoz...")    
-                            case '2':
-                                os.system('cls')
-                                idoMeres(0, 45)
-                                statPrint()
-                                print("\nFelhozza kedvenc metál együttesét és mivel mindketten hatalmas fanok, így jó hosszan beszélgettek a metál zenéről")
-                                input("\nENTER a folytatáshoz")
-                            case '3':
-                                os.system('cls')
-                                idoMeres(0, 30)
-                                if ehseg >= 10:
-                                    etel(-10)
-                                else:
-                                    etel(-ehseg)
-                                statPrint()
-                                print("\nPetivel elbeszélgettek egymás barátnőiről és beszélgetés közben kedvesen megkínál sütijéből")
-                                input("\nENTER a folytatáshoz")
-                    case 'csutortok':
-                        os.system("cls")
-                        statPrint()
-                        print()
-                        print("\n1...Barni")
-                        print("\n2...Olivér")
-                        print("\n3...Peti")
-                        n = input("\nKit választasz?")
-                        match n:
-                            case '1':
-                                os.system('cls')
-                                statPrint()
-                                print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
-                                input("\nENTER a folytatáshoz")
-                            case '2':
-                                os.system('cls')
-                                statPrint()
-                                print('\nBarni és Olivér elment az Árkádba így sajnos nem tudsz beszélni velük')
-                                input("\nENTER a folytatáshoz")
-                            case '3':
-                                os.system('cls')
-                                statPrint()
-                                print("\nPeti jó szokásához híven ma is elment edzeni, így nem tudsz vele beszélni")
-                                input("\nENTER folytatáshoz...")
-                voltSzoba = True
+                    voltSzoba = True
+                case '6':
+                    return 0
+        else:
+            break
 
 
 def telefon():
