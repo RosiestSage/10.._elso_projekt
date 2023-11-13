@@ -1202,9 +1202,9 @@ def sport():
 
             case '3':
                 os.system('cls')
-                helySzin('Tanulószoba')
+                helySzin('Foglalkoztató')
                 statPrint()
-                print(f'\nFelmentél a tanulószobába sakkozni egyet {ember} és egy jó hosszú játszma után {nyeres}')
+                print(f'\nFelmentél a foglalkoztatóba sakkozni egyet {ember} és egy jó hosszú játszma után {nyeres}')
                 idoMeres(1, 15)
                 etel(25)
                 input("\nENTER folytatáshoz...")
