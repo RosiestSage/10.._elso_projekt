@@ -4,7 +4,7 @@ from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, 
 furdottMar = False
 voltvaros = False
 vacsiMar = False
-
+csocso = False
 
 def vasarnap():
     global voltSzoba
@@ -284,6 +284,7 @@ def csutortok():
     global furdottMar
     global voltvaros
     global vacsiMar
+    global csocso 
     helySzin('Jedlik ajtaja előtt')
     Nap('csutortok')
     os.system('cls')
@@ -321,7 +322,8 @@ def csutortok():
                     print('\n3...Bemegyek valakit meglátogatni')
                     print('\n4...Elmegyek wcre')
                     print('\n5...Bemegyek a szobámba')
-                    print('\n6...Sport')
+                    print('\n6...Csocsóbajnokság')
+                    print('\n7...Sport')
                     if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
                         print('\n7...Vacsora')
                     j = input('\nMit csináljak? ')
@@ -341,9 +343,20 @@ def csutortok():
                             szoba()
                             voltSzoba = True
                         case '6':
-                            sport()
+                            if csocso == False:
+                                gyozelem = csocsoBajnoksag(csocso)
+                                csocso = True
+                            else:
+                                os.system("cls")
+                                statPrint()
+                                if gyozelem == True:
+                                    print('\nA bajnokságnak már vége, győztél')
+                                    input('\nENTER')
+                                else:
+                                    print('\nA bajnokságnak már vége, vesztettél')
+                                    input('\nENTER')
                         case '7':
-                                csocsoBajnoksag()
+                            sport()
                         case '8':
                             vacsiMar = vacsora(vacsiMar)
         if getora() >= 22:
@@ -371,6 +384,7 @@ voltSzoba = False
 voltvaros = False
 furdottMar = False
 csutortok()
+
 
 
 
