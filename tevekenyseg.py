@@ -1,6 +1,10 @@
 import random, os
 from statok import etel, getehseg, idoMeres, tudas, tudasPlusz, statPrint, getora, perc, getperc, getnap, ora, penz, getpenz, gettudas, helySzin
+
+#Furdo
 furdottMar = False
+
+#Szoba
 voltSzoba = False
 voltPenz = False
 toltott = False
@@ -9,8 +13,15 @@ elso = True
 keddentoltott = False
 javitas = False
 m = '0'
+
+#Tanari
 kiulo = False
 
+#Buli
+italAr = 0
+szenyoAr = 0
+dj = ''
+Szerep = ''
 
 def furdes():
     helySzin('Fürdő')
@@ -1343,4 +1354,141 @@ def csocsoBajnoksag(csocso):
             csocso = False 
     return csocso
 
+
+def buliszervezes():
+    global italAr
+    global szenyoAr
+    global dj
+    global Szerep
+    helySzin('Gergő szobája')
+    m = 0
+    ital = False
+    szenyo = False
+    DJ = False
+    szerep = False
+    while m != 1:
+        os.system('cls')
+        statPrint()
+        print("\nGergő segítségeded kéri a közelgő avatóbuli megszervezésében. Meg kell választani a büfében lévő dolgok árát, a DJ-t és hogy milyen szerepet vállalsz")
+        if ital == False:
+            print('\n1...Ital ára')
+        else:
+            print('\n1...Ital ára (kész)')
+        
+        if szenyo == False:
+            print('\n2...Melegszendvics ára')
+        else:
+            print('\n2...Melegszendvics ára (kész)')
+        
+        if DJ == False:
+            print('\n3...DJ választás')
+        else:
+            print('\n3...DJ választás (kész)')
+        
+        if szerep == False:
+            print('\n4...Szerep')
+        else:
+            print('\n4...Szerep (kész)')
+
+        m = input("\nVálasztásod: ")
+        match m:
+            case '1':
+                if ital == False:
+                    n = 0
+                    while n != 1:
+                        os.system('cls')
+                        statPrint()
+                        print("\nGergő az 2 dl ital árát 50 és 150 Ft közé tenné.")
+                        n = input("\nMennyi legyen az ára(Ft):")
+                        italAr = n
+                        ital = True
+                        if n != '':
+                            break
+                            
+                else:
+                    os.system('cls')
+                    statPrint()
+                    print(f'\nItal ára(Ft): {italAr}')
+                    input("\nENTER folytatáshoz: ")
+            case '2':
+                if szenyo == False:
+                    n = 0
+                    while n != 1:
+                        os.system('cls')
+                        statPrint()
+                        print("\nGergő a melegszendvics árát 200 és 400 Ft közé tenné.")
+                        n = input("\nMennyi legyen az ára(Ft):")
+                        szenyoAr = n
+                        szenyo = True
+                        if n != '':
+                            break
+                else:
+                    os.system('cls')
+                    statPrint()
+                    print(f'\nMelegszendvics ára(Ft): {szenyoAr}')
+                    input("\nENTER folytatáshoz: ")
+            case '3':
+                if DJ == False:
+                    n = '0'
+                    while n != '1' and n != '2':
+                        os.system("cls")
+                        statPrint()
+                        print('\nGergő a következő kettő embert találta önkéntesen dj-nek, melyiket választod?')
+                        print('\n1...Máté')
+                        print('\n2...Beni')
+                        n = input("\nKi legyen? ")
+                        match n:
+                            case '1':
+                                DJ = True
+                                dj = 'Máté'
+                            case '2':
+                                DJ = True
+                                dj = 'Beni'
+                else:
+                    os.system('cls')
+                    statPrint()
+                    print(f'\nA DJ: {dj}')
+                    input("\nENTER folytatáshoz: ")
+            case '4':
+                if szerep == False:
+                    n = '0'
+                    while n != '1' and n != '2' and n != '3':
+                        os.system("cls")
+                        statPrint()
+                        print('\nGergő a következő szerepeket ajánlja fel, melyiket választod?')
+                        print('\n1...Ajtónálló')
+                        print('\n2...Büfés')
+                        print('\n3...Felügyelés')
+                        n = input("\nKi legyen? ")
+                        match n:
+                            case '1':
+                                szerep = True
+                                Szerep = 'Ajtónállás'
+                            case '2':
+                                szerep = True
+                                Szerep = 'Büfés'
+                            case '3':
+                                szerep = True
+                                Szerep = 'Felügyelés'
+                else:
+                    os.system('cls')
+                    statPrint()
+                    print(f'\nA szereped: {Szerep}')
+                    input("\nENTER folytatáshoz: ")
+        if ital == True and szenyo == True and DJ == True and szerep == True:
+            break
+
+
+def bulistatok():
+    os.system('cls')
+    statPrint()
+    global italAr
+    global szenyoAr
+    global dj
+    global Szerep
+    print(f'\nItal ára(Ft): {italAr}')
+    print(f'\nMelegszendvics ára(Ft): {szenyoAr}')       
+    print(f'\nDJ: {dj}')
+    print(f'\nSzereped: {Szerep}')
+    input("\nENTER folytatáshoz: ")
 

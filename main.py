@@ -1,10 +1,11 @@
 import os
 from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gettudas, Nap, helySzin
-from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora, sport, tanari, csocsoBajnoksag
+from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora, sport, tanari, csocsoBajnoksag, buliszervezes, bulistatok
 furdottMar = False
 voltvaros = False
 vacsiMar = False
 csocso = False
+megszervezve = False
 
 def vasarnap():
     global voltSzoba
@@ -210,7 +211,7 @@ def szerda():
     global furdottMar
     global voltvaros
     global vacsiMar
-
+    global megszervezve
     helySzin('Jedlik ajtaja előtt')
     Nap('szerda')
     os.system('cls')
@@ -249,8 +250,9 @@ def szerda():
                     print('\n4...Elmegyek wcre')
                     print('\n5...Bemegyek a szobámba')
                     print('\n6...Sport')
+                    print('\n7...Buliszervezés')
                     if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
-                        print('\n7...Vacsora')
+                        print('\n8...Vacsora')
                     j = input('\nMit csináljak? ')
                     match j:
                         case '1':
@@ -270,6 +272,12 @@ def szerda():
                         case '6':
                             sport()
                         case '7':
+                            if megszervezve == False:
+                                buliszervezes()
+                                megszervezve = True
+                            else:
+                                bulistatok()
+                        case '8':
                             vacsiMar = vacsora(vacsiMar)
         if getora() >= 22:
             os.system('cls')
@@ -367,15 +375,15 @@ def csutortok():
         break
 
 
-vasarnap()
+#vasarnap()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
-hetfo()
+#hetfo()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
-kedd()
+#kedd()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
