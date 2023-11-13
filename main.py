@@ -31,7 +31,7 @@ def vasarnap():
             m = input('\nMit csináljak? ')
             match m:
                 case '1':
-                    furdes()                    
+                    furdes()
                     szoba()
                 case '2':
                     voltSzoba = tanulas(voltSzoba)
