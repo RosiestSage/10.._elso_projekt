@@ -43,9 +43,9 @@ def statPrint():
 def etel(etelek):
     global ehseg
     ehseg += etelek
-    if ehseg >= 100:
-        print("Éhezem meghaltam")
-    elif ehseg >= 70:
+    # if ehseg >= 100:
+    #     print("Éhezem meghaltam")
+    if ehseg >= 70 and ehseg < 100:
         print(f'\n{ehseg}% az éhséged, menj el enni!\n')
     
     # if ehseg < 0:

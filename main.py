@@ -51,14 +51,15 @@ def vasarnap():
                 while n != '1':
                     os.system('cls')
                     print('\nÉhen haltál')
-                    input()
+                    input("Enter a kilépéshez..")
+                    quit()
             if getora() >= 22:
                 os.system('cls')
                 alvas()
                 input('\nEnter a következő naphoz..')
-                m = 0
+                # m = 0
                 furdottMar = False
-            break
+        break
         
 
 
@@ -87,59 +88,67 @@ def hetfo():
         while getora() < 22:
             ido = getora()
             ehseg = getehseg()
-            if voltvaros == False:
-                os.system('cls')    
-                statPrint()
-                print('\nMit kezdesz a déutánoddal')
-                print('\n1...Bemegyek a városba')
-                print('\n2...Visszamegyek a koliba')
-                m = input('\nMit csináljak? ')
-                voltvaros = True
-            else:
-                m = '2'
-            match m:
-                case '1':
-                    varos()
-                case '2':
-                    if visszament == False:
-                        idoMeres(0, 20)
-                        visszament = True
-                    helySzin('Folyosó')
-                    os.system('cls')
+            if ehseg < 100:
+                if voltvaros == False:
+                    os.system('cls')    
                     statPrint()
-                    print('\n\n1...Elmegyek fürödni')
-                    print('\n2...Elmegyek tanulni')
-                    print('\n3...Bemegyek valakit meglátogatni')
-                    print('\n4...Elmegyek wcre')
-                    print('\n5...Bemegyek a szobámba')
-                    print('\n6...Sport')
-                    if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
-                        print('\n7...Vacsora')
-                    j = input('\nMit csináljak? ')
-                    match j:
-                        case '1':
-                            furdes()
-                            szoba()
-                        case '2':
-                            tanulas(voltSzoba)
-                        case '3':
-                            valakiSzobaja()
-                            voltSzoba = False
-                        case '4':
-                            WC()
-                            voltSzoba = False
-                        case '5':
-                            szoba()
-                            voltSzoba = True
-                        case '6':
-                            sport()
-                        case '7':
-                            vacsiMar = vacsora(vacsiMar)
-        if getora() >= 22:
-            os.system('cls')
-            alvas()
-            input('\nEnter a következő naphoz..')
-            m = 0
+                    print('\nMit kezdesz a déutánoddal')
+                    print('\n1...Bemegyek a városba')
+                    print('\n2...Visszamegyek a koliba')
+                    m = input('\nMit csináljak? ')
+                    voltvaros = True
+                else:
+                    m = '2'
+                match m:
+                    case '1':
+                        varos()
+                    case '2':
+                        if visszament == False:
+                            idoMeres(0, 20)
+                            visszament = True
+                        helySzin('Folyosó')
+                        os.system('cls')
+                        statPrint()
+                        print('\n\n1...Elmegyek fürödni')
+                        print('\n2...Elmegyek tanulni')
+                        print('\n3...Bemegyek valakit meglátogatni')
+                        print('\n4...Elmegyek wcre')
+                        print('\n5...Bemegyek a szobámba')
+                        print('\n6...Sport')
+                        if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
+                            print('\n7...Vacsora')
+                        j = input('\nMit csináljak? ')
+                        match j:
+                            case '1':
+                                furdes()
+                                szoba()
+                            case '2':
+                                tanulas(voltSzoba)
+                            case '3':
+                                valakiSzobaja()
+                                voltSzoba = False
+                            case '4':
+                                WC()
+                                voltSzoba = False
+                            case '5':
+                                szoba()
+                                voltSzoba = True
+                            case '6':
+                                sport()
+                            case '7':
+                                vacsiMar = vacsora(vacsiMar)
+            else:
+                n = '0'
+                while n != '1':
+                    os.system('cls')
+                    print('\nÉhen haltál')
+                    input('Enter a kilépéshez..')
+                    quit()        
+            if getora() >= 22:
+                os.system('cls')
+                alvas()
+                input('\nEnter a következő naphoz..')
+                m = 0
         break
 
 
@@ -167,59 +176,67 @@ def kedd():
         while getora() < 22:
             ido = getora()
             ehseg = getehseg()
-            if voltvaros == False:
-                os.system('cls')    
-                statPrint()
-                print('\nMit kezdesz a déutánoddal')
-                print('\n1...Bemegyek a városba')
-                print('\n2...Visszamegyek a koliba')
-                m = input('\nMit csináljak? ')
-                voltvaros = True
-            else:
-                m = '2'
-            match m:
-                case '1':
-                    varos()
-                case '2':
-                    helySzin('Folyosó')
-                    os.system('cls')
+            if ehseg < 100:
+                if voltvaros == False:
+                    os.system('cls')    
                     statPrint()
-                    print('\n\n1...Elmegyek fürödni')
-                    print('\n2...Elmegyek tanulni')
-                    print('\n3...Bemegyek valakit meglátogatni')
-                    print('\n4...Elmegyek wcre')
-                    print('\n5...Bemegyek a szobámba')
-                    print('\n6...Sport')
-                    print('\n7...Tanári')
-                    if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
-                        print('\n8...Vacsora')
-                    j = input('\nMit csináljak? ')
-                    match j:
-                        case '1':
-                            furdes()
-                            szoba()
-                        case '2':
-                            tanulas(voltSzoba)
-                        case '3':
-                            valakiSzobaja()
-                            voltSzoba = False
-                        case '4':
-                            WC()
-                            voltSzoba = False
-                        case '5':
-                            szoba()
-                            voltSzoba = True
-                        case '6':
-                            sport()
-                        case '7':
-                            tanari()
-                        case '8':
-                            vacsiMar = vacsora(vacsiMar)
-        if getora() >= 22:
-            os.system('cls')
-            alvas()
-            input('\nEnter a következő naphoz..')
-            m = '0'
+                    print('\nMit kezdesz a déutánoddal')
+                    print('\n1...Bemegyek a városba')
+                    print('\n2...Visszamegyek a koliba')
+                    m = input('\nMit csináljak? ')
+                    voltvaros = True
+                else:
+                    m = '2'
+                match m:
+                    case '1':
+                        varos()
+                    case '2':
+                        helySzin('Folyosó')
+                        os.system('cls')
+                        statPrint()
+                        print('\n\n1...Elmegyek fürödni')
+                        print('\n2...Elmegyek tanulni')
+                        print('\n3...Bemegyek valakit meglátogatni')
+                        print('\n4...Elmegyek wcre')
+                        print('\n5...Bemegyek a szobámba')
+                        print('\n6...Sport')
+                        print('\n7...Tanári')
+                        if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
+                            print('\n8...Vacsora')
+                        j = input('\nMit csináljak? ')
+                        match j:
+                            case '1':
+                                furdes()
+                                szoba()
+                            case '2':
+                                tanulas(voltSzoba)
+                            case '3':
+                                valakiSzobaja()
+                                voltSzoba = False
+                            case '4':
+                                WC()
+                                voltSzoba = False
+                            case '5':
+                                szoba()
+                                voltSzoba = True
+                            case '6':
+                                sport()
+                            case '7':
+                                tanari()
+                            case '8':
+                                vacsiMar = vacsora(vacsiMar)
+            else:
+                n = '0'
+                while n != '1':
+                    os.system('cls')
+                    print('\nÉhen haltál')
+                    input('Enter a kilépéshez..')
+                    quit()
+            if getora() >= 22:
+                os.system('cls')
+                alvas()
+                input('\nEnter a következő naphoz..')
+                m = '0'
         break
 
 
@@ -246,63 +263,71 @@ def szerda():
         while getora() < 22:
             ido = getora()
             ehseg = getehseg()
-            if voltvaros == False:
-                os.system('cls')    
-                statPrint()
-                print('\nMit kezdesz a déutánoddal')
-                print('\n1...Bemegyek a városba')
-                print('\n2...Visszamegyek a koliba')
-                m = input('\nMit csináljak? ')
-                voltvaros = True
-            else:
-                m = '2'
-            match m:
-                case '1':
-                    varos()
-                case '2':
-                    helySzin('Folyosó')
-                    os.system('cls')
+            if ehseg < 100:
+                if voltvaros == False:
+                    os.system('cls')    
                     statPrint()
-                    print('\n\n1...Elmegyek fürödni')
-                    print('\n2...Elmegyek tanulni')
-                    print('\n3...Bemegyek valakit meglátogatni')
-                    print('\n4...Elmegyek wcre')
-                    print('\n5...Bemegyek a szobámba')
-                    print('\n6...Sport')
-                    print('\n7...Buliszervezés')
-                    if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
-                        print('\n8...Vacsora')
-                    j = input('\nMit csináljak? ')
-                    match j:
-                        case '1':
-                            furdes()
-                            szoba()
-                        case '2':
-                            tanulas(voltSzoba)
-                        case '3':
-                            valakiSzobaja()
-                            voltSzoba = False
-                        case '4':
-                            WC()
-                            voltSzoba = False
-                        case '5':
-                            szoba()
-                            voltSzoba = True
-                        case '6':
-                            sport()
-                        case '7':
-                            if megszervezve == False:
-                                buliszervezes()
-                                megszervezve = True
-                            else:
-                                bulistatok()
-                        case '8':
-                            vacsiMar = vacsora(vacsiMar)
-        if getora() >= 22:
-            os.system('cls')
-            alvas()
-            input('\nEnter a következő naphoz..')
-            m = '0'
+                    print('\nMit kezdesz a déutánoddal')
+                    print('\n1...Bemegyek a városba')
+                    print('\n2...Visszamegyek a koliba')
+                    m = input('\nMit csináljak? ')
+                    voltvaros = True
+                else:
+                    m = '2'
+                match m:
+                    case '1':
+                        varos()
+                    case '2':
+                        helySzin('Folyosó')
+                        os.system('cls')
+                        statPrint()
+                        print('\n\n1...Elmegyek fürödni')
+                        print('\n2...Elmegyek tanulni')
+                        print('\n3...Bemegyek valakit meglátogatni')
+                        print('\n4...Elmegyek wcre')
+                        print('\n5...Bemegyek a szobámba')
+                        print('\n6...Sport')
+                        print('\n7...Buliszervezés')
+                        if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
+                            print('\n8...Vacsora')
+                        j = input('\nMit csináljak? ')
+                        match j:
+                            case '1':
+                                furdes()
+                                szoba()
+                            case '2':
+                                tanulas(voltSzoba)
+                            case '3':
+                                valakiSzobaja()
+                                voltSzoba = False
+                            case '4':
+                                WC()
+                                voltSzoba = False
+                            case '5':
+                                szoba()
+                                voltSzoba = True
+                            case '6':
+                                sport()
+                            case '7':
+                                if megszervezve == False:
+                                    buliszervezes()
+                                    megszervezve = True
+                                else:
+                                    bulistatok()
+                            case '8':
+                                vacsiMar = vacsora(vacsiMar)
+            else:
+                n = '0'
+                while n != '1':
+                    os.system('cls')
+                    print('\nÉhen haltál')
+                    input('Enter a kilépéshez..')
+                    quit()
+            if getora() >= 22:
+                os.system('cls')
+                alvas()
+                input('\nEnter a következő naphoz..')
+                m = '0'
         break
 
 
@@ -331,71 +356,79 @@ def csutortok():
         while getora() < 22:
             ido = getora()
             ehseg = getehseg()
-            if voltvaros == False:
-                os.system('cls')    
-                statPrint()
-                print('\nMit kezdesz a déutánoddal')
-                print('\n1...Bemegyek a városba')
-                print('\n2...Visszamegyek a koliba')
-                m = input('\nMit csináljak? ')
-                voltvaros = True
-            else:
-                m = '2'
-            match m:
-                case '1':
-                    varos()
-                case '2':
-                    helySzin('Folyosó')
-                    os.system('cls')
+            if ehseg < 100:
+                if voltvaros == False:
+                    os.system('cls')    
                     statPrint()
-                    print('\n\n1...Elmegyek fürödni')
-                    print('\n2...Elmegyek tanulni')
-                    print('\n3...Bemegyek valakit meglátogatni')
-                    print('\n4...Elmegyek wcre')
-                    print('\n5...Bemegyek a szobámba')
-                    print('\n6...Csocsóbajnokság')
-                    print('\n7...Sport')
-                    if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
-                        print('\n7...Vacsora')
-                    j = input('\nMit csináljak? ')
-                    match j:
-                        case '1':
-                            furdes()
-                            szoba()
-                        case '2':
-                            tanulas(voltSzoba)
-                        case '3':
-                            valakiSzobaja()
+                    print('\nMit kezdesz a déutánoddal')
+                    print('\n1...Bemegyek a városba')
+                    print('\n2...Visszamegyek a koliba')
+                    m = input('\nMit csináljak? ')
+                    voltvaros = True
+                else:
+                    m = '2'
+                match m:
+                    case '1':
+                        varos()
+                    case '2':
+                        helySzin('Folyosó')
+                        os.system('cls')
+                        statPrint()
+                        print('\n\n1...Elmegyek fürödni')
+                        print('\n2...Elmegyek tanulni')
+                        print('\n3...Bemegyek valakit meglátogatni')
+                        print('\n4...Elmegyek wcre')
+                        print('\n5...Bemegyek a szobámba')
+                        print('\n6...Csocsóbajnokság')
+                        print('\n7...Sport')
+                        if ido >= 18 and ido <19 and vacsiMar == False and ehseg > 0:
+                            print('\n7...Vacsora')
+                        j = input('\nMit csináljak? ')
+                        match j:
+                            case '1':
+                                furdes()
+                                szoba()
+                            case '2':
+                                tanulas(voltSzoba)
+                            case '3':
+                                valakiSzobaja()
 
-                            voltSzoba = False
-                        case '4':
-                            WC()
-                            voltSzoba = False
-                        case '5':
-                            szoba()
-                            voltSzoba = True
-                        case '6':
-                            if csocso == False:
-                                gyozelem = csocsoBajnoksag(csocso)
-                                csocso = True
-                            else:
-                                os.system("cls")
-                                statPrint()
-                                if gyozelem == True:
-                                    print('\nA bajnokságnak már vége, győztél')
-                                    input('\nENTER')
+                                voltSzoba = False
+                            case '4':
+                                WC()
+                                voltSzoba = False
+                            case '5':
+                                szoba()
+                                voltSzoba = True
+                            case '6':
+                                if csocso == False:
+                                    gyozelem = csocsoBajnoksag(csocso)
+                                    csocso = True
                                 else:
-                                    print('\nA bajnokságnak már vége, vesztettél')
-                                    input('\nENTER')
-                        case '7':
-                            sport()
-                        case '8':
-                            vacsiMar = vacsora(vacsiMar)
-        if getora() >= 22:
-            os.system('cls')
-            alvas()
-            input('\nEnter a következő naphoz..')
-            m = '0'
+                                    os.system("cls")
+                                    statPrint()
+                                    if gyozelem == True:
+                                        print('\nA bajnokságnak már vége, győztél')
+                                        input('\nENTER')
+                                    else:
+                                        print('\nA bajnokságnak már vége, vesztettél')
+                                        input('\nENTER')
+                            case '7':
+                                sport()
+                            case '8':
+                                vacsiMar = vacsora(vacsiMar)
+            else:
+                n = '0'
+                while n != '1':
+                    os.system('cls')
+                    print('\nÉhen haltál')
+                    input('Enter a kilépéshez..')
+                    quit()
+            if getora() >= 22:
+                os.system('cls')
+                alvas()
+                input('\nEnter a következő naphoz..')
+                m = '0'
         break
 
 
