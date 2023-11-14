@@ -29,11 +29,14 @@ def statPrint():
     global ehseg
     global tudas
     global penzem
+    global napVan
     print(f'Idő: {ora}:{perc:02}', end='')
     print(f'\t\t\t\tÉhség: {ehseg}')
     print(f'Pénz: {penzem}Ft', end='')
     print(f'\t\t\t\tTudás: {tudas}')
     print(f'Helyszín: {hely()}')
+    print(f'Nap: {napvan()}')
+
 
 
 # ehezes(ehseg)
@@ -69,6 +72,20 @@ def Nap(milyenNap):
     global nap
     nap = milyenNap
     return nap
+
+def napvan(): 
+    nap = getnap()
+    if nap == 'vasarnap':
+        napVan = 'Vasárnap'
+    elif nap == 'hetfo':
+        napVan = 'Hétfő'
+    elif nap == 'kedd':
+        napVan = 'Kedd'
+    elif nap == 'szerda':
+        napVan = 'Szerda'
+    elif nap == 'csutortok':
+        napVan = 'Csütörtök'
+    return napVan
 
 #hol vagy
 def helySzin(Helyszin):
