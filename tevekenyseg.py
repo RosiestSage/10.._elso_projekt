@@ -7,6 +7,7 @@ furdottMar = False
 #Szoba
 voltSzoba = False
 voltPenz = False
+ilonaBan = False
 toltott = False
 voltmar = True
 elso = True
@@ -838,6 +839,7 @@ def szoba():
 
 def telefon():
     global voltPenz
+    global ilonaBan
     m = '0'
     while m != '1' and m != '2' and m != '3' and m != '4':
         os.system('cls')
@@ -866,6 +868,7 @@ def telefon():
                             statPrint()
                             print('\nBeszélgettél anyukáddal, örültél neki.')
                             idoMeres(0, 5)
+                            etel(2)
                             input('ENTER...')
                             telefon()
                         case '2':
@@ -875,6 +878,7 @@ def telefon():
                                 print('\nBeszélgettél apukáddal és küldött 1500 Ft-ot.')
                                 penz(+1500)
                                 idoMeres(0, 5)
+                                etel(2)
                                 voltPenz = True
                                 input('ENTER...')
                                 telefon()
@@ -883,6 +887,7 @@ def telefon():
                                 statPrint()
                                 print('\nBeszélgettél apukáddal, örültél neki.')
                                 idoMeres(0, 5)
+                                etel(2)
                                 input('ENTER...')
                                 telefon()
                         case '3':
@@ -892,9 +897,9 @@ def telefon():
                 while n != '1' and n != '2':
                     os.system('cls')
                     statPrint()
-                    print('\n1.. Megnézem Corinna Kopf bejegyzéseit.')
-                    print('\n2.. Megnézem a mai bejegyzéseket.')
-                    print('\n3.. Kilépek')
+                    print('\n1.. Megnézem Corinna Kopf bejegyzéseit')
+                    print('2.. Megnézem a mai bejegyzéseket')
+                    print('3.. Kilépek')
                     n = input('\nMit választasz: ')
 
                     match n:
@@ -903,6 +908,7 @@ def telefon():
                             statPrint()
                             print('\nMivel megnézted Corinna Kopf bejegyzéseit, így nem bírtad ki, hogy ne huzogasd a bőrtokos calippod. Sajnos ezzel elment egy kis idő.')
                             idoMeres(0, 20)
+                            etel(6)
                             input('ENTER...')
                             telefon()
                         case '2':
@@ -910,43 +916,94 @@ def telefon():
                             statPrint()
                             print('\nMegnézted a mai bejegyzéseket, semmi különös nem volt.')
                             idoMeres(0, 10)
+                            etel(4)
                             input('ENTER...')
                             telefon()
                         case '3':
                             telefon()
             case '3':
-                n = '0'
-                while n != '1' and n != '2':
+                y = 0
+                while y != '1' and y != '2' and y != '3':
                     os.system('cls')
                     statPrint()
-                    print('\nIlona néni éppen liveol és a halott férjéről beszél.')
-                    print('\n1.. Küldesz neki rózsát.')
-                    print('2.. Beszólsz neki.')
-                    print('3.. Kilépsz')
-                    n = input('\nMit választasz: ')
-                    
-                    match n:
+                    print('\n1.. Videókat nézek')
+                    print('2.. Nézek live-ot')
+                    print('3.. Kilépek')
+                    y = input('\nMit választasz: ')
+
+                    match y:
                         case '1':
                             os.system('cls')
                             statPrint()
-                            print('\nKüldtél neki rózsát, és mondta "Hmm... Rózsa illatos!". Nem értetted miért mondja ezt.')
-                            penz(-300)
-                            idoMeres(0, 5)
+                            print('\nNézted a videókat egy ideig')
+                            idoMeres(0, 20)
+                            etel(6)
                             input('ENTER...')
                             telefon()
+
                         case '2':
-                            os.system('cls')
-                            statPrint()
-                            print('\nBeszóltál neki, de nem vette észre.')
-                            idoMeres(0, 5)
-                            input('ENTER...')
-                            telefon()
+                            if ilonaBan == False:
+                                n = '0'
+                                while n != '1' and n != '2':
+                                    os.system('cls')
+                                    statPrint()
+                                    print('\nIlona néni éppen liveol és a halott férjéről beszél.')
+                                    print('\n1.. Küldesz neki rózsát.')
+                                    print('2.. Beszólsz neki.')
+                                    print('3.. Kilépsz')
+                                    n = input('\nMit választasz: ')
+                                    
+                                    match n:
+                                        case '1':
+                                            os.system('cls')
+                                            statPrint()
+                                            print('\nKüldtél neki rózsát, és mondta "Hmm... Rózsa illatos!". Nem értetted miért mondja ezt.')
+                                            penz(-300)
+                                            idoMeres(0, 5)
+                                            etel(2)
+                                            input('ENTER...')
+                                            telefon()
+                                        case '2':
+                                                x = random.randint(1, 4)
+                                                match x:
+                                                    case 1:
+                                                        os.system('cls')
+                                                        statPrint()
+                                                        print('\nBeszóltál neki, de nem vette észre.')
+                                                        idoMeres(0, 5)
+                                                        etel(2)
+                                                        input('ENTER...')
+                                                        telefon()
+                                                    case 2:
+                                                        os.system('cls')
+                                                        statPrint()
+                                                        print('\nBeszóltál neki, de nem vette észre.')
+                                                        idoMeres(0, 5)
+                                                        etel(2)
+                                                        input('ENTER...')
+                                                        telefon()
+                                                    case 3:
+                                                        os.system('cls')
+                                                        statPrint()
+                                                        print('\nÉszrevette, mindennek szidott tégedet, majd ki lettél bannolva...')
+                                                        idoMeres(0, 5)
+                                                        etel(2)
+                                                        ilonaBan = True
+                                                        input('ENTER...')
+                                                        telefon()                            
+                                        case '3':
+                                            telefon()
+                            elif ilonaBan == True:
+                                os.system('cls')
+                                statPrint()
+                                print('\nKi lettél tiltva a live-ból.')
+                                input('ENTER...')
+                                telefon()
                         case '3':
                             telefon()
             case '4':
                 szoba()
-
-
+                
 def alvas():
     print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
     idoMeres(0, -getperc())
