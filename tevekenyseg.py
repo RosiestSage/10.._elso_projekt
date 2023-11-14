@@ -832,7 +832,7 @@ def szoba():
                                     input("\nENTER folytatáshoz...")
                     voltSzoba = True
                 case '6':
-                    return 0
+                    m = '6'
         else:
             break
 
@@ -1002,7 +1002,7 @@ def telefon():
                         case '3':
                             telefon()
             case '4':
-                szoba()
+                break
                 
 def alvas():
     print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")
