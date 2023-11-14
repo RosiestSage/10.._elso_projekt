@@ -44,7 +44,12 @@ a.active{
     justify-content: center;
     width: 85%;
 }
-
+.torzs div.row div.carousel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+}
 #valasztomenu{
     margin-top: 8%;
 }
