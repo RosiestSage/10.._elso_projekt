@@ -1,6 +1,6 @@
 import os
 from statok import statPrint, getora, idoMeres, etel, tudasPlusz, getehseg, gettudas, Nap, helySzin
-from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora, sport, tanari, csocsoBajnoksag, buliszervezes, bulistatok
+from tevekenyseg import furdes, tanulas, szoba, voltSzoba, alvas, dogaEredmeny, varos, WC, vacsora, sport, tanari, csocsoBajnoksag, buliszervezes, bulistatok, jegyek, jatekvege, valakiSzobaja
 furdottMar = False
 voltvaros = False
 vacsiMar = False
@@ -17,40 +17,49 @@ def vasarnap():
     statPrint()
     print('\nSok sikert és eredményes hetet!')
     input('\nFolytatáshoz ENTER...')
-
     m = 0
+    
     while m != 1 and m != 2 and m != 3 and m != 4 and m != 5:
         while getora() < 22:
-            os.system('cls')   
-            helySzin('Folyosó') 
-            statPrint()
-            print('\n\n1...Elmegyek fürödni')
-            print('\n2...Elmegyek tanulni')
-            print('\n3...Bemegyek valakit meglátogatni')
-            print('\n4...Elmegyek wcre')
-            print('\n5...Bemegyek a szobámba')
-            m = input('\nMit csináljak? ')
-            match m:
-                case '1':
-                    furdes()
-                    szoba()
-                case '2':
-                    voltSzoba = tanulas(voltSzoba)
-                case '3':
-                    print('bemegyekValakihez')#func
-                    voltSzoba = False
-                case '4':
-                    WC()
-                    voltSzoba = False
-                case '5':
-                    szoba()
-        if getora() >= 22:
-            os.system('cls')
-            alvas()
-            input('\nEnter a következő naphoz..')
-            m = 0
-            furdottMar = False
-        break
+            ehseg = getehseg()
+            if ehseg < 100:
+                os.system('cls')   
+                helySzin('Folyosó') 
+                statPrint()
+                print('\n\n1...Elmegyek fürödni')
+                print('\n2...Elmegyek tanulni')
+                print('\n3...Bemegyek valakit meglátogatni')
+                print('\n4...Elmegyek wcre')
+                print('\n5...Bemegyek a szobámba')
+                m = input('\nMit csináljak? ')
+                match m:
+                    case '1':
+                        furdes()
+                        szoba()
+                    case '2':
+                        voltSzoba = tanulas(voltSzoba)
+                    case '3':
+                        valakiSzobaja()
+                        voltSzoba = False
+                    case '4':
+                        WC()
+                        voltSzoba = False
+                    case '5':
+                        szoba()
+            else:
+                n = '0'
+                while n != '1':
+                    os.system('cls')
+                    print('\nÉhen haltál')
+                    input()
+            if getora() >= 22:
+                os.system('cls')
+                alvas()
+                input('\nEnter a következő naphoz..')
+                m = 0
+                furdottMar = False
+            break
+        
 
 
 def hetfo(): 
@@ -61,7 +70,11 @@ def hetfo():
     Nap('hetfo')
     helySzin('Jedlik ajtaja előtt')
     os.system('cls')
-    print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon. \n~A mai naptól lehetősége nyílik különböző sportokat játszani a kollégiumban.~')
+    jegy = dogaEredmeny()
+    jegy2 = dogaEredmeny()
+    jegyek(jegy)
+    jegyek(jegy2)
+    print(f'Hétfőn kipihenten állt neki a napnak, és megírt dolgozataira {jegy} és {jegy2} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon. \n~A mai naptól lehetősége nyílik különböző sportokat játszani a kollégiumban.~')
     input('\nFolytatáshoz ENTER...')
     idoMeres(-8, 30)
     etel(-getehseg())
@@ -110,7 +123,7 @@ def hetfo():
                         case '2':
                             tanulas(voltSzoba)
                         case '3':
-                            print('bemegyekValakihez')#func
+                            valakiSzobaja()
                             voltSzoba = False
                         case '4':
                             WC()
@@ -119,7 +132,7 @@ def hetfo():
                             szoba()
                             voltSzoba = True
                         case '6':
-                            szoba()
+                            sport()
                         case '7':
                             vacsiMar = vacsora(vacsiMar)
         if getora() >= 22:
@@ -138,7 +151,11 @@ def kedd():
     Nap('kedd')
     helySzin('Jedlik ajtaja előtt')
     os.system('cls')
-    print(f'Sok óra alvás után kipihenten állt neki a napnak, és megírt dolgozatára és feleletére {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.\n~Csak mai napon még a Tanárit is meglátogathatja.~')
+    jegy = dogaEredmeny()
+    jegy2 = dogaEredmeny()
+    jegyek(jegy)
+    jegyek(jegy2)
+    print(f'Kedden a sok óra alvás után kipihenten állt neki a napnak, és megírt dolgozatára és feleletére {jegy} és {jegy2} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.\n~Csak mai napon még a Tanárit is meglátogathatja.~')
     input('\nFolytatáshoz ENTER...')
     idoMeres(-9, 10)
     etel(-getehseg())
@@ -184,7 +201,7 @@ def kedd():
                         case '2':
                             tanulas(voltSzoba)
                         case '3':
-                            print('bemegyekValakihez')#func
+                            valakiSzobaja()
                             voltSzoba = False
                         case '4':
                             WC()
@@ -215,7 +232,9 @@ def szerda():
     helySzin('Jedlik ajtaja előtt')
     Nap('szerda')
     os.system('cls')
-    print(f'Szerdán kipihenten állt neki a napnak, és megírt dolgozatára {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.\n~A mai napon Gergő segítségedet kérte a jövő heti kollégiumi buli megszervezésében.~')
+    jegy = dogaEredmeny()
+    jegyek(jegy)
+    print(f'Szerdán kipihenten állt neki a napnak, és megírt dolgozatára {jegy} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.\n~A mai napon Gergő segítségedet kérte a jövő heti kollégiumi buli megszervezésében.~')
     input('\nFolytatáshoz ENTER...')
     idoMeres(-8, 30)
     etel(-getehseg())
@@ -261,7 +280,7 @@ def szerda():
                         case '2':
                             tanulas(voltSzoba)
                         case '3':
-                            print('bemegyekValakihez')#func
+                            valakiSzobaja()
                             voltSzoba = False
                         case '4':
                             WC()
@@ -296,7 +315,11 @@ def csutortok():
     helySzin('Jedlik ajtaja előtt')
     Nap('csutortok')
     os.system('cls')
-    print(f'Csütörtökön kipihenten és a közelgő hétvége reményében ment iskolában, és megírt dolgozataira {dogaEredmeny()} és {dogaEredmeny()} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
+    jegy = dogaEredmeny()
+    jegy2 = dogaEredmeny()
+    jegyek(jegy)
+    jegyek(jegy2)
+    print(f'Csütörtökön kipihenten és a közelgő hétvége reményében ment iskolában, és megírt dolgozataira {jegy} és {jegy2} érdemjegyet kapott. Eljött a délután és ön éppen az iskola előtt áll és gondolkodik hogy mit csináljon.')
     input('\nFolytatáshoz ENTER...')
     idoMeres(-8, 30)
     etel(-getehseg())
@@ -342,7 +365,8 @@ def csutortok():
                         case '2':
                             tanulas(voltSzoba)
                         case '3':
-                            print('bemegyekValakihez')#func
+                            valakiSzobaja()
+
                             voltSzoba = False
                         case '4':
                             WC()
@@ -375,15 +399,15 @@ def csutortok():
         break
 
 
-#vasarnap()
+vasarnap()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
-#hetfo()
+hetfo()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
-#kedd()
+kedd()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
@@ -392,7 +416,7 @@ voltSzoba = False
 voltvaros = False
 furdottMar = False
 csutortok()
-
+jatekvege()
 
 
 
