@@ -120,13 +120,13 @@ def tanulas(voltSzoba):
                             statPrint()
                             #Elmeséli a történetet
                             print('\n\nA történet után elmentem a Tanszobába.')
-                            tanul()
+                            tanul(30)
 
                         case 'Nem':
                             os.system('cls')
                             statPrint()
                             print('\n\nKöszöntem neki és tovább haladtam a Tanszobába.')
-                            tanul()
+                            tanul(30)
 
                 voltSzoba = False
             
@@ -145,7 +145,7 @@ def tanulas(voltSzoba):
                             os.system('cls')
                             statPrint()
                             print('\n\nSzobatársam csendben maradt és megtanultam.')
-                            tanul()
+                            tanul(30)
                         case '2':
                             os.system('cls')
                             statPrint()
@@ -170,7 +170,7 @@ def tanulas(voltSzoba):
                             os.system('cls')
                             statPrint()
                             print('\n\nElkértem a kulcsot és megtanultam.')
-                            tanul()
+                            tanul(30)
 
                         case '2':
                             os.system('cls')
@@ -186,8 +186,8 @@ def tanulas(voltSzoba):
     return voltSzoba                    
 
 
-def tanul():
-    tudasPlusz(30)
+def tanul(pluszTudas):
+    tudasPlusz(pluszTudas)
     print('Megtanulod a mai anyag egy részét, holnap jobban fognak menni a dolgozatok.')
     etel(20)
     idoMeres(1, 0)
@@ -475,8 +475,7 @@ def szoba():
                     os.system("cls")
                     statPrint()
                     print('')
-                    tanul()
-                    tudasPlusz(-10)
+                    tanul(20)
                     idoMeres(-1, 45)  
                     input("Enter...")
                     voltSzoba = True
