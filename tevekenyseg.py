@@ -1008,6 +1008,7 @@ def telefon():
                             telefon()
             case '4':
                 szoba()
+ 
                 
 def alvas():
     print("\nElmúlt 22:00 óra így kényszerülsz aludni, a következő statokkal zártad a mai napot:\n")

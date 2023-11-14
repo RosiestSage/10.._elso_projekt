@@ -26,7 +26,13 @@ div.navbar-nav.row{
 }
 .navbar-nav a{
     color: var(--bs-navbar-active-color);
+    font-size: 150%;
 }
+.navbar-brand{
+    font-size: 200%;
+
+}
+
 a.active{
     font-weight: bold;
     text-decoration: underline;
