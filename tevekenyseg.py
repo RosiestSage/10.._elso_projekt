@@ -52,15 +52,15 @@ def furdes():
             print(f'\n\nElmentem fürödni, {problema}.')
             print('Mit tegyek? ')
             
-            print(f'\n1.. {elsovalasz}')
-            print('2.. Kinyomom a pattanásaim')
-            print('3.. Beszélgetek')
+            print(f'\n1...{elsovalasz}')
+            print('2...Kinyomom a pattanásaim')
+            print('3...Beszélgetek')
             m = input('\nDöntésem:  ')
             match m:
                 case '1':
                     os.system('cls')
                     statPrint()
-                    print('\n\nLefürödtem és vissza mentem a szobába.')
+                    print('\n\nLefürödtél és visszamentél a szobába.')
                     input('\nEnter: Vissza a szobába')
                     furdottMar = True
                     etel(10)
@@ -69,7 +69,7 @@ def furdes():
                 case '2':
                     os.system('cls')
                     statPrint()
-                    print('\n\nKinyomtam a pattanásaimat, utána lefürödtem és visszamentem a szobába.')
+                    print('\n\nKinyomtad a pattanásaid, utána lefürödtél és visszamentél a szobába.')
                     input('\nEnter: Vissza a szobába')
                     furdottMar = True
                     etel(10)
@@ -78,8 +78,7 @@ def furdes():
                 case '3':
                     os.system('cls')
                     statPrint()
-                    #JEDLIKES TÖRTÉNET
-                    print('\n\nA beszélgetés után elmentem fürödni és visszamentem a szobába.')
+                    print('\n\nA beszélgetés után elmentél fürödni és visszamentél a szobába.')
                     input('\nEnter: Vissza a szobába')
                     furdottMar = True
                     etel(10)
@@ -89,8 +88,7 @@ def furdes():
     else:
         os.system('cls')
         statPrint()
-        print('\n\nMa már fürödtem visszamegyek a szobába.')
-        #SZOBA FUNCTION
+        print('\n\nMa már fürödtél, visszamentél a szobába.')
         input('\nEnter: Vissza a szobába')
     return furdottMar
 
@@ -103,32 +101,34 @@ def tanulas(voltSzoba):
         statPrint()
         print('\n\nHol tanuljak?')
 
-        print('\n1.. Tanszoba')
-        print('2.. Szoba')
-        print('3.. Kistanuló')
+        print('\n1...Tanszoba')
+        print('2...Szoba')
+        print('3...Kistanuló')
         m = input('\nDöntésem: ')
         match m:
             case '1':
                 n = '0'
-                while n != 'Igen' and n != 'Nem':
+                while n != '1' and n != '2':
                     os.system('cls')
                     statPrint()
                     helySzin('Tanulószoba')
-                    print('\n\nTanszobához menet barátom jött szembe.')
-                    print('\nBeszélgessek vele?')
+                    print('\n\nTanszobához menet a barátod jött veled szembe.')
+                    print('\nBeszélgetsz vele?')
+
+                    print('\n1...Igen')
+                    print('2...Nem')
                     n = input('Igen/Nem: ')
                     match n:
-                        case 'Igen':
+                        case '1':
                             os.system('cls')
                             statPrint()
-                            #Elmeséli a történetet
-                            print('\n\nA történet után elmentem a Tanszobába.')
+                            print('\n\nA történet után elmentél a Tanszobába.')
                             tanul(30)
 
-                        case 'Nem':
+                        case '2':
                             os.system('cls')
                             statPrint()
-                            print('\n\nKöszöntem neki és tovább haladtam a Tanszobába.')
+                            print('\n\nKöszöntél neki és továbbhaladtál a Tanszobába.')
                             tanul(30)
 
                 voltSzoba = False
@@ -139,7 +139,7 @@ def tanulas(voltSzoba):
                     os.system('cls')
                     helySzin('Szoba')
                     statPrint()
-                    print('\n\nMaradok a szobában tanulni, de szobatársam zavar.')
+                    print('\n\nMaradtál a szobában tanulni, de a szobatársad zavar.')
                     print('\n1.. Szólok, hogy hagyja abba')
                     print('2.. Elmegyek máshova tanulni')
                     n = input('\nMit tegyek? ')
@@ -147,12 +147,12 @@ def tanulas(voltSzoba):
                         case '1':
                             os.system('cls')
                             statPrint()
-                            print('\n\nSzobatársam csendben maradt és megtanultam.')
+                            print('\n\nSzobatársad csendben maradt és megtanultál.')
                             tanul(30)
                         case '2':
                             os.system('cls')
                             statPrint()
-                            print('\n\nKimegyek a szobából és máshova megyek tanulni.')
+                            print('\n\nKimész a szobából és máshol tanulsz.')
                             input('ENTER...')
                             os.system('cls')
                             statPrint()
@@ -164,7 +164,7 @@ def tanulas(voltSzoba):
                     os.system('cls')
                     statPrint()
                     helySzin('Kistanuló')
-                    print('\n\nElmentem a kistanulóba, de az ajtó zárva.')
+                    print('\n\nElmentél a kistanulóba, de az ajtó zárva.')
                     print('\n1.. Elkérem a kulcsot')
                     print('2.. Tanulok máshol')
                     n = input('\nMit csináljak? ')
@@ -172,13 +172,13 @@ def tanulas(voltSzoba):
                         case '1':
                             os.system('cls')
                             statPrint()
-                            print('\n\nElkértem a kulcsot és megtanultam.')
+                            print('\n\nElkérted a kulcsot és megtanultál.')
                             tanul(30)
 
                         case '2':
                             os.system('cls')
                             statPrint()
-                            print('\n\nElmegyek a kistanulótól máshova tanulni.')
+                            print('\n\nElmentél a kistanulótól máshova tanulni.')
                             input('ENTER...')
 
                             os.system('cls')
@@ -191,7 +191,7 @@ def tanulas(voltSzoba):
 
 def tanul(pluszTudas):
     tudasPlusz(pluszTudas)
-    print('Megtanulod a mai anyag egy részét, holnap jobban fognak menni a dolgozatok.')
+    print('Megtanultad a mai anyag egy részét, holnap jobban fognak menni a dolgozatok.')
     etel(20)
     idoMeres(1, 0)
 
@@ -202,21 +202,21 @@ def kezmosas():
     while j != '1' and j != '2':
         os.system('cls')
         statPrint()
-        print('\n1.. Kezet mosok')
-        print('2.. Nem mosok kezet')
+        print('\n1...Kezet mosok')
+        print('2...Nem mosok kezet')
         j = input('\nMit tegyek:')
         match j:
             case '1':
                 os.system('cls')
                 idoMeres(0, 3)
                 statPrint()
-                print('\nKezet mostam, és kimentem a WC-ből')
+                print('\nKezet mostál, és kimentél a WC-ből')
                 input('\nENTER...')
                 # WC()
             case '2':
                 os.system('cls')
                 statPrint()
-                print('\nNem mostam kezet, ezért koszos maradt.')
+                print('\nNem mostál kezet, ezért koszos maradt.')
                 input('\nENTER...')
                 # WC()
         
@@ -244,15 +244,15 @@ def WC():
     while m != '1' and m != '2' and m != '3' and m != '4' and m != '5' and m != '6' and m != '7':
         os.system('cls')
         statPrint()
-        print('\nHol wc-zzek?')
+        print('\nHol wc-zel?')
 
-        print('\n1.. Első piszoár')
-        print('\n2.. Második piszoár')
-        print('\n3.. Harmadik piszoár')
-        print('\n4.. Első fülke')
-        print('\n5.. Második fülke')
-        print('\n6.. Harmadik fülke')
-        print('\n7.. Negyedik fülke')
+        print('\n1...Első piszoár')
+        print('\n2...Második piszoár')
+        print('\n3...Harmadik piszoár')
+        print('\n4...Első fülke')
+        print('\n5...Második fülke')
+        print('\n6...Harmadik fülke')
+        print('\n7...Negyedik fülke')
         m = input('\nDöntésem: ')
 
         if x == 1 or x == 2 or x == 3:
@@ -269,7 +269,7 @@ def WC():
                         statPrint()
                         match n:
                             case 'Igen':
-                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                print(f'\nElvégezted a dolgodat, {valasz}')
                                 input('ENTER...')
                                 idoMeres(0, 5)
                                 kezmosas()
@@ -279,7 +279,7 @@ def WC():
                 case '2':
                         os.system('cls')
                         statPrint()
-                        print('\nKözépen buzis pisilni...')
+                        print('\nKözépen buzis pisilni..')
                         input('\nENTER...')
                         WC()
 
@@ -295,7 +295,7 @@ def WC():
                         statPrint()
                         match n:
                             case 'Igen':
-                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                print(f'\nElvégezted a dolgodat, {valasz}')
                                 input('ENTER...')
                                 idoMeres(0, 5)
                                 kezmosas()
@@ -314,7 +314,7 @@ def WC():
                         statPrint()
                         match n:
                             case 'Igen':
-                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                print(f'\nElvégezted a dolgodat, {valasz}')
                                 input('ENTER...')
                                 idoMeres(0, 15)
                                 kezmosas()
@@ -333,7 +333,7 @@ def WC():
                         statPrint()
                         match n:
                             case 'Igen':
-                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                print(f'\nElvégezted a dolgodat, {valasz}')
                                 input('ENTER...')
                                 idoMeres(0, 15)
                                 kezmosas()
@@ -352,7 +352,7 @@ def WC():
                         statPrint()
                         match n:
                             case 'Igen':
-                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                print(f'\nElvégezted a dolgodat, {valasz}')
                                 input('ENTER...')
                                 idoMeres(0, 15)
                                 kezmosas()
@@ -371,7 +371,7 @@ def WC():
                         statPrint()
                         match n:
                             case 'Igen':
-                                print(f'\nElvégeztem a dolgomat, {valasz}')
+                                print(f'\nElvégezted a dolgodat, {valasz}')
                                 input('ENTER...')
                                 idoMeres(0, 15)
                                 kezmosas()
@@ -383,13 +383,13 @@ def WC():
             if m == '2':
                 os.system('cls')
                 statPrint()
-                print('\nKözépen buzis pisilni...')
+                print('\nKözépen buzis pisilni..')
                 input('\nENTER...')
                 kezmosas()
             else:
                 os.system('cls')
                 statPrint()
-                print('\nElvégeztem a dolgomat.')
+                print('\nElvégezted a dolgodat.')
                 input('\nENTER...')
                 if m == '1' or m == '2' or m == '3':
                     idoMeres(0, 5)
@@ -849,10 +849,10 @@ def telefon():
     while m != '1' and m != '2' and m != '3' and m != '4':
         os.system('cls')
         statPrint()
-        print('\n1.. Hívás')
-        print('2.. Instagram')
-        print('3.. Tiktok')
-        print('4.. Kilépés')
+        print('\n1...Hívás')
+        print('2...Instagram')
+        print('3...Tiktok')
+        print('4...Kilépés')
         m = input('\nMit válasszak: ')
 
         match m:
@@ -862,9 +862,9 @@ def telefon():
                     os.system('cls')
                     statPrint()
                     print('\nNévjegyek:')
-                    print('\n1.. Anya')
-                    print('2.. Apa')
-                    print('3.. Kilépek')
+                    print('\n1...Anya')
+                    print('2...Apa')
+                    print('3...Kilépek')
                     n = input('\nMit választasz: ')
 
                     match n:
@@ -902,16 +902,16 @@ def telefon():
                 while n != '1' and n != '2':
                     os.system('cls')
                     statPrint()
-                    print('\n1.. Megnézem Corinna Kopf bejegyzéseit')
-                    print('2.. Megnézem a mai bejegyzéseket')
-                    print('3.. Kilépek')
+                    print('\n1...Megnézem Corinna Kopf bejegyzéseit')
+                    print('2...Megnézem a mai bejegyzéseket')
+                    print('3...Kilépek')
                     n = input('\nMit választasz: ')
 
                     match n:
                         case '1':
                             os.system('cls')
                             statPrint()
-                            print('\nMivel megnézted Corinna Kopf bejegyzéseit, így nem bírtad ki, hogy ne huzogasd a bőrtokos calippod. Sajnos ezzel elment egy kis idő.')
+                            print('\nMivel megnézted Corinna Kopf bejegyzéseit és nagyon tetszett. Sajnos ezzel elment egy kis idő.')
                             idoMeres(0, 20)
                             etel(6)
                             input('ENTER...')
@@ -931,9 +931,9 @@ def telefon():
                 while y != '1' and y != '2' and y != '3':
                     os.system('cls')
                     statPrint()
-                    print('\n1.. Videókat nézek')
-                    print('2.. Nézek live-ot')
-                    print('3.. Kilépek')
+                    print('\n1...Videókat nézek')
+                    print('2...Nézek live-ot')
+                    print('3...Kilépek')
                     y = input('\nMit választasz: ')
 
                     match y:
@@ -953,9 +953,9 @@ def telefon():
                                     os.system('cls')
                                     statPrint()
                                     print('\nIlona néni éppen liveol és a halott férjéről beszél.')
-                                    print('\n1.. Küldesz neki rózsát.')
-                                    print('2.. Beszólsz neki.')
-                                    print('3.. Kilépsz')
+                                    print('\n1...Küldesz neki rózsát.')
+                                    print('2...Beszólsz neki.')
+                                    print('3...Kilépsz')
                                     n = input('\nMit választasz: ')
                                     
                                     match n:
@@ -1065,7 +1065,7 @@ def varos():
                                 else:
                                     etel(-ehseg)
                                 penz(-2000)
-                            input('\nENTER a folytatáshoz...')
+                            input('\nENTER a folytatáshoz..')
                         case '2':
                             os.system('cls')
                             helySzin('KFC')
@@ -1089,7 +1089,7 @@ def varos():
                                 else:
                                     etel(-ehseg)
                                 penz(-1000)
-                            input('\nENTER a folytatáshoz...')
+                            input('\nENTER a folytatáshoz..')
                         case '3':
                             os.system('cls')
                             helySzin('Burger King')
@@ -1113,7 +1113,7 @@ def varos():
                                 else:
                                     etel(-ehseg)
                                 penz(-2200)
-                            input('\nENTER a folytatáshoz...')
+                            input('\nENTER a folytatáshoz..')
             case '2':
                     os.system('cls')
                     statPrint()
@@ -1134,7 +1134,7 @@ def varos():
                                 etel(-ehseg)
                             idoMeres(1, 0)
                             penz(-600)                            
-                            input('\nENTER a folytatáshoz...')
+                            input('\nENTER a folytatáshoz..')
                         case '2':
                             os.system('cls')
                             helySzin('Reál')
@@ -1146,7 +1146,7 @@ def varos():
                                 etel(-ehseg)
                             idoMeres(0, 45)
                             penz(-1200)                            
-                            input('\nENTER a folytatáshoz...')                                                        
+                            input('\nENTER a folytatáshoz..')                                                        
                         case '3':
                             os.system('cls')
                             statPrint()
@@ -1182,13 +1182,13 @@ def varos():
                             idoMeres(0, 45)
                             os.system('cls')
                             print(f"\nMiután megvetted a {kaja} visszamentél a koliba és megetted")
-                            input('\nENTER a folytatáshoz...')                                                        
+                            input('\nENTER a folytatáshoz..')                                                        
 
 
 
     else:
         print("\nNincs pénzed, nem tudsz venno semmit magadnak")
-        input("\nENTER folytatáshoz...")
+        input("\nENTER folytatáshoz..")
 
 
 def vacsora(vacsiMar):
@@ -1267,7 +1267,7 @@ def sport():
                 print(f'\nLementél pingpongozni egyet {ember} és egy jó hosszú játszma után {nyeres}')
                 idoMeres(1, 0)
                 etel(20)
-                input("\nENTER folytatáshoz...")
+                input("\nENTER folytatáshoz..")
 
             case '2':
                 os.system('cls')
@@ -1276,7 +1276,7 @@ def sport():
                 print(f'\nFelmentél a tanulószobába dartsozni  {ember} és egy jó hosszú játszma után {nyeres}')
                 idoMeres(0, 45)
                 etel(15)
-                input("\nENTER folytatáshoz...")
+                input("\nENTER folytatáshoz..")
 
             case '3':
                 os.system('cls')
@@ -1285,7 +1285,7 @@ def sport():
                 print(f'\nLementél a foglalkoztatóba sakkozni egyet {ember} és egy jó hosszú játszma után {nyeres}')
                 idoMeres(1, 15)
                 etel(25)
-                input("\nENTER folytatáshoz...")
+                input("\nENTER folytatáshoz..")
 
             case '4':
                 os.system('cls')
@@ -1294,7 +1294,7 @@ def sport():
                 print(f'\nLementél a foglalkoztatóba csocsózni {ember} és egy jó hosszú játszma után {nyeres}')
                 idoMeres(0, 30)
                 etel(10)
-                input("\nENTER folytatáshoz...")
+                input("\nENTER folytatáshoz..")
 
 
 def tanari():
@@ -1316,7 +1316,7 @@ def tanari():
                 etel(5)
                 statPrint()
                 print('\nSzékely tanár úrral sokat beszélgettetek, majd emlékeztett hogy jövő héten színházba mész a csoportoddal.')
-                input("\nENTER folytatáshoz...")
+                input("\nENTER folytatáshoz..")
 
             case '2':
                 os.system('cls')
@@ -1335,12 +1335,12 @@ def tanari():
                                 statPrint()
                                 kiulo = True
                                 print('\nA hosszú és fárasztó munka után végre rendben van a kiülő')
-                                input("\nENTER folytatáshoz...")
+                                input("\nENTER folytatáshoz..")
                             case 'Nem':
                                 os.system("cls")
                                 statPrint()
                                 print("\nFehér tanár úr megérti hogy más dolgod van és inkább megkérdez mást")
-                                input("\nENTER folytatáshoz...")
+                                input("\nENTER folytatáshoz..")
 
                 else:
                     os.system('cls')
@@ -1348,7 +1348,7 @@ def tanari():
                     etel(5)
                     statPrint()
                     print('\nFehér tanár úrral sokat beszélgettetek.')
-                    input("\nENTER folytatáshoz...")
+                    input("\nENTER folytatáshoz..")
 
 
 
@@ -1358,7 +1358,7 @@ def tanari():
                 etel(10)
                 statPrint()
                 print('\nMódly tanár úrral jól el lehet beszélgetni, ez most se volt másképp, sokat beszéltetek történelemről és a kollégiumban történt eseményekről')
-                input("\nENTER folytatáshoz...")
+                input("\nENTER folytatáshoz..")
 
 
 def csocsoBajnoksag(csocso):
@@ -1401,18 +1401,18 @@ def csocsoBajnoksag(csocso):
                     print("\nVeszteség")
                 print(f"\nGyőzelmek száma: {gyoz}")
                 print(f"\nVereségek száma: {vesz}")
-                input('\nFolytatáshoz ENTER ')
+                input('\nFolytatáshoz ENTER..')
         if gyoz >= 3:
             os.system('cls')    
             statPrint()
             print('\nA tavalyi után az idei bajnokságot is sikeresen megnyerted')
-            input('\nFolytatáshoz ENTER ')
+            input('\nFolytatáshoz ENTER..')
             csocso = True
         else:
             os.system('cls')    
             statPrint()
             print('\nA tavalyi sikerek után sajnos nem tudtad fenntartani bajnoki címed')
-            input('\nFolytatáshoz ENTER ')  
+            input('\nFolytatáshoz ENTER..')  
             csocso = False 
     return csocso
 
@@ -1625,17 +1625,17 @@ def valakiSzobaja():
                         etel(5)
                         statPrint()
                         print("\nMikor leültél beszélni a szoba lakóival elmondták hogy Zoli sajnos lebetegedett")
-                        input("\nEnter a folytatáshoz")
+                        input("\nEnter a folytatáshoz..")
                     case 'szerda':
                         os.system("cls")
                         statPrint
                         print('\nZoli beteg')
-                        input("\nEnter a folytatáshoz")
+                        input("\nEnter a folytatáshoz..")
                     case 'csütörtök':
                         os.system("cls")
                         statPrint
                         print('\nZoli beteg')
-                        input("\nEnter a folytatáshoz")
+                        input("\nEnter a folytatáshoz..")
             case '2': 
                 helySzin("Gergőék szobája")
                 match nap:
@@ -1652,7 +1652,7 @@ def valakiSzobaja():
                         idoMeres(0, 45)
                         statPrint()
                         print("\nGergővel hosszasan beszélgettél és ezelatt az idő alatt még egy szendvicset is csinált neked")
-                        input("\nEnter a folytatáshoz")
+                        input("\nEnter a folytatáshoz..")
                     case 'hetfo':
                         os.system('cls')
                         helySzin('Gergő szobájának ajtaja előtt')
@@ -1663,7 +1663,7 @@ def valakiSzobaja():
                             print(f"\n{problema2}")
                         else:
                             print(f'\n{problema1}')
-                        input("\nEnter a folytatáshoz")
+                        input("\nEnter a folytatáshoz..")
                     case 'kedd':
                         n = '0'
                         while n != '1' and n!= '2':
@@ -1679,19 +1679,19 @@ def valakiSzobaja():
                                     idoMeres(0, 45)
                                     statPrint()
                                     print("\nMiközben Mátéval beszélgettél Gergő is megérkezett és beszélgettetek")
-                                    input("\nEnter a folytatáshoz")
+                                    input("\nEnter a folytatáshoz..")
                                 case '2':
                                     os.system('cls')
                                     idoMeres(0, 15)
                                     statPrint()
                                     print("\nPetikét zavarta, hogy beszélsz hozzá Witcherezés közben ezrét kizavart")
-                                    input("\nEnter a folytatáshoz")
+                                    input("\nEnter a folytatáshoz..")
                     case 'szerda':
                         os.system('cls')
                         helySzin("Gergő szobájának ajtaja előtt")
                         statPrint()
                         print('\nGergőék elmentek a Metroba bevásárolni')
-                        input("\nEnter a folytatáshoz")
+                        input("\nEnter a folytatáshoz..")
 
                     case 'csütörtök':
                         os.system('cls')
@@ -1703,7 +1703,7 @@ def valakiSzobaja():
                             print(f"\n{problema2}")
                         else:
                             print(f'\n{problema1}')
-                        input("Enter a folytatáshoz")
+                        input("Enter a folytatáshoz..")
             
 
 
