@@ -1007,7 +1007,7 @@ def telefon():
                         case '3':
                             telefon()
             case '4':
-                szoba()
+                break
  
                 
 def alvas():
