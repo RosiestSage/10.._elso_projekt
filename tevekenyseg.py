@@ -117,7 +117,7 @@ def tanulas(voltSzoba):
 
                     print('\n1...Igen')
                     print('2...Nem')
-                    n = input('Igen/Nem: ')
+                    n = input('\nIgen/Nem: ')
                     match n:
                         case '1':
                             os.system('cls')
@@ -1566,10 +1566,10 @@ def jatekvege():
     global hetJegyei
     penz = getpenz()
     os.system('cls')
-    print('Gratulálok!\n\nPéntek délután elindulsz haza egy sikeresen túlélt hét után.\nKövetkező statokkal zárod a hetet:')
+    print('Gratulálok!\n\nPéntek délután elindulsz haza egy sikeresen túlélt hét után.\n\nKövetkező statokkal zárod a hetet:')
     print(f"Jegyid: {hetJegyei}")
     print(f"Megmaradt pénzed: {penz}")
-    input("")
+    input("\nENTER kilépéshez")
 
 
 def valakiSzobaja():
@@ -1632,9 +1632,9 @@ def valakiSzobaja():
                         statPrint
                         print('\nZoli beteg')
                         input("\nEnter a folytatáshoz..")
-                    case 'csütörtök':
+                    case 'csutortok':
                         os.system("cls")
-                        statPrint
+                        statPrint()
                         print('\nZoli beteg')
                         input("\nEnter a folytatáshoz..")
             case '2': 
@@ -1694,7 +1694,7 @@ def valakiSzobaja():
                         print('\nGergőék elmentek a Metroba bevásárolni')
                         input("\nEnter a folytatáshoz..")
 
-                    case 'csütörtök':
+                    case 'csutortok':
                         os.system('cls')
                         helySzin('Gergő szobájának ajtaja előtt')
                         statPrint()

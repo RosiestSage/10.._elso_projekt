@@ -392,7 +392,6 @@ def csutortok():
                                 tanulas(voltSzoba)
                             case '3':
                                 valakiSzobaja()
-
                                 voltSzoba = False
                             case '4':
                                 WC()
@@ -431,7 +430,7 @@ def csutortok():
                 m = '0'
         break
 
-
+'''
 vasarnap()
 voltSzoba = False
 voltvaros = False
@@ -448,6 +447,7 @@ szerda()
 voltSzoba = False
 voltvaros = False
 furdottMar = False
+'''
 csutortok()
 jatekvege()
 
